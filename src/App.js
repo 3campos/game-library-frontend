@@ -2,11 +2,13 @@
 import './App.css';
 import Home from "./components/Home"
 import New from "./components/NewGame"
+import DataFetching from "./components/DataFetching"
+import RawgFetching from "./components/RawgFetching"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useEffect, useState } from 'react';
 
 //define baseURL
-// let baseURL = process.env.REACT_APP_BACKEND_URL
+let baseURL = process.env.REACT_APP_BACKEND_URL
 
 //need to somehow include the substitution of state (useState, perhaps?) in the parent App function below.
 
@@ -15,7 +17,7 @@ function App(props) {
   const [secondInput, setSecondInput] = useState('GIVE ME THE FORMUOLI');
                                     //^the default state is what is put in parens.
 
-  // If lifecycle functions need to be used with functional components, a special React hook called useEffect() needs to be used which behaves differently from lifecycle functions.
+  // If lifecycle functions (mounting, updating and unmounting) need to be used with functional components, a special React hook called useEffect() needs to be used which behaves differently from lifecycle functions.
 
   const Example = () => {
     useEffect(()=> {
@@ -26,12 +28,18 @@ function App(props) {
     );
   }
 
-  // getGameTitle = () => {
+  function GetGameTitle () {
+    const [state, setState] = useState([])
+    useEffect(() => {
+      fetch(`${baseURL}`)
+      .then(
+        res=> setState(res.data)
+      )
+    })
     //need to research a fetch method equivalent for a functional component
       //return json
       //instead of setState, I'll have to use an equivalent for functional components like "setInput" or "setSecondInput" above.
-  // }
-
+  }
 
   return (
     <Router>
@@ -40,7 +48,13 @@ function App(props) {
         element={
         <>
           <Home />
+          <RawgFetching />
           <Example />
+          <DataFetching />
+          <GetGameTitle/>
+          <div>
+            {console.log({GetGameTitle})}
+          </div>
           <input value={input}
           onChange={e => setInput(e.target.value)}
           />
