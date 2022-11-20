@@ -14,12 +14,13 @@ let baseURL = process.env.REACT_APP_BACKEND_URL
 //need to somehow include the substitution of state (useState, perhaps?) in the parent App function below.
 
 function App(props) {
-  const [input, setInput] = useState('RAVIOLI, RAVIOLI');
-  const [secondInput, setSecondInput] = useState('GIVE ME THE FORMUOLI');
+  const [secondInput, setSecondInput] = useState([{first: 'RAVIOLI', second: 'R@V10L1'}]);
+  const [input, setInput] = useState('GIVE ME THE FORMUOLI');
                                     //^the default state is what is put in parens.
 
-  // If lifecycle functions (mounting, updating and unmounting) need to be used with functional components, a special React hook called useEffect() needs to be used which behaves differently from lifecycle functions.
 
+  // If lifecycle functions (mounting, updating and unmounting) need to be used with functional components, a special React hook called useEffect() needs to be used which behaves differently from lifecycle functions.
+ 
   const Example = () => {
     useEffect(()=> {
       <input value={input}/>
@@ -27,19 +28,6 @@ function App(props) {
     return (
       <h1> GET TO THE CHOPPA ..... ! </h1>
     );
-  }
-
-  function GetGameTitle () {
-    const [state, setState] = useState([])
-    useEffect(() => {
-      fetch(`${baseURL}`)
-      .then(
-        res=> setState(res.data)
-      )
-    })
-    //need to research a fetch method equivalent for a functional component
-      //return json
-      //instead of setState, I'll have to use an equivalent for functional components like "setInput" or "setSecondInput" above.
   }
 
   return (
@@ -52,10 +40,9 @@ function App(props) {
           <RawgFetching />
           <Example />
           <DataFetching />
-          <GetGameTitle/>
-          <div>
+          {/* <div>
             {console.log({GetGameTitle})}
-          </div>
+          </div> */}
           <input value={input}
           onChange={e => setInput(e.target.value)}
           />
@@ -65,7 +52,12 @@ function App(props) {
         </>
         }
         />
-        {/* <Route path ="/show" element={<Show />} /> */}
+        <Route path ='/show' element={
+        <>
+        
+        {'BOB\'S BURGERS'}
+        {<Show />}
+        </> } />
         <Route path ="/new" element={<New />} />
       </Routes>
     </Router>
