@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Home from "./components/Home"
+import Show from "./components/Show"
 import New from "./components/NewGame"
 import DataFetching from "./components/DataFetching"
 import RawgFetching from "./components/RawgFetching"
@@ -44,7 +45,7 @@ function App(props) {
   return (
     <Router>
       <Routes>
-        <Route path ="/"
+        <Route path ="/library"
         element={
         <>
           <Home />
@@ -64,6 +65,7 @@ function App(props) {
         </>
         }
         />
+        {/* <Route path ="/show" element={<Show />} /> */}
         <Route path ="/new" element={<New />} />
       </Routes>
     </Router>

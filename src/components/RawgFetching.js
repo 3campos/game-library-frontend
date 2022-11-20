@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 
 function RawgFetching() {
     const [myGames, setGameData] = useState([])
@@ -22,12 +22,14 @@ function RawgFetching() {
     //     setGameData(res.data)
 
     return<>
+    
             <div>
                     <ul>
                     {/* {data.data.allGames} */}
                     {/* {'test'} */}
                     {/* {console.log('line32', games.allGames?.map(game=> <li key = {game.id}>{game.title}</li>))} */}
-                    {myGames.allGames?.map(game=> <li key = {game.id}>Title:{game.title}</li>)}
+                    {myGames.allGames?.map(game=> <li key = {game._id}>Title:{game.title}</li>)}
+                    {console.log(myGames.allGames?.map(game=> <li key = {game._id}>Title:{game.title}</li>))}
                     </ul>
             </div>
             </>
