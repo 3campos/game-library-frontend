@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 function DataFetching() {
+
     const [posts, setPosts] = useState([])
-    useEffect(() => {
+
+    useEffect( () => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(res => {
             console.log(res)
@@ -15,6 +17,11 @@ function DataFetching() {
         })
     }, [])
         //the empty array ensures that the data is fetched only one time.
+    // const getGameData = async () => {
+    //     const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    //     .then((response) => response.json());
+    //     setPosts(response)
+    // }
   return<>
     <div>
         <ul>
