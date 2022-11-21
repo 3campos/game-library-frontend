@@ -3,8 +3,8 @@ import './App.css';
 import Home from "./components/Home"
 import Show from "./components/Show"
 import New from "./components/NewGame"
-import DataFetching from "./components/DataFetching"
-import RawgFetching from "./components/RawgFetching"
+// import DataFetching from "./components/DataFetching"
+// import RawgFetching from "./components/RawgFetching"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useEffect, useState } from 'react';
 
@@ -16,11 +16,7 @@ let baseURL = process.env.REACT_APP_BACKEND_URL
 function App(props) {
   const [secondInput, setSecondInput] = useState([{first: 'RAVIOLI', second: 'R@V10L1'}]);
   const [input, setInput] = useState('GIVE ME THE FORMUOLI');
-                                    //^the default state is what is put in parens.
-
-
-  // If lifecycle functions (mounting, updating and unmounting) need to be used with functional components, a special React hook called useEffect() needs to be used which behaves differently from lifecycle functions.
- 
+                                    
   const Example = () => {
     useEffect(()=> {
       <input value={input}/>
@@ -29,6 +25,37 @@ function App(props) {
       <h1> GET TO THE CHOPPA ..... ! </h1>
     );
   }
+
+  function RawgFetching() {
+    const [myGames, setGameData] = useState([])
+
+    useEffect(() => {
+        getGameData();
+        }, []);
+        // axios.get('http://localhost:3003/games')
+        // axios.get('https://api.rawg.io/api/games/3328?key=876f15b6994d412a9f41668f5eeee5d5')
+        //3328 represents the game's "id"
+
+    const getGameData = async () => {
+        const response = await fetch('http://localhost:3003/games')
+        .then((response) => response.json());
+        setGameData(response)
+    }
+
+    // .then(res => {
+    //     console.log(res)
+    //     setGameData(res.data)
+
+    return<>
+    
+            <div>
+                    <ul>
+                    {myGames.allGames?.map(game=> <li key = {game._id}>Title:{game.title}</li>)}
+                    {console.log(myGames.allGames?.map(game=> <li key = {game._id}>Title:{game.title}</li>))}
+                    </ul>
+            </div>
+            </>
+}
 
   return (
     <Router>
@@ -39,7 +66,7 @@ function App(props) {
           <Home />
           <RawgFetching />
           <Example />
-          <DataFetching />
+          {/* <DataFetching /> */}
           {/* <div>
             {console.log({GetGameTitle})}
           </div> */}
