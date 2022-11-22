@@ -129,14 +129,20 @@ class App extends Component{
         <Router>
           <Routes>
             <Route
-              path='/library'
+              path='/'
               element={<Home
                 customGames={this.state.customGames}
                 apiGames={this.state.games}
                 passExerciseData={this.passGameData}
                 />}
             />
-            
+            <Route
+            path='/showapi'
+            element={ShowApiGame
+              apiGames={this.state.games}
+              
+            }
+            />
           </Routes>
         </Router>
       )
