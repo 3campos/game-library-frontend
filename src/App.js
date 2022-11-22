@@ -136,6 +136,7 @@ class App extends Component{
                 passExerciseData={this.passGameData}
                 />}
             />
+            
           </Routes>
         </Router>
       )
