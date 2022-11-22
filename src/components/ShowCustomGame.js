@@ -1,0 +1,47 @@
+import React, { Component } from 'react'
+import ShowContainerCustom from './ShowContainerCustom'
+// import BackBtn from './BackBtn';
+
+class ShowCustomGame extends Component {
+    constructor(props){
+        super(props)
+    }
+
+    render(){
+        return(
+        <div>
+        {this.props.customGames.map((game, index) => {
+                if(game._id === customGameId){
+                    return(
+                        <ShowContainerCustom
+                        key={index}
+                        id={this.props.id}
+                        title={this.props.gameTitle}img={this.props.gameImage}
+                        gameDuration={this.props.gameDuration}
+                        gameGenre={this.props.gameGenre}
+                        gameRating={this.props.gameRating}
+                        handleDeleteGame={this.props.handleDeleteGame}
+                        gameToEdit={this.props.gameToEdit}
+                        passGameData={this.props.passGameData}
+                        />
+                    )
+    }
+})}
+</div>
+)}}
+
+export default ShowCustomGame
+
+{/* <ShowContainerCustom
+key={index}
+id={customExerciseId}
+exerciseName={exercise.name}
+exerciseDescription = {exercise.description}
+exerciseImage = {exercise.exerciseImage}
+category = {exercise.muscles}
+categoryArray = {this.props.categories}
+notes = {exercise.notes}
+handleDeleteExercise = {this.props.handleDeleteExercise}
+exerciseToEdit={this.props.exerciseToEdit}
+passExerciseData={this.props.passExerciseData}
+/> */}
