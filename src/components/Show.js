@@ -1,47 +1,24 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect, useSearchParams } from 'react'
+
+//the useSearchParams hook stores the search //results in the URL instead of state.
+//source: https://www.youtube.com/watch?v=jIKBiFmlS4k&ab_channel=Codevolution
 
 function Show() {
-    return (
-    <div>Showtime!</div>
-  )
-}
+    const [searchParams, setSearchParams] =useSearchParams()
+    //look into  searchParams.get('filter') with respect to favoriting games
+    //https://www.youtube.com/watch?v=jIKBiFmlS4k&ab_channel=Codevolution
+     return<>
+         <div>'test'</div>
+         <div>
+            <div>User 1</div>
+            <div>User 2</div>
+            <div>User 3</div>
+         </div>
+         <div>
+            <button onClick={() => setSearchParams({filter: 'active'})}>Game Details Page</button>
+            <button onClick={() => setSearchParams({})}>Reset Page</button>
+         </div>
+    </>
+ }
 
-export default Show
-
-/*
-
-    
-    render(){
-
-        return (
-            <div className='flex flex-col relative'>
-                <div id="tile" className='border-black border-2 rounded-md bg-white p-2 h-44 w-44 overflow-hidden'>
-
-                <div className='flex justify-between items-start'>
-                    <div className='flex flex-col'>
-                         <p className='font-bold'>{this.props.name}</p>
-                         <p className='italic text-sm'>{this.props.muscles}</p>
-                    </div>
-                   
-                    <div className='flex items-center justify-center'> 
-                        {this.getMuscleIcon()}
-                    </div>
-                </div>
-
-                <div className='my-4'></div>
-                <p className='truncate text-sm'>{this.props.description}</p>
-                <Link to ={`/showcustom?id=${this.props.id}`}>
-                    <p className='pr-4 underline text-[#616161] text-sm absolute bottom-2'>
-                        View More
-                    </p>
-                </Link>
-                </div>
-            </div>
-        )
-    }
-
-}
-
-export default CustomExerciseTile
-
-*/
+ export default Show
