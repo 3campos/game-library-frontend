@@ -23,14 +23,38 @@ class ShowContainerCustom extends Component{
     render() {
         return(
             <>
-                <div>{this.props.gameTitle}</div>
+            <div>
+                <h1>{this.props.gameTitle}</h1>
                 <div>{this.props.gameImage}</div>
                 <div>{this.props.gameDuration}</div>
-                <div>{this.props.gameGenre}</div>
+                <div>
+                    <h2>Genre:</h2>
+                </div>
+                    <p>{this.props.gameGenre}</p>
+                <div>
+                    <h2>Game Rating:</h2>
+                </div>
                 <div>{this.props.gameRating}</div>
-                <div>{this.props.gameDescription}</div>
-                <div><EditBtn id = {this.props.id}/></div>
+                <div>
+                    <h2>Description:</h2>
+                    <EditBtn id={this.props.id}/>
+                </div>
+                    <p>{this.props.gameDescription}</p>
+                <div>
+                    <EditBtn id = {this.props.id}/>
+                </div>
+                <button onClick={()=>{
+                    this.props.handleDeleteExercise(this.props.id);
+                    }}
+                    >
+                    <span>
+                        delete
+                    </span>
+                </button>
+            </div>
             </>
         )
     }
 }
+
+export default ShowContainerCustom

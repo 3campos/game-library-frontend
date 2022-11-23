@@ -135,19 +135,38 @@ class App extends Component{
               element={<Home
                 customGames={this.state.customGames}
                 apiGames={this.state.games}
-                passExerciseData={this.passGameData}
-                />}
+                passExerciseData={this.passGameData}/>}
             />
             <Route
-            path='/showapi'
-            element={ShowApiGame
-              apiGames={this.state.games}
-
-            }
+              path='/showapi'
+              element={<ShowApiGame
+                apiGames={this.state.games}/>}
             />
+            <Route
+              path='/showcustom'
+              element={<ShowCustomGame
+                customGames={this.state.customGames}
+                handleDeleteGame={this.handleDeleteGame}
+                gameToEdit={this.state.gameToEdit}
+                passGameData={this.passGameData}/>}
+            />
+            <Route
+              path='/edit'
+              element={<EditGame
+                customGames={this.state.customGames}
+                handleEditGame={this.handleEditGame}
+                gameToEdit={this.state.gameToEdit}/>}
+            />
+            <Route
+              element={<EditBtn
+                customGames={this.state.customGames}
+                handleDeleteGame={this.handleDeleteGame}
+                gameToEdit={this.state.gameToEdit}
+                passGameData={this.passGameData}/>}
+              />
           </Routes>
         </Router>
-      )
+      );
     }
 }
 

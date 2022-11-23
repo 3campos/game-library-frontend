@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApiGameTile from './ApiGameTile';
 import CustomGameTile from './CustomGameTile'
+import '../index.css'
 
 class Home extends Component {
     render() {

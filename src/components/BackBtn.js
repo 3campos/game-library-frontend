@@ -8,7 +8,7 @@ const BackBtn = () => {
             className=''
         >
             <div>
-                <p>Home</p>
+                <p>Return Home</p>
             </div>
         </Link>
     )
