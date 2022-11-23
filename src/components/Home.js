@@ -18,6 +18,7 @@ class Home extends Component {
                         gameDuration = {game.playDuration}
                         gameGenre = {game.genre}
                         gameRating = {game.rating}
+                        gameDescription={game.description}
                         />
                     )
                 })}
@@ -34,6 +35,7 @@ class Home extends Component {
                         gameDuration = {game.playDuration}
                         gameGenre = {game.genre}
                         gameRating = {game.rating}
+                        gameDescription={game.description}
                         passGameData={this.props.passGameData}
                         />
                     )

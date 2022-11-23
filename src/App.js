@@ -27,6 +27,7 @@ class App extends Component{
         playDuration: "",
         genre: "",
         rating: "",
+        description: "",
       }],
         baseUrl: 'https://api.rawg.io/api/games/',
         id: "",
@@ -39,6 +40,7 @@ class App extends Component{
         playDuration: "",
         genre: "",
         rating: "",
+        description: "",
       }
     };
   }
@@ -77,12 +79,12 @@ class App extends Component{
     passGameData = (gameToEdit) => {
       this.setState({gameToEdit: {
         id: gameToEdit.id,
-        name: gameToEdit.name,
         title: gameToEdit.title,
         img: gameToEdit.img,
         playDuration: gameToEdit.playDuration,
         genre: gameToEdit.genre,
         rating: gameToEdit.rating,
+        description: gameToEdit.description,
       }
       })
     }
@@ -140,7 +142,7 @@ class App extends Component{
             path='/showapi'
             element={ShowApiGame
               apiGames={this.state.games}
-              
+
             }
             />
           </Routes>

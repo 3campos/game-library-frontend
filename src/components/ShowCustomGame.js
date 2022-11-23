@@ -6,7 +6,6 @@ class ShowCustomGame extends Component {
     constructor(props){
         super(props)
     }
-
     render(){
         return(
         <div>
@@ -22,6 +21,7 @@ class ShowCustomGame extends Component {
                         gameRating={this.props.gameRating}
                         handleDeleteGame={this.props.handleDeleteGame}
                         gameToEdit={this.props.gameToEdit}
+                        gameDescription={this.props.gameDescription}
                         passGameData={this.props.passGameData}
                         />
                     )
@@ -31,17 +31,3 @@ class ShowCustomGame extends Component {
 )}}
 
 export default ShowCustomGame
-
-{/* <ShowContainerCustom
-key={index}
-id={customExerciseId}
-exerciseName={exercise.name}
-exerciseDescription = {exercise.description}
-exerciseImage = {exercise.exerciseImage}
-category = {exercise.muscles}
-categoryArray = {this.props.categories}
-notes = {exercise.notes}
-handleDeleteExercise = {this.props.handleDeleteExercise}
-exerciseToEdit={this.props.exerciseToEdit}
-passExerciseData={this.props.passExerciseData}
-/> */}

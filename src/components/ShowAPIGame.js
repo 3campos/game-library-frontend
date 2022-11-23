@@ -22,6 +22,7 @@ class ShowAPIGame extends Component {
                     gameDuration = {game.playDuration}
                     gameGenre = {game.genre}
                     gameRating = {game.rating}
+                    gameDescription = {game.description}
                     />)}
             })
         }

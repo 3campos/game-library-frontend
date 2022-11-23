@@ -29,6 +29,7 @@ class EditGameForm extends Component {
                 playDuration: this.state.playDuration,
                 genre: this.state.genre,
                 rating: this.state.rating,
+                description: this.state.description,
             }),
             headers: {
                 'Content-Type': 'application/json'

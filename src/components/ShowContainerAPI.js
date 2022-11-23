@@ -13,6 +13,7 @@ class ShowContainerAPI extends Component {
             <div>{this.props.gameDuration}</div>
             <div>{this.props.gameGenre}</div>
             <div>{this.props.gameRating}</div>
+            <div>{this.props.gameDescription}</div>
             </>
         )
     }

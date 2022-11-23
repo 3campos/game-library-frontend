@@ -15,6 +15,7 @@ class ShowContainerCustom extends Component{
                 gameDuration: this.props.gameDuration,
                 genre: this.props.gameGenre,
                 rating: this.props.gameRating,
+                rating: this.props.gameDescription,
             }
             this.props.passGameData(gameToEdit)
         }
@@ -27,8 +28,8 @@ class ShowContainerCustom extends Component{
                 <div>{this.props.gameDuration}</div>
                 <div>{this.props.gameGenre}</div>
                 <div>{this.props.gameRating}</div>
+                <div>{this.props.gameDescription}</div>
                 <div><EditBtn id = {this.props.id}/></div>
-
             </>
         )
     }
