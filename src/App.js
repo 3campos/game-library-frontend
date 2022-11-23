@@ -3,6 +3,7 @@ import './App.css';
 import React, { Component } from 'react'
 import Home from "./components/Home"
 import NewGame from './components/NewGame'
+import NavBar from './components/NavBar'
 import ShowAPIGame from './components/ShowAPIGame'
 import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
