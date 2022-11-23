@@ -2,6 +2,11 @@
 import './App.css';
 import React, { Component } from 'react'
 import Home from "./components/Home"
+import NewGame from './components/NewGame'
+import ShowAPIGame from './components/ShowAPIGame'
+import ShowCustomGame from './components/ShowCustomGame'
+import EditGame from './components/EditGame'
+import EditBtn from './components/EditBtn'
 // import Show from "./components/Show"
 // import New from "./components/NewGame"
 // import DataFetching from "./components/DataFetching"
@@ -139,7 +144,7 @@ class App extends Component{
             />
             <Route
               path='/showapi'
-              element={<ShowApiGame
+              element={<ShowAPIGame
                 apiGames={this.state.games}/>}
             />
             <Route
@@ -149,6 +154,10 @@ class App extends Component{
                 handleDeleteGame={this.handleDeleteGame}
                 gameToEdit={this.state.gameToEdit}
                 passGameData={this.passGameData}/>}
+            />
+            <Route
+              path='/new'
+              element={<NewGame/>}
             />
             <Route
               path='/edit'
