@@ -7,6 +7,7 @@ class ShowCustomGame extends Component {
         super(props)
     }
     render(){
+        const customGameId = window.location.search.slice(0);
         return(
         <div>
         {this.props.customGames.map((game, index) => {
@@ -15,7 +16,8 @@ class ShowCustomGame extends Component {
                         <ShowContainerCustom
                         key={index}
                         id={this.props.id}
-                        title={this.props.gameTitle}img={this.props.gameImage}
+                        title={this.props.gameTitle}
+                        img={this.props.gameImage}
                         gameDuration={this.props.gameDuration}
                         gameGenre={this.props.gameGenre}
                         gameRating={this.props.gameRating}

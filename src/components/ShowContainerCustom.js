@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // importing edit component here
-// import EditBtn from './EditBtn'
+import EditBtn from './EditBtn'
 
 class ShowContainerCustom extends Component{
     constructor(props){

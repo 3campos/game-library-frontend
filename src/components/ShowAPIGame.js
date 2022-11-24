@@ -7,23 +7,24 @@ class ShowAPIGame extends Component {
         super(props)
     }
     render(){
-        const apiGameId=parseInt(window.location.search);
+        const apiGameId = parseInt(window.location.search.slice(4));
 
     return(
         <div>
-        {this.props.apiGames.map((game, index)=> {
+        {this.props.apiGames?.map((game, index)=> {
             if(game.id === apiGameId){
                 return(
                     <ShowContainerAPI
                     key={index}
                     id={apiGameId}
-                    gameTitle={game.title}
-                    gameImage={game.img}
-                    gameDuration = {game.playDuration}
-                    gameGenre = {game.genre}
+                    gameTitle={game.name}
+                    gameImage={game.background_image}
+                    gameDuration = {game.playtime}
+                    gameGenre = {game.genres}
                     gameRating = {game.rating}
                     gameDescription = {game.description}
-                    />)}
+                    />)
+                }
             })
         }
         </div>

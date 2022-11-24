@@ -1,16 +1,17 @@
-import React from "react";
+import React, { Component } from 'react'
 import BackBtn from './BackBtn'
+
 
 class NewGame extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: gameToEdit.title,
-            img: gameToEdit.img,
-            playDuration: gameToEdit.playDuration,
-            genre: gameToEdit.genre,
-            rating: gameToEdit.rating,
-            description: gameToEdit.description,
+            title: '',
+            img: '',
+            playDuration: '',
+            genre: '',
+            rating: '',
+            description: '',
         }
     }
 

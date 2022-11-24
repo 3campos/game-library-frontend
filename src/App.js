@@ -3,7 +3,7 @@ import './App.css';
 import React, { Component } from 'react'
 import Home from "./components/Home"
 import NewGame from './components/NewGame'
-import NavBar from './components/NavBar'
+// import NavBar from './components/NavBar'
 import ShowAPIGame from './components/ShowAPIGame'
 import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
@@ -18,8 +18,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 //define baseURL
 let baseURL = process.env.REACT_APP_BACKEND_URL
 
-//define apiKEY
-let apiKEY = process.env.REACT_APP_API_KEY
+//define key
+// let key = process.env.REACT_APP_API_KEY
 
 //need to somehow include the substitution of state (useState, perhaps?) in the parent App function below.
 
@@ -35,9 +35,9 @@ class App extends Component{
         rating: "",
         description: "",
       }],
-        baseUrl: 'https://api.rawg.io/api/games/',
-        id: "",
-        key: "?" + apiKEY,
+        baseUrl: 'https://api.rawg.io/api/games?key=',
+        key: process.env.REACT_APP_API_KEY,
+        searchUrl: "",
       //for editing games, initializing an empty object.
       gameToEdit: {
         id: "",
@@ -95,7 +95,7 @@ class App extends Component{
       })
     }
 
-    handleDeleteExercise = (id) => {
+    handleDeleteGame = (id) => {
       fetch(`${process.env.REACT_APP_BACKEND_URL}/${id}`, {
         method: 'DELETE'
       }).then( response => {
@@ -110,7 +110,7 @@ class App extends Component{
     //API Game Handlers
     getSearchUrl = () => {
       this.setState({
-        searchUrl: this.state.baseUrl
+        searchUrl: this.state.baseUrl + this.state.key
       }, () => (
         fetch(this.state.searchUrl)
         .then(response => {return response.json() })

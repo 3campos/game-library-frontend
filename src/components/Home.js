@@ -9,15 +9,15 @@ class Home extends Component {
             <>
             <h2>API Games</h2>
             <div>
-                {this.props.apiGames.map((game, index) => {
+                {this.props.apiGames?.map((game, index) => {
                     return (
                         <ApiGameTile
                         key={index}
                         id={game.id}
-                        gameTitle={game.title}
-                        gameImage={game.img}
-                        gameDuration = {game.playDuration}
-                        gameGenre = {game.genre}
+                        gameTitle={game.name}
+                        gameImage={game.background_image}
+                        gameDuration = {game.playtime}
+                        gameGenre = {game.genres}
                         gameRating = {game.rating}
                         gameDescription={game.description}
                         />
