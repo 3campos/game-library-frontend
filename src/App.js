@@ -8,6 +8,7 @@ import ShowAPIGame from './components/ShowAPIGame'
 import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
 import EditBtn from './components/EditBtn'
+// import ShowDescription from './components/ShowDescription'
 // import Show from "./components/Show"
 // import New from "./components/NewGame"
 // import DataFetching from "./components/DataFetching"
@@ -33,7 +34,7 @@ class App extends Component{
         playDuration: "",
         genre: "",
         rating: "",
-        description: "",
+        // description: "",
       }],
         baseUrl: 'https://api.rawg.io/api/games?key=',
         key: process.env.REACT_APP_API_KEY,
@@ -47,7 +48,11 @@ class App extends Component{
         genre: "",
         rating: "",
         description: "",
-      }
+      },
+      gameDescriptionBaseUrl: "https://api.rawg.io/api/games/",
+      // gameDescriptionId: "",
+      endGameDescriptionBaseUrl: "?key=",
+      secondSearchUrl: "",
     };
   }
 
@@ -127,12 +132,41 @@ class App extends Component{
       ))
     }
 
+    //misc handlers
+    getGameDescription = () => {
+      this.setState({
+        secondSearchUrl: this.state.gameDescriptionBaseUrl + this.state.id + this.state.endGameDescriptionBaseUrl + this.state.key
+      }, () => (
+        fetch(this.state.secondSearchUrl)
+        .then(response => {return response.json() })
+        .then(json => {
+          const descToAdd = ""
+          // for (variable in object){
+          // statement}
+          let desc = json.results
+          for (let key in desc) {
+              descToAdd += desc[key]
+          }
+          // json.results.forEach((desc) => {
+          //     descToAdd.push(desc)
+          // })
+          this.setState({
+            descriptions: descToAdd
+          })
+        }
+        ), (err) => console.log(err)
+      ))
+    }
+
     componentDidMount() {
       this.getGames();
       this.getSearchUrl();
+      this.getGameDescription();
     }
 
     render() {
+      console.log(this.state.descriptions)
+      console.log(this.state.secondSearchUrl)
       return(
         <Router>
           <Routes>
@@ -146,7 +180,9 @@ class App extends Component{
             <Route
               path='/showapi'
               element={<ShowAPIGame
-                apiGames={this.state.games}/>}
+                apiGames={this.state.games}
+                gameDescription={this.state.descriptions}
+                />}             
             />
             <Route
               path='/showcustom'

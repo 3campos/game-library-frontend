@@ -15,11 +15,11 @@ class Home extends Component {
                         key={index}
                         id={game.id}
                         gameTitle={game.name}
-                        gameImage={game.background_image}
+                        gameImage={game.image}
                         gameDuration = {game.playtime}
                         gameGenre = {game.genres}
                         gameRating = {game.rating}
-                        gameDescription={game.description}
+                        // gameDescription={desc.description}
                         />
                     )
                 })}
@@ -32,11 +32,11 @@ class Home extends Component {
                         key = {index}
                         id = {game._id}
                         gameTitle={game.title}
-                        gameImage={game.img}
+                        gameImage={<img src={game.background_image}/>}
                         gameDuration = {game.playDuration}
                         gameGenre = {game.genre}
                         gameRating = {game.rating}
-                        gameDescription={game.description}
+                        // gameDescription={game.description}
                         passGameData={this.props.passGameData}
                         />
                     )

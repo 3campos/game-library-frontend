@@ -1,10 +1,15 @@
+import { toBeInTheDOM } from '@testing-library/jest-dom/dist/matchers';
 import React, { Component } from 'react'
 import BackBtn from './BackBtn'
 
+let key = process.env.REACT_APP_API_KEY
+
 class ShowContainerAPI extends Component {
     constructor(props){
-        super(props)
+        super(props);
     }
+
+//https://api.rawg.io/api/games/3328?key=876f15b6994d412a9f41668f5eeee5d5
 
     render(){
         let genrePull =[]
@@ -31,11 +36,12 @@ class ShowContainerAPI extends Component {
                     // /ig='i' makes the regular expression case insensitive and 'g' means that all occurrences of tags that the method finds on the rendered page should be replaced.
         }
         // let alteredDescription = removeHtmlTags(this.props.gameDescription)
+
         return(
             <>
             {/* {console.log(this.props.description)} */}
             <div>Title: {this.props.gameTitle}</div>
-            <div>{this.props.gameImage}</div>
+            <div>{<img src = {this.props.gameImage} />}</div>
             <div>Game Duration: {this.props.gameDuration} hours</div>
             <div>Genres: 
                 {this.props.gameGenre.forEach(genre => {
@@ -45,7 +51,8 @@ class ShowContainerAPI extends Component {
                 {genrePull = genrePull.toString()}
             </div>
             <div>Rating: {this.props.gameRating}/5</div>
-            <div>Description: {this.props.gameDescription}</div>
+            {/* <div>Description: {this.props.gameDescription}</div> */}
+            
             <div><BackBtn/></div>
             </>
         )

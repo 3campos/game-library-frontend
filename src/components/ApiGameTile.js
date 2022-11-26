@@ -11,6 +11,7 @@ class ApiGameTile extends Component {
                             <p>{this.props.gameTitle}</p>
                             <p>{this.props.genre}</p>
                             <p>{this.props.rating}</p>
+                            <p>{<img src = {this.props.image} />}</p>
                         </div>
                     </div>
                     <Link to = {`/showapi?id=${this.props.id}`}> View More
