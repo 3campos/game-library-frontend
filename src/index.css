@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-image {
+    background-image: url('https://images.saymedia-content.com/.image/t_share/MTc0MzY1Mjg5OTM5NDc4MTUw/the-scariest-monsters-in-shadow-of-the-colossus.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 // import { Link } from "react-router-dom";
 import ShowContainerAPI from './ShowContainerAPI'
+import BackBtn from './BackBtn';
 
 let apiGameId = parseInt(window.location.search.slice(4));
 class ShowAPIGame extends Component {
-    
     constructor(props){
         super(props);
         // this.state = {
@@ -51,12 +51,12 @@ class ShowAPIGame extends Component {
 
     render(){
         apiGameId = parseInt(window.location.search.slice(4));
-
     return(
         <div>
         {this.props.apiGames?.map((game, index)=> {
             if(game.id === apiGameId){
                 return(
+                    <div>
                     <ShowContainerAPI
                     key={index}
                     id={apiGameId}
@@ -67,6 +67,8 @@ class ShowAPIGame extends Component {
                     gameRating = {game.rating}
                     // gameDescription = {desc.description}
                     />
+                    <BackBtn />
+                    </div>
                     )
                 }
             })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // importing edit component here
-import EditBtn from './EditBtn'
+// import EditBtn from './EditBtn'
 
 class ShowContainerCustom extends Component{
     constructor(props){
@@ -11,11 +11,11 @@ class ShowContainerCustom extends Component{
         let gameToEdit ={
                 id: this.props.id,
                 title: this.props.gameTitle,
-                img: this.props.gameImage,
-                gameDuration: this.props.gameDuration,
+                background_image: this.props.gameImage,
+                playtime: this.props.gameDuration,
                 genre: this.props.gameGenre,
                 rating: this.props.gameRating,
-                rating: this.props.gameDescription,
+                notes: this.props.gameNotes,
             }
             this.props.passGameData(gameToEdit)
         }
@@ -25,7 +25,7 @@ class ShowContainerCustom extends Component{
             <>
             <div>
                 <h1>{this.props.gameTitle}</h1>
-                <div>{this.props.gameImage}</div>
+                <div>{<img src = {this.props.gameImage} />}</div>
                 <div>{this.props.gameDuration}</div>
                 <div>
                     <h2>Genre:</h2>
@@ -36,15 +36,15 @@ class ShowContainerCustom extends Component{
                 </div>
                 <div>{this.props.gameRating}</div>
                 <div>
-                    <h2>Description:</h2>
-                    <EditBtn id={this.props.id}/>
+                    <h2>Notes:</h2>
+                    {/* <EditBtn id={this.props.id}/> */}
                 </div>
-                    <p>{this.props.gameDescription}</p>
-                <div>
+                    <p>{this.props.gameNotes}</p>
+                {/* <div>
                     <EditBtn id = {this.props.id}/>
-                </div>
+                </div> */}
                 <button onClick={()=>{
-                    this.props.handleDeleteExercise(this.props.id);
+                    this.props.handleDeleteGame(this.props.id);
                     }}
                     >
                     <span>

@@ -3,7 +3,7 @@ import './App.css';
 import React, { Component } from 'react'
 import Home from "./components/Home"
 import NewGame from './components/NewGame'
-// import NavBar from './components/NavBar'
+import NavBar from './components/NavBar'
 import ShowAPIGame from './components/ShowAPIGame'
 import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
@@ -43,16 +43,16 @@ class App extends Component{
       gameToEdit: {
         id: "",
         title:"",
-        img: "",
-        playDuration: "",
+        background_image: "",
+        playtime: "",
         genre: "",
         rating: "",
-        description: "",
+        notes: "",
       },
-      gameDescriptionBaseUrl: "https://api.rawg.io/api/games/",
-      // gameDescriptionId: "",
-      endGameDescriptionBaseUrl: "?key=",
-      secondSearchUrl: "",
+      // gameDescriptionBaseUrl: "https://api.rawg.io/api/games/",
+      // // gameDescriptionId: "",
+      // endGameDescriptionBaseUrl: "?key=",
+      // secondSearchUrl: "",
     };
   }
 
@@ -91,11 +91,11 @@ class App extends Component{
       this.setState({gameToEdit: {
         id: gameToEdit.id,
         title: gameToEdit.title,
-        img: gameToEdit.img,
-        playDuration: gameToEdit.playDuration,
+        img: gameToEdit.background_image,
+        playtime: gameToEdit.playtime,
         genre: gameToEdit.genre,
         rating: gameToEdit.rating,
-        description: gameToEdit.description,
+        notes: gameToEdit.notes,
       }
       })
     }
@@ -133,42 +133,42 @@ class App extends Component{
     }
 
     //misc handlers
-    getGameDescription = () => {
-      this.setState({
-        secondSearchUrl: this.state.gameDescriptionBaseUrl + this.state.id + this.state.endGameDescriptionBaseUrl + this.state.key
-      }, () => (
-        fetch(this.state.secondSearchUrl)
-        .then(response => {return response.json() })
-        .then(json => {
-          const descToAdd = ""
-          // for (variable in object){
-          // statement}
-          let desc = json.results
-          for (let key in desc) {
-              descToAdd += desc[key]
-          }
-          // json.results.forEach((desc) => {
-          //     descToAdd.push(desc)
-          // })
-          this.setState({
-            descriptions: descToAdd
-          })
-        }
-        ), (err) => console.log(err)
-      ))
-    }
+    // getGameDescription = () => {
+    //   this.setState({
+    //     secondSearchUrl: this.state.gameDescriptionBaseUrl + this.state.id + this.state.endGameDescriptionBaseUrl + this.state.key
+    //   }, () => (
+    //     fetch(this.state.secondSearchUrl)
+    //     .then(response => {return response.json() })
+    //     .then(json => {
+    //       const descToAdd = ""
+    //       // for (variable in object){
+    //       // statement}
+    //       let desc = json.results
+    //       for (let key in desc) {
+    //           descToAdd += desc[key]
+    //       }
+    //       // json.results.forEach((desc) => {
+    //       //     descToAdd.push(desc)
+    //       // })
+    //       this.setState({
+    //         descriptions: descToAdd
+    //       })
+    //     }
+    //     ), (err) => console.log(err)
+    //   ))
+    // }
 
     componentDidMount() {
       this.getGames();
       this.getSearchUrl();
-      this.getGameDescription();
+      // this.getGameDescription();
     }
 
     render() {
-      console.log(this.state.descriptions)
-      console.log(this.state.secondSearchUrl)
+
       return(
         <Router>
+          <NavBar />
           <Routes>
             <Route
               path='/'
@@ -181,7 +181,7 @@ class App extends Component{
               path='/showapi'
               element={<ShowAPIGame
                 apiGames={this.state.games}
-                gameDescription={this.state.descriptions}
+                // gameDescription={this.state.descriptions}
                 />}             
             />
             <Route
@@ -190,7 +190,8 @@ class App extends Component{
                 customGames={this.state.customGames}
                 handleDeleteGame={this.handleDeleteGame}
                 gameToEdit={this.state.gameToEdit}
-                passGameData={this.passGameData}/>}
+                passGameData={this.passGameData}
+                />}
             />
             <Route
               path='/new'
