@@ -132,32 +132,6 @@ class App extends Component{
       ))
     }
 
-    //misc handlers
-    // getGameDescription = () => {
-    //   this.setState({
-    //     secondSearchUrl: this.state.gameDescriptionBaseUrl + this.state.id + this.state.endGameDescriptionBaseUrl + this.state.key
-    //   }, () => (
-    //     fetch(this.state.secondSearchUrl)
-    //     .then(response => {return response.json() })
-    //     .then(json => {
-    //       const descToAdd = ""
-    //       // for (variable in object){
-    //       // statement}
-    //       let desc = json.results
-    //       for (let key in desc) {
-    //           descToAdd += desc[key]
-    //       }
-    //       // json.results.forEach((desc) => {
-    //       //     descToAdd.push(desc)
-    //       // })
-    //       this.setState({
-    //         descriptions: descToAdd
-    //       })
-    //     }
-    //     ), (err) => console.log(err)
-    //   ))
-    // }
-
     componentDidMount() {
       this.getGames();
       this.getSearchUrl();
