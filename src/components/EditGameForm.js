@@ -42,19 +42,21 @@ class EditGameForm extends Component {
         })
         .then(resJson => {
             window.location.href=`https://game-library-frontend.herokuapp.com/showcustom?id=${this.props.gameToEdit.id}`;
+            // window.location.href=`http://localhost:3000/showcustom?id=${this.props.gameToEdit.id}`;
         })
         .catch(err => (console.log(err)))
     }
     render(){
         return(
             <>
-            <form onSubmit={this.handleEditGame}>
+            <form onSubmit={this.handleEditGame} className="flex flex-col w-4/5 p-4 max-w-[400px] bg-[#fffffff] rounded mx-8">
             <input
                 id='title'
                 type='text'
                 defaultValue={this.props.gameToEdit.title}
                 onChange={this.handleChange}
                 placeholder='Game Name'
+                className='border rounded p-1.5 my-1'
             >
             </input>
             <input
@@ -63,6 +65,7 @@ class EditGameForm extends Component {
                 defaultValue={this.props.gameToEdit.backgroundImage}
                 onChange={this.handleChange}
                 placeholder='Image URL'
+                className='border rounded p-1.5 my-1'
                 >
             </input>
             <input
@@ -71,6 +74,7 @@ class EditGameForm extends Component {
                 defaultValue={this.props.gameToEdit.playtime}
                 onChange={this.handleChange}
                 placeholder='Game Name'
+                className='border rounded p-1.5 my-1'
                 >
             </input>
             <input
@@ -79,6 +83,7 @@ class EditGameForm extends Component {
                 defaultValue={this.props.gameToEdit.genre}
                 onChange={this.handleChange}
                 placeholder='Genre'
+                className='border rounded p-1.5 my-1'
                 >
             </input>
             <input
@@ -87,19 +92,22 @@ class EditGameForm extends Component {
                 defaultValue={this.props.gameToEdit.rating}
                 onChange={this.handleChange}
                 placeholder='Rating'
+                className='border rounded p-1.5 my-1'
                 >
             </input>
             <input
                 id='notes'
                 type='text'
-                value={this.props.gameToEdit.notes}
+                defaultValue={this.props.gameToEdit.notes}
                 onChange={this.handleChange}
                 placeholder='Notes'
+                className='border rounded p-1.5 my-1'
                 >
             </input>
             <input
                 type='submit'
                 value='Update Game Details'
+                className='border rounded p-1.5 my-1'
             />
             </form>
             </>

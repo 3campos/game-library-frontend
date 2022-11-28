@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // importing edit component here
 import EditBtn from './EditBtn'
+import BackBtn from './BackBtn'
 
 class ShowContainerCustom extends Component{
     constructor(props){
@@ -23,35 +24,30 @@ class ShowContainerCustom extends Component{
     render() {
         return(
             <>
-            <div className='font-share-tech-mono bg-emerald-400'>
-                <h1>{this.props.gameTitle}</h1>
-                <div>{<img src = {this.props.gameImage} />}</div>
-                <div>{this.props.gameDuration}</div>
-                <div>
-                    <h2>Genre:</h2>
+            <div className='font-share-tech-mono bg-emerald-400 min-h-screen flex'>
+                <div className='w-full max-w-[1000px] items-center'>
+                    <h1 className='text-blue-800 text-5xl font-bold text-center'>{this.props.gameTitle}</h1>
+                    <div className="flex justify-center">{<img className='h-[300px]' src = {this.props.gameImage} />}</div>
+                    <div className="text-blue-800 text-2xl flex justify-center">Game Duration: {this.props.gameDuration}</div>
+                    <div className="text-blue-800 text-2xl flex justify-center"> Genre: {this.props.gameGenre}</div>
+                        
+                    <div className="text-blue-800 text-2xl flex justify-center"> Game Rating: {this.props.gameRating}
+                    </div>
+                    <div className="text-blue-800 text-2xl flex justify-center">Notes: {this.props.gameNotes}
+                    </div>
+                    <div>
+                        <EditBtn id = {this.props.id}/>
+                    </div>
+                    <button className="flex justify-center w-1/5 rounded-full border-solid border-2 border-white text-blue-800 text-center text-2xl" onClick={()=>{
+                        this.props.handleDeleteGame(this.props.id);
+                        }}
+                        >
+                        <span>
+                            Delete Game
+                        </span>
+                    </button>
+                    <div><BackBtn/></div>
                 </div>
-                    <p>{this.props.gameGenre}</p>
-                <div>
-                    <h2>Game Rating:</h2>
-                </div>
-                <div>{this.props.gameRating}</div>
-                <div>
-                    <h2>Notes:</h2>
-                    {/* <EditBtn id={this.props.id}/> */}
-                </div>
-                    <p>{this.props.gameNotes}</p>
-                    <EditBtn id = {this.props.id}/>
-                {/* <div>
-                    <EditBtn id = {this.props.id}/>
-                </div> */}
-                <button onClick={()=>{
-                    this.props.handleDeleteGame(this.props.id);
-                    }}
-                    >
-                    <span>
-                        delete
-                    </span>
-                </button>
             </div>
             </>
         )

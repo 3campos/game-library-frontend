@@ -30,15 +30,10 @@ class ShowCustomGame extends Component {
                             gameToEdit={this.props.gameToEdit}
                             passGameData={this.props.passGameData}
                             />
-                            <BackBtn />
                         </div>
                     )
     }
 })}
-<div>
-<Link to = {`/showcustom?id=${this.props.id}`}> View More
-                    </Link>
-</div>
 </div>
 )}}
 
