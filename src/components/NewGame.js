@@ -63,10 +63,10 @@ class NewGame extends Component {
 
     render() {
         return(
-            <div className='font-share-tech-mono'>
-                <div>
-                    <BackBtn/>
-                    <h1>
+            <div className='font-share-tech-mono bg-emerald-400 min-h-screen flex flex-col justify-start items-start box-border'>
+                <div className="w-full max-w-[1000px] items-center">
+                    
+                    <h1 className='text-blue-800 font-bold text-4xl my-8 mx-8'>
                         Add Custom Game
                     </h1>
                     <form 
@@ -78,6 +78,7 @@ class NewGame extends Component {
                     value={this.state.title}
                     onChange={this.handleChange}
                     placeholder='Game Name'
+                    className='border rounded p-1.5 my-1'
                     >
                     </input>
                     <input
@@ -86,6 +87,7 @@ class NewGame extends Component {
                     value={this.state.backgroundImage}
                     onChange={this.handleChange}
                     placeholder='Image URL'
+                    className='border rounded p-1.5 my-1'
                     >
                     </input>
                     <input
@@ -94,6 +96,7 @@ class NewGame extends Component {
                     value={this.state.playtime}
                     onChange={this.handleChange}
                     placeholder='Playing Time'
+                    className='border rounded p-1.5 my-1'
                     >
                     </input>
                     <input
@@ -102,6 +105,7 @@ class NewGame extends Component {
                     value={this.state.genre}
                     onChange={this.handleChange}
                     placeholder='Genre'
+                    className='border rounded p-1.5 my-1'
                     >
                     </input>
                     <input
@@ -110,6 +114,7 @@ class NewGame extends Component {
                     value={this.state.rating}
                     onChange={this.handleChange}
                     placeholder='Rating'
+                    className='border rounded p-1.5 my-1'
                     >
                     </input>
                     <input
@@ -118,15 +123,18 @@ class NewGame extends Component {
                     value={this.state.notes}
                     onChange={this.handleChange}
                     placeholder='Notes'
+                    className='border rounded p-1.5 my-1'
                     >
                     </input>
                     
                     <input
                     type='submit'
                     value='Add New Game'
+                    className='bg-white p-2 m-2'
                     />
 
                     </form>
+                    <BackBtn/>
                 </div>
             </div>
         )

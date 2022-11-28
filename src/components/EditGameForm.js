@@ -49,7 +49,7 @@ class EditGameForm extends Component {
     render(){
         return(
             <>
-            <form onSubmit={this.handleEditGame} className="flex flex-col w-4/5 p-4 max-w-[400px] bg-[#fffffff] rounded mx-8">
+            <form onSubmit={this.handleEditGame} className="font-share-tech-mono flex flex-col w-4/5 p-4 max-w-[400px] bg-white rounded mx-8">
             <input
                 id='title'
                 type='text'
