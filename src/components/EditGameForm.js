@@ -6,8 +6,8 @@ class EditGameForm extends Component {
         super(props)
         this.state = {
             title: this.props.gameToEdit.game,
-            img: this.props.gameToEdit.img,
-            playDuration: this.props.gameToEdit.playDuration,
+            backgroundImage: this.props.gameToEdit.backgroundImage,
+            playtime: this.props.gameToEdit.playtime,
             genre: this.props.gameToEdit.genre,
             rating: this.props.gameToEdit.rating,
         }
@@ -25,11 +25,11 @@ class EditGameForm extends Component {
             method: 'PUT',
             body: JSON.stringify({
                 title: this.state.title,
-                img: this.state.img,
-                playDuration: this.state.playDuration,
+                backgroundImage: this.state.backgroundImage,
+                playtime: this.state.playtime,
                 genre: this.state.genre,
                 rating: this.state.rating,
-                description: this.state.description,
+                notes: this.state.notes,
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -58,17 +58,17 @@ class EditGameForm extends Component {
             >
             </input>
             <input
-                id='img'
+                id='backgroundImage'
                 type='text'
-                defaultValue={this.props.gameToEdit.description}
+                defaultValue={this.props.gameToEdit.backgroundImage}
                 onChange={this.handleChange}
                 placeholder='Image URL'
                 >
             </input>
             <input
-                id='playDuration'
+                id='playtime'
                 type='text'
-                defaultValue={this.props.gameToEdit.playDuration}
+                defaultValue={this.props.gameToEdit.playtime}
                 onChange={this.handleChange}
                 placeholder='Game Name'
                 >
@@ -90,11 +90,11 @@ class EditGameForm extends Component {
                 >
             </input>
             <input
-                id='description'
+                id='notes'
                 type='text'
-                value={this.props.gameToEdit.description}
+                value={this.props.gameToEdit.notes}
                 onChange={this.handleChange}
-                placeholder='Description'
+                placeholder='Notes'
                 >
             </input>
             <input

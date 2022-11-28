@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // importing edit component here
-// import EditBtn from './EditBtn'
+import EditBtn from './EditBtn'
 
 class ShowContainerCustom extends Component{
     constructor(props){
@@ -11,7 +11,7 @@ class ShowContainerCustom extends Component{
         let gameToEdit ={
                 id: this.props.id,
                 title: this.props.gameTitle,
-                background_image: this.props.gameImage,
+                backgroundImage: this.props.gameImage,
                 playtime: this.props.gameDuration,
                 genre: this.props.gameGenre,
                 rating: this.props.gameRating,
@@ -23,7 +23,7 @@ class ShowContainerCustom extends Component{
     render() {
         return(
             <>
-            <div>
+            <div className='font-share-tech-mono bg-emerald-400'>
                 <h1>{this.props.gameTitle}</h1>
                 <div>{<img src = {this.props.gameImage} />}</div>
                 <div>{this.props.gameDuration}</div>
@@ -40,6 +40,7 @@ class ShowContainerCustom extends Component{
                     {/* <EditBtn id={this.props.id}/> */}
                 </div>
                     <p>{this.props.gameNotes}</p>
+                    <EditBtn id = {this.props.id}/>
                 {/* <div>
                     <EditBtn id = {this.props.id}/>
                 </div> */}

@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'share-tech-mono': ['"Share Tech Mono"']
+      }
+    },
   },
   plugins: [],
 }

@@ -7,11 +7,11 @@ class NewGame extends Component {
         super(props)
         this.state = {
             title: '',
-            img: '',
-            playDuration: '',
+            backgroundImage: '',
+            playtime: '',
             genre: '',
             rating: '',
-            description: '',
+            notes: '',
         }
     }
 
@@ -32,11 +32,11 @@ class NewGame extends Component {
             },
             body: JSON.stringify({
                 title: this.state.title,
-                img: this.state.img,
-                playDuration: this.state.playDuration,
+                backgroundImage: this.state.backgroundImage,
+                playtime: this.state.playtime,
                 genre: this.state.genre,
                 rating: this.state.rating,
-                description: this.state.description,
+                notes: this.state.notes,
             })
         })
 
@@ -50,11 +50,11 @@ class NewGame extends Component {
         .then(resJson => {
             this.setState({
                 title: '',
-                img: '',
-                playDuration: '',
+                backgroundImage: '',
+                playtime: '',
                 genre: '',
                 rating: '',
-                description: '',
+                notes: '',
             })
             window.location.href=`https://game-library-frontend.herokuapp.com/`
         })
@@ -63,7 +63,7 @@ class NewGame extends Component {
 
     render() {
         return(
-            <div>
+            <div className='font-share-tech-mono'>
                 <div>
                     <BackBtn/>
                     <h1>
@@ -81,19 +81,19 @@ class NewGame extends Component {
                     >
                     </input>
                     <input
-                    id='img'
+                    id='backgroundImage'
                     type='text'
-                    value={this.state.img}
+                    value={this.state.backgroundImage}
                     onChange={this.handleChange}
                     placeholder='Image URL'
                     >
                     </input>
                     <input
-                    id='playDuration'
+                    id='playtime'
                     type='text'
-                    value={this.state.playDuration}
+                    value={this.state.playtime}
                     onChange={this.handleChange}
-                    placeholder='Game Name'
+                    placeholder='Playing Time'
                     >
                     </input>
                     <input
@@ -113,11 +113,11 @@ class NewGame extends Component {
                     >
                     </input>
                     <input
-                    id='description'
+                    id='notes'
                     type='text'
-                    value={this.state.description}
+                    value={this.state.notes}
                     onChange={this.handleChange}
-                    placeholder='Description'
+                    placeholder='Notes'
                     >
                     </input>
                     

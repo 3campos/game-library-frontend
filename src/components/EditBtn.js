@@ -10,9 +10,9 @@ class EditBtn extends Component {
         return (
             <Link to ={`/edit?id=${this.props.id}`}>
                 <p>
-                    <span>
-                        edit_tile
-                    </span>
+                <div className="hover:animate-bounce font-share-tech-mono">
+                    <div className="text-end text-cyan-400">Edit Game</div>
+                </div>
                 </p>
             </Link>
         )

@@ -30,8 +30,8 @@ class App extends Component{
     this.state = {
       customGames: [{
         title:"",
-        img: "",
-        playDuration: "",
+        backgroundImage: "",
+        playtime: "",
         genre: "",
         rating: "",
         // description: "",
@@ -43,7 +43,7 @@ class App extends Component{
       gameToEdit: {
         id: "",
         title:"",
-        background_image: "",
+        backgroundImage: "",
         playtime: "",
         genre: "",
         rating: "",
@@ -91,7 +91,7 @@ class App extends Component{
       this.setState({gameToEdit: {
         id: gameToEdit.id,
         title: gameToEdit.title,
-        img: gameToEdit.background_image,
+        backgroundImage: gameToEdit.backgroundImage,
         playtime: gameToEdit.playtime,
         genre: gameToEdit.genre,
         rating: gameToEdit.rating,

@@ -52,11 +52,11 @@ class ShowAPIGame extends Component {
     render(){
         apiGameId = parseInt(window.location.search.slice(4));
     return(
-        <div>
+        <div className='font-share-tech-mono bg-emerald-400'>
         {this.props.apiGames?.map((game, index)=> {
             if(game.id === apiGameId){
                 return(
-                    <div>
+                    <div className='font-share-tech-mono bg-emerald-400'>
                     <ShowContainerAPI
                     key={index}
                     id={apiGameId}
@@ -67,7 +67,9 @@ class ShowAPIGame extends Component {
                     gameRating = {game.rating}
                     // gameDescription = {desc.description}
                     />
+                    <div>
                     <BackBtn />
+                    </div>
                     </div>
                     )
                 }

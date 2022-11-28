@@ -12,7 +12,7 @@ class ShowCustomGame extends Component {
         customGameId = window.location.search.slice(4);
         // console.log(customGameId)
         return(
-        <div>
+        <div className='font-share-tech-mono'>
         {this.props.customGames?.map((game, index) => {
                 if(game._id == customGameId){
                     return(
@@ -21,7 +21,7 @@ class ShowCustomGame extends Component {
                             key={index}
                             id={customGameId}
                             gameTitle={game.title}
-                            gameImage={game.background_image}
+                            gameImage={game.backgroundImage}
                             gameGenre={game.genre}
                             gameDuration={game.playtime}
                             gameRating={game.rating}
@@ -36,7 +36,7 @@ class ShowCustomGame extends Component {
     }
 })}
 <div>
-<Link to = {`/showapi?id=${this.props.id}`}> View More
+<Link to = {`/showcustom?id=${this.props.id}`}> View More
                     </Link>
 </div>
 </div>
