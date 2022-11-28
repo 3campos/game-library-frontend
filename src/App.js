@@ -135,6 +135,7 @@ class App extends Component{
     componentDidMount() {
       this.getGames();
       this.getSearchUrl();
+      console.log(process.env)
       // this.getGameDescription();
     }
 
