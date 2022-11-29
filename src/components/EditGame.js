@@ -24,9 +24,3 @@ class EditGame extends Component {
 }
 
 export default EditGame
-
-{/* <EditExerciseForm 
-        customExercises={this.props.customExercises} 
-        handleEditExercise={this.props.handleEditExercise} 
-        exerciseToEdit={this.props.exerciseToEdit}
-        categories={this.props.categories}/> */}

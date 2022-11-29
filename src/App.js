@@ -135,7 +135,7 @@ class App extends Component{
     componentDidMount() {
       this.getGames();
       this.getSearchUrl();
-      console.log(process.env)
+      // console.log(process.env)
       // this.getGameDescription();
     }
 
@@ -150,7 +150,7 @@ class App extends Component{
               element={<Home
                 customGames={this.state.customGames}
                 apiGames={this.state.games}
-                passExerciseData={this.passGameData}/>}
+                passGameData={this.passGameData}/>}
             />
             <Route
               path='/showapi'
@@ -193,4 +193,3 @@ class App extends Component{
 }
 
 export default App;
-

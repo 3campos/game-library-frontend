@@ -4,6 +4,7 @@ import CustomGameTile from './CustomGameTile'
 import '../index.css'
 
 class Home extends Component {
+    
     render() {
         return(
             <div className='font-share-tech-mono flex flex-col justify-center items-center bg-gray-600 w-full h-screen pt-4 pb-4'>
@@ -27,7 +28,7 @@ class Home extends Component {
                         })}
                     </div>
                     <h2 className='text-cyan-400 font-bold text-2xl my-4'>Custom Games</h2>
-                    <div id="custom-exercise-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit">
+                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit">
                         {this.props.customGames?.map((game, index) => {
                             // cssKey=index
                             return(
@@ -42,6 +43,7 @@ class Home extends Component {
                                 gameRating = {game.rating}
                                 gameNotes={game.notes}
                                 passGameData={this.props.passGameData}
+                                // handleClick={this.props.handleClick}
                                 />
                             )
                             })}
@@ -53,11 +55,3 @@ class Home extends Component {
 
 export default Home
 
-// function Home(){
-//     return<>
-//     <h1 className="text-3xl text-fuchsia-600 font-bold underline italic">
-//     <span className="text-3xl text-emerald-300 not-italic"> Hi </span> West <span className="text-3xl text-emerald-300 not-italic"> World! </span>
-//     </h1>
-//     {console.log(process.env.REACT_APP_BACKEND_URL)}
-//     </>
-// }
