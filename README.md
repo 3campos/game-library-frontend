@@ -43,4 +43,4 @@ Descriptions of any unsolved problems or future features.
 I did not reach my stretch goals and I'd like to incorporate a feature to allow the user to favorite games.
 
 A README.md file in your API, if applicable, with a description of what the API is, how to access it, and the endpoints, with a description of how to make requests to each end point and what data to expect back.
-https://api.rawg.io/docs/
+I utilized the "RAWG Video Games Database API" to create my API games library. Link to the API instructions manual: https://api.rawg.io/docs/
