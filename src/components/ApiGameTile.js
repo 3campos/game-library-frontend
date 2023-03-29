@@ -26,4 +26,3 @@ class ApiGameTile extends Component {
 
 
 export default ApiGameTile
-
