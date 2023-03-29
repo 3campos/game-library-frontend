@@ -9,9 +9,10 @@ class ApiGameTile extends Component {
                     <div className='flex justify-around items-start w-full'>
                         <div className='flex flex-col w-full'>
                             <p className='truncate'>{this.props.gameTitle}</p>
-                            <div className="h-3/4 w-3/4">
-                            <Link to = {`/showapi?id=${this.props.id}`}>{<img src = {this.props.gameImage} />}
-                            </Link></div>
+                            <div>
+                                <Link to = {`/showapi?id=${this.props.id}`}>{<img className="w-auto h-auto w-32 h-24" src = {this.props.gameImage} />}
+                                </Link>
+                            </div>
                             <p>Rating: {this.props.gameRating}/5</p>                          
                             {/* <p>{<img src = {this.props.gameImage} className='w-[44px] my-2 mr-2' />}</p> */}
                         </div>
