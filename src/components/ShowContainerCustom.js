@@ -28,10 +28,10 @@ class ShowContainerCustom extends Component{
                 <div className='w-full max-w-[1000px] items-center'>
                     <h1 className='text-blue-800 text-5xl font-bold text-center'>{this.props.gameTitle}</h1>
                     <div className="flex justify-center">{<img className='h-[300px]' src = {this.props.gameImage} />}</div>
-                    <div className="text-blue-800 text-2xl flex justify-center">Game Duration: {this.props.gameDuration}</div>
+                    <div className="text-blue-800 text-2xl flex justify-center">Game Duration: {this.props.gameDuration} Hours</div>
                     <div className="text-blue-800 text-2xl flex justify-center"> Genre: {this.props.gameGenre}</div>
                         
-                    <div className="text-blue-800 text-2xl flex justify-center"> Game Rating: {this.props.gameRating}
+                    <div className="text-blue-800 text-2xl flex justify-center"> Game Rating: {this.props.gameRating}/5
                     </div>
                     <div className="text-blue-800 text-2xl flex justify-center">Notes: {this.props.gameNotes}
                     </div>
