@@ -10,7 +10,7 @@ class ApiGameTile extends Component {
                         <div className='flex flex-col w-full'>
                             <p className='truncate'>{this.props.gameTitle}</p>
                             <div>
-                                <Link to = {`/showapi?id=${this.props.id}`}>{<img className="w-auto h-auto w-32 h-24" src = {this.props.gameImage} />}
+                                <Link to = {`/showapi?id=${this.props.id}`}>{<img className="w-auto h-auto w-32 h-32" src = {this.props.gameImage} />}
                                 </Link>
                             </div>
                             <p>Rating: {this.props.gameRating}/5</p>                          
