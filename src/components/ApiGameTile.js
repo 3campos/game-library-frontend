@@ -14,7 +14,6 @@ class ApiGameTile extends Component {
                                 </Link>
                             </div>
                             <p>Rating: {this.props.gameRating}/5</p>                          
-                            {/* <p>{<img src = {this.props.gameImage} className='w-[44px] my-2 mr-2' />}</p> */}
                         </div>
                     </div>
                     

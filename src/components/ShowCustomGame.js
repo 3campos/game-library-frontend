@@ -10,7 +10,6 @@ class ShowCustomGame extends Component {
     }
     render(){
         customGameId = window.location.search.slice(4);
-        // console.log(customGameId)
         return(
         <div className='font-share-tech-mono'>
         {this.props.customGames?.map((game, index) => {

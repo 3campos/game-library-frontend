@@ -30,7 +30,6 @@ class Home extends Component {
                     <h2 className='text-cyan-400 font-bold text-2xl my-4'>Custom Games</h2>
                     <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-y-scroll max-w-fit">
                         {this.props.customGames?.map((game, index) => {
-                            // cssKey=index
                             return(
                                 <CustomGameTile
                                 cssKeys={index}
@@ -43,7 +42,6 @@ class Home extends Component {
                                 gameRating = {game.rating}
                                 gameNotes={game.notes}
                                 passGameData={this.props.passGameData}
-                                // handleClick={this.props.handleClick}
                                 />
                             )
                             })}

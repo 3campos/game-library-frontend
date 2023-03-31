@@ -8,21 +8,10 @@ import ShowAPIGame from './components/ShowAPIGame'
 import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
 import EditBtn from './components/EditBtn'
-// import ShowDescription from './components/ShowDescription'
-// import Show from "./components/Show"
-// import New from "./components/NewGame"
-// import DataFetching from "./components/DataFetching"
-// import RawgFetching from "./components/RawgFetching"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-// import { useEffect, useState } from 'react';
 
 //define baseURL
 let baseURL = process.env.REACT_APP_BACKEND_URL
-
-//define key
-// let key = process.env.REACT_APP_API_KEY
-
-//need to somehow include the substitution of state (useState, perhaps?) in the parent App function below.
 
 class App extends Component{
   constructor(props) {
@@ -135,7 +124,6 @@ class App extends Component{
     componentDidMount() {
       this.getGames();
       this.getSearchUrl();
-      // console.log(process.env)
       // this.getGameDescription();
     }
 

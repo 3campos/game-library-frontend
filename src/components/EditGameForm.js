@@ -42,7 +42,6 @@ class EditGameForm extends Component {
         })
         .then(resJson => {
             window.location.href=`https://game-library-frontend.herokuapp.com/showcustom?id=${this.props.gameToEdit.id}`;
-            // window.location.href=`http://localhost:3000/showcustom?id=${this.props.gameToEdit.id}`;
         })
         .catch(err => (console.log(err)))
     }

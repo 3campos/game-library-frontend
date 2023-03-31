@@ -9,14 +9,11 @@ class ShowContainerAPI extends Component {
         super(props);
     }
 
-//https://api.rawg.io/api/games/3328?key=876f15b6994d412a9f41668f5eeee5d5
-
     render(){
         let genrePull =[]
 
         return(
             <div className='font-share-tech-mono bg-emerald-400 min-h-screen flex'>
-            {/* {console.log(this.props.description)} */}
             <div className="w-full max-w-[1000px] items-center">
             <h1 className='text-blue-800 text-5xl font-bold text-center'>{this.props.gameTitle}</h1>
             <div className="flex justify-center">{<img className='h-[300px]' src = {this.props.gameImage} />}</div>
