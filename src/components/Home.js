@@ -21,6 +21,7 @@ class Home extends Component {
                                 gameDuration = {game.playtime}
                                 gameGenre = {game.genres}
                                 gameRating = {game.rating}
+                                gameNotes={game.notes}
                                 // gameDescription={desc.description}
                                 />
                                 

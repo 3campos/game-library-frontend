@@ -23,7 +23,7 @@ class App extends Component{
         playtime: "",
         genre: "",
         rating: "",
-        // description: "",
+        notes: "",
       }],
         baseUrl: 'https://api.rawg.io/api/games?key=',
         key: process.env.REACT_APP_API_KEY,
