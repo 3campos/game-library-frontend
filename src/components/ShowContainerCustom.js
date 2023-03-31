@@ -35,11 +35,11 @@ class ShowContainerCustom extends Component{
                     </div>
                     <div className="text-blue-800 text-2xl flex justify-center">Notes: {this.props.gameNotes}
                     </div>
-                    <div className = "grid flex-col grid-cols-3 justify-center">
+                    <div className = "grid flex-col grid-cols-3 justify-items-center">
                         <div>
                             <EditBtn id = {this.props.id}/>
                         </div>
-                        <button className="flex justify-center w-2/5 rounded-full border-solid border-2 border-white text-blue-800 text-center text-2xl" onClick={()=>{
+                        <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-800 text-center text-2xl" onClick={()=>{
                             this.props.handleDeleteGame(this.props.id);
                             }}
                             >
