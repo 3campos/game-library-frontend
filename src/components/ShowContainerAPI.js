@@ -58,7 +58,7 @@ class ShowContainerAPI extends Component {
             <div>
             <div className="text-blue-800 text-2xl flex justify-center">Description: {this.state.descs}</div>
             </div>
-            <div className = "grid flex-col grid-cols-1 justify-center">
+            <div className = "grid flex-col grid-cols-1 justify-items-center">
               <div><BackBtn/></div>
             </div>
             </div>
