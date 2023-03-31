@@ -63,14 +63,14 @@ class NewGame extends Component {
 
     render() {
         return(
-            <div className='font-share-tech-mono bg-emerald-400 min-h-screen flex flex-col justify-start items-start box-border'>
+            <div className="font-share-tech-mono bg-emerald-400 min-h-screen flex flex-col justify-start items-start box-border">
                 <div className="w-full max-w-[1000px] items-center">
-                    
                     <h1 className='text-blue-800 font-bold text-4xl my-8 mx-8'>
                         Add Custom Game
                     </h1>
                     <form 
                         onSubmit={this.handleSubmit}
+                        className="font-share-tech-mono flex flex-col w-4/5 p-4 max-w-[400px] bg-black rounded mx-8"
                     >
                     <input
                     id='title'
@@ -130,7 +130,7 @@ class NewGame extends Component {
                     <input
                     type='submit'
                     value='Add New Game'
-                    className='bg-white p-2 m-2'
+                    className='bg-black border rounded p-1.5 my-1 text-white'
                     />
 
                     </form>

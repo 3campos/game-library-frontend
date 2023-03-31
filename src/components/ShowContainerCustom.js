@@ -24,8 +24,8 @@ class ShowContainerCustom extends Component{
     render() {
         return(
             <>
-            <div className='font-share-tech-mono bg-emerald-400 min-h-screen flex'>
-                <div className='w-full max-w-[1000px] items-center'>
+            <div className='font-share-tech-mono bg-emerald-400 min-h-screen flex justify-center'>
+                <div className='w-full max-w-[1000px]'>
                     <h1 className='text-blue-800 text-5xl font-bold text-center'>{this.props.gameTitle}</h1>
                     <div className="flex justify-center">{<img className='h-[300px]' src = {this.props.gameImage} />}</div>
                     <div className="text-blue-800 text-2xl flex justify-center">Game Duration: {this.props.gameDuration} Hours</div>
@@ -35,18 +35,20 @@ class ShowContainerCustom extends Component{
                     </div>
                     <div className="text-blue-800 text-2xl flex justify-center">Notes: {this.props.gameNotes}
                     </div>
-                    <div>
-                        <EditBtn id = {this.props.id}/>
+                    <div className = "grid flex-col grid-cols-3 justify-center">
+                        <div>
+                            <EditBtn id = {this.props.id}/>
+                        </div>
+                        <button className="flex justify-center w-2/5 rounded-full border-solid border-2 border-white text-blue-800 text-center text-2xl" onClick={()=>{
+                            this.props.handleDeleteGame(this.props.id);
+                            }}
+                            >
+                            <span>
+                                Delete Game
+                            </span>
+                        </button>
+                        <div><BackBtn/></div>
                     </div>
-                    <button className="flex justify-center w-1/5 rounded-full border-solid border-2 border-white text-blue-800 text-center text-2xl" onClick={()=>{
-                        this.props.handleDeleteGame(this.props.id);
-                        }}
-                        >
-                        <span>
-                            Delete Game
-                        </span>
-                    </button>
-                    <div><BackBtn/></div>
                 </div>
             </div>
             </>

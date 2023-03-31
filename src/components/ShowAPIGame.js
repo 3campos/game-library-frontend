@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 // import { Link } from "react-router-dom";
 import ShowContainerAPI from './ShowContainerAPI'
-import BackBtn from './BackBtn';
 
 let apiGameId = parseInt(window.location.search.slice(4));
 class ShowAPIGame extends Component {
@@ -11,6 +10,7 @@ class ShowAPIGame extends Component {
 
     render(){
         apiGameId = parseInt(window.location.search.slice(4));
+    
     return(
         <div className='font-share-tech-mono bg-emerald-400'>
         {this.props.apiGames?.map((game, index)=> {
@@ -25,7 +25,6 @@ class ShowAPIGame extends Component {
                     gameDuration = {game.playtime}
                     gameGenre = {game.genres}
                     gameRating = {game.rating}
-                    gameNotes = {game.description_raw}
                     />
                     </div>
                     )
