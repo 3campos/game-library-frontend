@@ -8,7 +8,7 @@ class CustomGameTile extends Component {
             <div id="tile" className={this.props.cssKeys > 3 ? "border-black border-2 rounded-md p-2 h-44 w-44 overflow-hidden transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" : "border-black border-2 rounded-md p-2 h-44 w-44 overflow-hidden transition ease-in-out delay-150 bg-blue-500 hover: translate-y-3 hover:scale-110 hover:bg-indigo-500 duration-300"}>
                 <div className='flex justify-between items-start w-full snap-center'>
                     <div className='flex flex-col w-full'>
-                        <p className='truncate'>{this.props.gameTitle}
+                        <p className='truncate'><div className={this.props.gameTitle.length>18?'hover:-translate-x-full duration-[3000ms] delay-150':`truncate`}>{this.props.gameTitle}</div>
                         </p>
                         <div>
                         <Link to={`/showcustom?id=${this.props.id}`}>

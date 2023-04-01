@@ -27,7 +27,7 @@ class App extends Component{
       }],
         baseUrl: 'https://api.rawg.io/api/games?key=',
         key: process.env.REACT_APP_API_KEY,
-        searchUrl: "",
+        apiSearchUrl: "",
       //for editing games, initializing an empty object.
       gameToEdit: {
         id: "",
@@ -38,10 +38,6 @@ class App extends Component{
         rating: "",
         notes: "",
       },
-      // gameDescriptionBaseUrl: "https://api.rawg.io/api/games/",
-      // // gameDescriptionId: "",
-      // endGameDescriptionBaseUrl: "?key=",
-      // secondSearchUrl: "",
     };
   }
 
@@ -89,6 +85,12 @@ class App extends Component{
       })
     }
 
+    passGameId = (apiGameIdSlice) => {
+      this.setState({apiGameIdSearch: 
+        apiGameIdSlice}
+    )
+    }
+
     handleDeleteGame = (id) => {
       fetch(`${process.env.REACT_APP_BACKEND_URL}/${id}`, {
         method: 'DELETE'
@@ -102,11 +104,11 @@ class App extends Component{
     }
 
     //API Game Handlers
-    getSearchUrl = () => {
+    getApiGameUrl = () => {
       this.setState({
-        searchUrl: this.state.baseUrl + this.state.key
+        apiSearchUrl: this.state.baseUrl + this.state.key
       }, () => (
-        fetch(this.state.searchUrl)
+        fetch(this.state.apiSearchUrl)
         .then(response => {return response.json() })
         .then(json => {
           const gamesToAdd = []
@@ -123,7 +125,7 @@ class App extends Component{
 
     componentDidMount() {
       this.getGames();
-      this.getSearchUrl();
+      this.getApiGameUrl();
       // this.getGameDescription();
     }
 
@@ -138,13 +140,13 @@ class App extends Component{
               element={<Home
                 customGames={this.state.customGames}
                 apiGames={this.state.games}
-                passGameData={this.passGameData}/>}
+                passGameData={this.passGameData}
+                />}
             />
             <Route
               path='/showapi'
               element={<ShowAPIGame
                 apiGames={this.state.games}
-                // gameDescription={this.state.descriptions}
                 />}             
             />
             <Route
