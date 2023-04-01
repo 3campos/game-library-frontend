@@ -99,7 +99,7 @@ class EditGameForm extends Component {
                 type='text'
                 defaultValue={this.props.gameToEdit.notes}
                 onChange={this.handleChange}
-                placeholder='Notes'
+                placeholder='Game Progress'
                 className='border rounded p-1.5 my-1'
                 >
             </input>

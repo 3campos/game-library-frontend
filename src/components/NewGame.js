@@ -122,7 +122,7 @@ class NewGame extends Component {
                     type='text'
                     value={this.state.notes}
                     onChange={this.handleChange}
-                    placeholder='Notes'
+                    placeholder='Game Progress'
                     className='border rounded p-1.5 my-1'
                     >
                     </input>
