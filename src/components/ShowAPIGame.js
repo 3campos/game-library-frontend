@@ -11,11 +11,11 @@ class ShowAPIGame extends Component {
         apiGameId = parseInt(window.location.search.slice(4));
     
     return(
-        <div className='font-share-tech-mono bg-emerald-400'>
+        <div className='font-share-tech-mono bg-gray-600'>
         {this.props.apiGames?.map((game, index)=> {
             if(game.id === apiGameId){
                 return(
-                    <div className='font-share-tech-mono bg-emerald-400'>
+                    <div className='font-share-tech-mono bg-gray-600'>
                     <ShowContainerAPI
                     key={index}
                     id={apiGameId}
