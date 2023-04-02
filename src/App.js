@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react'
 import Home from "./components/Home"
@@ -126,7 +125,6 @@ class App extends Component{
     componentDidMount() {
       this.getGames();
       this.getApiGameUrl();
-      // this.getGameDescription();
     }
 
     render() {

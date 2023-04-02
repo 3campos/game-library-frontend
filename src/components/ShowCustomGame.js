@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import ShowContainerCustom from './ShowContainerCustom'
-import BackBtn from './BackBtn';
-import { Link } from 'react-router-dom'
 
 let customGameId = window.location.search.slice(4);
 class ShowCustomGame extends Component {

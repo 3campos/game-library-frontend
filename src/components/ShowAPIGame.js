@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { Link } from "react-router-dom";
 import ShowContainerAPI from './ShowContainerAPI'
 
 let apiGameId = parseInt(window.location.search.slice(4));
