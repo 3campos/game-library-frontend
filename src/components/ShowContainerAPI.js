@@ -40,7 +40,7 @@ class ShowContainerAPI extends Component {
           <>
           <div className='font-share-tech-mono bg-gray-800 min-h-screen flex justify-center mt-.5 pt-1.5 mb-.5'>
           <div className="w-full max-w-[1000px]">
-          <h1 className='text-blue-300 text-5xl font-bold text-center'>{this.props.gameTitle}</h1>
+          <h1 className='text-blue-300 text-5xl font-bold text-center pb-1'>{this.props.gameTitle}</h1>
           <div className="flex justify-center">{<img className='h-[300px]' src = {this.props.gameImage} />}</div>
           <div className="text-blue-300 text-2xl flex justify-center">Game Duration: {this.props.gameDuration} hours</div>
           <div className="text-blue-300 text-2xl flex justify-center">Genres: 
@@ -52,9 +52,9 @@ class ShowContainerAPI extends Component {
           </div>
           <div className="text-blue-300 text-2xl flex justify-center">Rating: {this.props.gameRating}/5</div>
           <div>
-          <div className="text-blue-300 text-2xl flex justify-center">Description: {this.state.descs}</div>
+          <div className="text-blue-300 text-2xl h-[280px] pt-2 text-left flex justify-center overflow-y-scroll max-w-full">Description: {this.state.descs}</div>
           </div>
-          <div className = "grid flex-col grid-cols-1 justify-items-center mt-2">
+          <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
             <div><BackBtn/></div>
           </div>
           </div>
