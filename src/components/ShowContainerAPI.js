@@ -40,8 +40,8 @@ class ShowContainerAPI extends Component {
           <>
           <div className='font-share-tech-mono bg-gray-800 min-h-screen flex justify-center mt-.5 pt-1.5 mb-.5'>
           <div className="w-full max-w-[1000px]">
-          <h1 className='text-blue-300 text-5xl font-bold text-center pb-1'>{this.props.gameTitle}</h1>
-          <div className="flex justify-center">{<img className='h-[300px]' src = {this.props.gameImage} />}</div>
+          <h1 className='text-blue-300 text-5xl font-bold text-center'>{this.props.gameTitle}</h1>
+          <div className="flex justify-center pt-1.5">{<img className='h-[300px]' src = {this.props.gameImage} />}</div>
           <div className="text-blue-300 text-2xl flex justify-center">Game Duration: {this.props.gameDuration} hours</div>
           <div className="text-blue-300 text-2xl flex justify-center">Genres: 
               {this.props.gameGenre.forEach(genre => {
