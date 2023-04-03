@@ -16,7 +16,9 @@ class EditGame extends Component {
                     handleEditGame={this.props.handleEditGame}
                     gameToEdit={this.props.gameToEdit}
                 />
+                <div className='mt-.5 pt-2'>
                 <BackBtn/>
+                </div>
                 </div>
             </div>
         )

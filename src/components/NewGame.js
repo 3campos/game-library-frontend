@@ -63,9 +63,9 @@ class NewGame extends Component {
 
     render() {
         return(
-            <div className="font-share-tech-mono bg-emerald-400 min-h-screen flex flex-col justify-start items-start box-border">
+            <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-start box-border">
                 <div className="w-full max-w-[1000px] items-center">
-                    <h1 className='text-blue-800 font-bold text-4xl my-8 mx-8'>
+                    <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8'>
                         Add Custom Game
                     </h1>
                     <form 
@@ -134,7 +134,9 @@ class NewGame extends Component {
                     />
 
                     </form>
+                    <div className='mt-.5 pt-2'>
                     <BackBtn/>
+                    </div>
                 </div>
             </div>
         )

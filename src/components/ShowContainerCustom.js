@@ -32,7 +32,7 @@ class ShowContainerCustom extends Component{
                         
                     <div className="text-blue-300 text-2xl flex justify-center"> Game Rating: {this.props.gameRating}/5
                     </div>
-                    <div className="text-blue-300 text-2xl flex justify-center h-[280px] pt-2 overflow-y-scroll max-w-full">Game Progress: {this.props.gameNotes}
+                    <div className="text-blue-300 text-2xl flex justify-center h-[250px] pt-2 overflow-y-scroll max-w-full">Game Progress: {this.props.gameNotes}
                     </div>
                     <div className = "grid flex-col grid-cols-3 justify-items-center mt-2">
                         <div>
