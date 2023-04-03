@@ -59,14 +59,6 @@ class App extends Component{
       });
     }
 
-    handleAddGame = (game) => {
-      const copyGames = [...this.state.customGames.games]
-      copyGames.unshift(game)
-      this.customGames.setState({
-        customGames: copyGames,
-      })
-    }
-
     handleEditGame = (e) => {
       e.preventDefault()
     }
@@ -82,12 +74,6 @@ class App extends Component{
         notes: gameToEdit.notes,
       }
       })
-    }
-
-    passGameId = (apiGameIdSlice) => {
-      this.setState({apiGameIdSearch: 
-        apiGameIdSlice}
-    )
     }
 
     handleDeleteGame = (id) => {
