@@ -117,15 +117,15 @@ class NewGame extends Component {
                     className='border rounded p-1.5 my-1'
                     >
                     </input>
-                    <input
+                    <textarea
                     id='notes'
                     type='text'
                     value={this.state.notes}
                     onChange={this.handleChange}
                     placeholder='Game Progress'
-                    className='border rounded p-1.5 my-1'
+                    className='border rounded p-1.5 my-1 resize-y'
                     >
-                    </input>
+                    </textarea>
                     
                     <input
                     type='submit'
