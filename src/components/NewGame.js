@@ -65,7 +65,7 @@ class NewGame extends Component {
         return(
             <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-start box-border">
                 <div className="w-full max-w-[1000px] items-center">
-                    <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8'>
+                    <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 pl-12'>
                         Add Custom Game
                     </h1>
                     <form 
@@ -130,11 +130,11 @@ class NewGame extends Component {
                     <input
                     type='submit'
                     value='Add New Game'
-                    className='bg-black border rounded p-1.5 my-1 text-white'
+                    className='bg-black border rounded p-1.5 my-1 text-white hover:bg-violet-900'
                     />
 
                     </form>
-                    <div className='mt-.5 pt-2'>
+                    <div className='mt-.5 pt-2 pl-[175px] grid flex-row justify-items-start'>
                     <BackBtn/>
                     </div>
                 </div>

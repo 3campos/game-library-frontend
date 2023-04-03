@@ -105,7 +105,7 @@ class EditGameForm extends Component {
             <input
                 type='submit'
                 value='Update Game Details'
-                className='border rounded p-1.5 my-1 text-white'
+                className='border rounded p-1.5 my-1 text-white hover:bg-violet-900'
             />
             </form>
             </>
