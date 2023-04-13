@@ -41,7 +41,7 @@ class App extends Component{
   }
 
   //CUSTOM GAME HANDLERS
-    //accessing custom games from Atlas
+    //accessing custom games
     getGames = () => {
       fetch(baseURL)
       .then((res) => {
