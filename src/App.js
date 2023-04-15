@@ -37,7 +37,22 @@ class App extends Component{
         rating: "",
         notes: "",
       },
+      //oAuth Login State
+      currentId: "",
     };
+  }
+
+  //oAuth setState
+  setCurrentId = () => {
+    this.setState({
+      currentId: this.state.currentId
+    }), () => {
+      fetch(this.state.currentId)
+      .then(response => {return response.json() })
+      .then(json => {
+        const 
+      })
+    }
   }
 
   //CUSTOM GAME HANDLERS
@@ -160,6 +175,15 @@ class App extends Component{
                 gameToEdit={this.state.gameToEdit}
                 passGameData={this.passGameData}/>}
               />
+            <Route 
+            path='/userlogin'
+            element={
+              <Form
+              userCurrentId = {this.state.currentId}
+              setCurrentId={this.setCurrentId}
+              />
+            }
+            />
           </Routes>
         </Router>
       );
