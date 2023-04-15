@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Link }from 'react'
 
 export class LoginForm extends Component {
     constructor(props){
@@ -6,7 +6,11 @@ export class LoginForm extends Component {
     }
   render() {
     return (
-      <div>Login Form</div>
+    <Link to='/userlogin'>
+        <div> {setCurrentId={setCurrentId}} </div>
+        <div>Login Form</div>
+        <div></div>
+    </Link>
     )
   }
 }
