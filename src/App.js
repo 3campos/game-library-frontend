@@ -132,6 +132,7 @@ class App extends Component{
     render() {
 
       return(
+        <div>
         <Router>
           <NavBar />
               <Routes>
@@ -197,6 +198,7 @@ class App extends Component{
                   />
               </Routes>
         </Router>
+        </div>
       );
     }
 }
