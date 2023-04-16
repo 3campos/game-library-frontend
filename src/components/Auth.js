@@ -51,7 +51,6 @@ export class Auth extends Component {
 
   render() {
 
-console.log('L52:', this.state.isSignUp)
     return (
     // <Link to='/auth'>
     <div>
@@ -109,7 +108,7 @@ console.log('L52:', this.state.isSignUp)
                         // handleChange={handleChange} 
                         type="password"></input>
 
-                        {this.state.isSignUp && <input name="confirmPassword" label="Repeat Password" handleChange={this.handleChange} type="password"></input>}
+                        {this.state.isSignUp && <input name="confirmPassword" label="Repeat Password" placeholder="Confirm Password" handleChange={this.handleChange} type="password"></input>}
 
                         </div>
                         <div className="pl-36 pt-2">
@@ -125,7 +124,6 @@ console.log('L52:', this.state.isSignUp)
                         </button>
                         </div>
                     </div>
-                    {console.log('L125:', this.state.isSignUp)}
                 </form>
                 
                 {/* <form 
