@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+// import { GoogleLogin } from 'react-google-login';
 
 export class Auth extends Component {
     constructor(props){
@@ -111,15 +112,14 @@ export class Auth extends Component {
                         {this.state.isSignUp && <input name="confirmPassword" label="Repeat Password" placeholder="Confirm Password" handleChange={this.handleChange} type="password"></input>}
 
                         </div>
-                        <div className="pl-36 pt-2">
-                            <input
+                        <div className="pl-32 pt-6 pb-2">
+                            <button
                             type='submit'
-                            className='bg-black border rounded p-1.5 my-1 ml-2 text-white hover:bg-violet-900'
-                            value={this.state.isSignUp ? 'Sign Up' : 'Sign In'}
-                           />
+                            className='w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-base hover:bg-violet-900'
+                           >{this.state.isSignUp ? 'Sign Up' : 'Sign In'}</button>
                         </div>
                         <div className="grid grid-cols-1 pt-2 pl-8 justify-items-center w-1/3">
-                        <button className="items-center w-48 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-base hover:bg-violet-900" onClick={this.switchMode}>
+                        <button className="items-center w-48 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-base hover:bg-violet-900" onClick={this.switchMode}>
                             {this.state.isSignUp ? 'Already have an account? Sign in.' : "Don't have an account? Sign up."}
                         </button>
                         </div>
