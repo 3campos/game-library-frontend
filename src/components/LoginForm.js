@@ -4,6 +4,16 @@ export class LoginForm extends Component {
     constructor(props){
         super(props)
     }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if(currentId){
+            console.log('Current Id obtained')
+        } else {
+            console.log('NO ID OBTAINED')
+        }
+    }
+
   render() {
     return (
     <Link to='/userlogin'>

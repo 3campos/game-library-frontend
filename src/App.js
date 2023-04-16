@@ -7,7 +7,8 @@ import ShowAPIGame from './components/ShowAPIGame'
 import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
 import EditBtn from './components/EditBtn'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Auth from './components/Auth'
+import { BrowserRouter as Router, Switch, Routes, Route } from "react-router-dom"
 
 //define baseURL
 let baseURL = process.env.REACT_APP_BACKEND_URL
@@ -43,17 +44,17 @@ class App extends Component{
   }
 
   //oAuth setState
-  setCurrentId = () => {
-    this.setState({
-      currentId: this.state.currentId
-    }), () => {
-      fetch(this.state.currentId)
-      .then(response => {return response.json() })
-      .then(json => {
-        const 
-      })
-    }
-  }
+  // setCurrentId = () => {
+  //   this.setState({
+  //     currentId: this.state.currentId
+  //   }), () => {
+  //     fetch(this.state.currentId)
+  //     .then(response => {return response.json() })
+  //     .then(json => {
+  //       const 
+  //     })
+  //   }
+  // }
 
   //CUSTOM GAME HANDLERS
     //accessing custom games
@@ -133,58 +134,68 @@ class App extends Component{
       return(
         <Router>
           <NavBar />
-          <Routes>
-            <Route
-              path='/'
-              element={<Home
-                customGames={this.state.customGames}
-                apiGames={this.state.games}
-                passGameData={this.passGameData}
-                />}
-            />
-            <Route
-              path='/showapi'
-              element={<ShowAPIGame
-                apiGames={this.state.games}
-                />}             
-            />
-            <Route
-              path='/showcustom'
-              element={<ShowCustomGame
-                customGames={this.state.customGames}
-                handleDeleteGame={this.handleDeleteGame}
-                gameToEdit={this.state.gameToEdit}
-                passGameData={this.passGameData}
-                />}
-            />
-            <Route
-              path='/new'
-              element={<NewGame/>}
-            />
-            <Route
-              path='/edit'
-              element={<EditGame
-                customGames={this.state.customGames}
-                handleEditGame={this.handleEditGame}
-                gameToEdit={this.state.gameToEdit}/>}
-            />
-            <Route
-              element={<EditBtn
-                customGames={this.state.customGames}
-                handleDeleteGame={this.handleDeleteGame}
-                gameToEdit={this.state.gameToEdit}
-                passGameData={this.passGameData}/>}
-              />
-            <Route 
-            path='/userlogin'
-            element={
-              <Form
-              userCurrentId = {this.state.currentId}
-              setCurrentId={this.setCurrentId}
-              />
-            }
-            />
-          </Routes>
+              <Routes>
+                <Route
+                  path='/'
+                  element={<Home
+                    customGames={this.state.customGames}
+                    apiGames={this.state.games}
+                    passGameData={this.passGameData}
+                    />}
+                />
+                <Route 
+                path='/auth'
+                element={
+                  <Auth
+                  userCurrentId = {this.state.currentId}
+                  // setCurrentId={this.setCurrentId}
+                  />
+                }
+                />
+                {/* <Route 
+                path='/userlogin'
+                element={
+                  <Form
+                  userCurrentId = {this.state.currentId}
+                  setCurrentId={this.setCurrentId}
+                  />
+                }
+                /> */}
+                
+                <Route
+                  path='/showapi'
+                  element={<ShowAPIGame
+                    apiGames={this.state.games}
+                    />}             
+                />
+                <Route
+                  path='/showcustom'
+                  element={<ShowCustomGame
+                    customGames={this.state.customGames}
+                    handleDeleteGame={this.handleDeleteGame}
+                    gameToEdit={this.state.gameToEdit}
+                    passGameData={this.passGameData}
+                    />}
+                />
+                <Route
+                  path='/new'
+                  element={<NewGame/>}
+                />
+                <Route
+                  path='/edit'
+                  element={<EditGame
+                    customGames={this.state.customGames}
+                    handleEditGame={this.handleEditGame}
+                    gameToEdit={this.state.gameToEdit}/>}
+                />
+                <Route
+                  element={<EditBtn
+                    customGames={this.state.customGames}
+                    handleDeleteGame={this.handleDeleteGame}
+                    gameToEdit={this.state.gameToEdit}
+                    passGameData={this.passGameData}/>}
+                  />
+              </Routes>
         </Router>
       );
     }
