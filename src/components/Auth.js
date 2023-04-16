@@ -75,11 +75,11 @@ export class Auth extends Component {
                             </>
                         )}
                         <div className="pl-16 pr-12 grid grid-cols-1 gap-3 justify-normal w-1/3">
-                        <input name="email" label="Email Address" 
+                        <input name="email" label="Email Address" placeholder="Email Address" 
                         // handleChange={handleChange} 
                         type="email"></input>
                         
-                        <input name="password" label="Password" 
+                        <input name="password" label="Password" placeholder="Password"
                         // handleChange={handleChange} 
                         type="password"></input>
                         </div>
