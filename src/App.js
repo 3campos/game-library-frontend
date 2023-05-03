@@ -122,8 +122,8 @@ class App extends Component{
     getUser = () => {
       axios.get("https://game-library-backend-ec.herokuapp.com/getuser", {withCredentials: true})
       .then((res) => {
-        console.log(res.data._id);
-        if(res){
+        // console.log(res.data._id);
+        if(res.data){
           this.setState({
             uniqueDbId: res.data._id,
             currentId: res.data.id,
