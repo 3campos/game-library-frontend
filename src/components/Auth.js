@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 const Auth = (props) => {
-    const [userSignUp, setSignUp] = useState(false);
+    // const [userSignUp, setSignUp] = useState(false);
 
-    const handleChange = (e) => {
-        e.preventDefault()
-    }
+    // const handleChange = (e) => {
+    //     e.preventDefault()
+    // }
 
     // const switchMode = () => {
     //     setSignUp((prevSignUp) => !prevSignUp);
     // }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }; 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    // }; 
 
     const googleLogin = () => {
         window.open("https://game-library-backend-ec.herokuapp.com/auth/google", "_self");
@@ -44,9 +44,9 @@ const Auth = (props) => {
                     {userSignUp ? 'Sign Up' : 'Sign In'}
                 </div> */}
 
-                <form 
+                {/* <form 
                 onSubmit={handleSubmit}
-                >
+                > */}
                     <div className="w-1/3 pl-20 py-2">
                             <button className='w-32 h-16 ml-10 rounded-full border-solid border-2 border-white text-blue-300 bg-white hover:bg-slate-100' onClick={googleLogin}>
                                 <div className="inline-flex">
@@ -103,7 +103,7 @@ const Auth = (props) => {
                             {userSignUp ? 'Already have an account? Sign in.' : "Don't have an account? Sign up."}
                         </button> */}
                         {/* </div> */}
-                </form>
+                {/* </form> */}
             </div>
         </div>
     </div>
