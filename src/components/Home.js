@@ -8,9 +8,9 @@ class Home extends Component {
     render() {
         console.log(this.props.uniqueDbId)
         return(
-            <div className='font-share-tech-mono flex flex-col justify-center items-center bg-gray-600 w-full h-screen pt-4 pb-4'>
+            <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-4 pb-4'>
                 <h2 className='text-cyan-400 font-bold text-2xl my-4'>Popular Games</h2>
-                    <div id="api-tile-container" className='grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-y-scroll min-w-full max-w-fit'>
+                    <div id="api-tile-container" className='grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-y-scroll max-w-fit min-w-[825px]'>
                         {this.props.apiGames?.map((game, index) => {
                             return (
                                 <ApiGameTile
@@ -33,7 +33,7 @@ class Home extends Component {
                     {this.props.uniqueDbId ?
                     <>
                     <h2 className='text-cyan-400 font-bold text-2xl my-4'>{this.props.userName}'s Games</h2>
-                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-y-scroll min-w-full max-w-fit">
+                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-y-scroll max-w-fit min-w-[825px]">
                         {this.props.customGames?.map((game, index) =>  {
                             if(this.props.uniqueDbId == game.dbIdForGame){
                                 return(
@@ -54,7 +54,8 @@ class Home extends Component {
                             }
                             })}
                     </div> 
-                    </> : "Sign In To Add Games!"
+                    </> : 
+                    <h2 className='text-cyan-400 font-bold text-2xl my-4 text-center'>Sign In Using Your Google Account <p className="break-words">To Add A Customizable Library!</p></h2>
                     }
                     </>
             </div>
