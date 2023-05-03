@@ -9,6 +9,7 @@ class EditGameForm extends Component {
             playtime: this.props.gameToEdit.playtime,
             genre: this.props.gameToEdit.genre,
             rating: this.props.gameToEdit.rating,
+            dbIdForGame: this.props.gameToEdit.uniqueDbId
         }
     }
 

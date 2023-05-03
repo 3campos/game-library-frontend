@@ -12,6 +12,7 @@ class NewGame extends Component {
             genre: '',
             rating: '',
             notes: '',
+            dbIdForGame: this.props.uniqueDbId,
         }
     }
 
@@ -37,6 +38,7 @@ class NewGame extends Component {
                 genre: this.state.genre,
                 rating: this.state.rating,
                 notes: this.state.notes,
+                dbIdForGame: this.props.uniqueDbId
             })
         })
 
@@ -55,6 +57,7 @@ class NewGame extends Component {
                 genre: '',
                 rating: '',
                 notes: '',
+                dbIdForGame: this.props.uniqueDbId
             })
             window.location.href=`https://game-library-frontend.herokuapp.com/`
         })

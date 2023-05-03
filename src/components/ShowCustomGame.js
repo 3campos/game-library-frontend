@@ -11,7 +11,7 @@ class ShowCustomGame extends Component {
         return(
         <div className='font-share-tech-mono'>
         {this.props.customGames?.map((game, index) => {
-                if(game._id == customGameId){
+                if(game._id == customGameId) {
                     return(
                         <div>
                             <ShowContainerCustom
@@ -26,6 +26,7 @@ class ShowCustomGame extends Component {
                             handleDeleteGame={this.props.handleDeleteGame}
                             gameToEdit={this.props.gameToEdit}
                             passGameData={this.props.passGameData}
+                            dbIdForGame={this.props.uniqueDbId}
                             />
                         </div>
                     )

@@ -1,28 +1,41 @@
-import React, { Component, Link }from 'react'
+// import React from 'react';
 
-export class LoginForm extends Component {
-    constructor(props){
-        super(props)
-    }
+// export default function LoginPage() {
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        if(currentId){
-            console.log('Current Id obtained')
-        } else {
-            console.log('NO ID OBTAINED')
-        }
-    }
+//     const googleLogin = () => {
+        
+//     }
+//     return(
+//         <div>Log In</div>
+//         <div>Log In with Google</div>
+//     )
+// }
 
-  render() {
-    return (
-    <Link to='/userlogin'>
-        <div> {setCurrentId={setCurrentId}} </div>
-        <div>Login Form</div>
-        <div></div>
-    </Link>
-    )
-  }
-}
+// import React, { Component, Link }from 'react'
 
-export default LoginForm
+// export class LoginForm extends Component {
+//     constructor(props){
+//         super(props)
+//     }
+
+//     handleSubmit = (e) => {
+//         e.preventDefault();
+//         if(currentId){
+//             console.log('Current Id obtained')
+//         } else {
+//             console.log('NO ID OBTAINED')
+//         }
+//     }
+
+//   render() {
+//     return (
+//     <Link to='/userlogin'>
+//         <div> {setCurrentId={setCurrentId}} </div>
+//         <div>Login Form</div>
+//         <div></div>
+//     </Link>
+//     )
+//   }
+// }
+
+// export default LoginForm

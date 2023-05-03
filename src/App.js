@@ -9,6 +9,7 @@ import EditGame from './components/EditGame'
 import EditBtn from './components/EditBtn'
 import Auth from './components/Auth'
 import { BrowserRouter as Router, Switch, Routes, Route } from "react-router-dom"
+import axios from 'axios';
 
 //define baseURL
 let baseURL = process.env.REACT_APP_BACKEND_URL
@@ -24,6 +25,7 @@ class App extends Component{
         genre: "",
         rating: "",
         notes: "",
+        dbIdForGame: ""
       }],
         baseUrl: 'https://api.rawg.io/api/games?key=',
         key: process.env.REACT_APP_API_KEY,
@@ -37,24 +39,17 @@ class App extends Component{
         genre: "",
         rating: "",
         notes: "",
+        dbIdForGame: ""
       },
       //oAuth Login State
+      uniqueDbId: "",
       currentId: "",
+      userObject: "",
+      userName: "",
+      userEmail: "",
+      userPassword: "",
     };
   }
-
-  //oAuth setState
-  // setCurrentId = () => {
-  //   this.setState({
-  //     currentId: this.state.currentId
-  //   }), () => {
-  //     fetch(this.state.currentId)
-  //     .then(response => {return response.json() })
-  //     .then(json => {
-  //       const 
-  //     })
-  //   }
-  // }
 
   //CUSTOM GAME HANDLERS
     //accessing custom games
@@ -124,20 +119,41 @@ class App extends Component{
       ))
     }
 
+    getUser = () => {
+      axios.get("https://game-library-backend-ec.herokuapp.com/getuser", {withCredentials: true})
+      .then((res) => {
+        console.log(res.data._id);
+        if(res){
+          this.setState({
+            uniqueDbId: res.data._id,
+            currentId: res.data.id,
+            userObject: res.data,
+            userName: res.data.username,
+          })
+        }
+      });
+    }
+
     componentDidMount() {
       this.getGames();
       this.getApiGameUrl();
+      this.getUser();
     }
 
     render() {
-
       return(
         <Router>
-          <NavBar />
+          <NavBar 
+            userCurrentId={this.state.currentId}
+            userObject={this.state.userObject}
+            userName={this.state.userName}
+          />
               <Routes>
                 <Route
                   path='/'
                   element={<Home
+                    uniqueDbId={this.state.uniqueDbId}
+                    userName = {this.state.userName}
                     customGames={this.state.customGames}
                     apiGames={this.state.games}
                     passGameData={this.passGameData}
@@ -148,6 +164,9 @@ class App extends Component{
                 element={
                   <Auth
                   userCurrentId = {this.state.currentId}
+                  userObject = {this.state.userObject}
+                  userName = {this.state.userName}
+                  getUserData={this.getUser}
                   // setCurrentId={this.setCurrentId}
                   />
                 }
@@ -175,11 +194,14 @@ class App extends Component{
                     handleDeleteGame={this.handleDeleteGame}
                     gameToEdit={this.state.gameToEdit}
                     passGameData={this.passGameData}
+                    uniqueDbId={this.state.uniqueDbId}
                     />}
                 />
                 <Route
                   path='/new'
-                  element={<NewGame/>}
+                  element={<NewGame
+                    uniqueDbId={this.state.uniqueDbId}
+                  />}
                 />
                 <Route
                   path='/edit'
