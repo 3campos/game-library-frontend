@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import AddGameBtn from './AddGameBtn'
 import axios from 'axios';
 
-let baseURL = process.env.REACT_APP_BACKEND_URL
+let userURL = process.env.REACT_APP_BACKEND_USERS_URL
 let searchUsers = '';
 
 const NavBar = (props) => {
@@ -25,7 +25,7 @@ const NavBar = (props) => {
                 </div>
                 <div className="flex flex-row pl-[320px]">
                     <div>
-                        {fetch(baseURL)
+                        {fetch(userURL)
                             .then((res) => {
                               if (res.status ===200) {
                                 return res.json();
@@ -45,7 +45,6 @@ const NavBar = (props) => {
                                 //     </div>
                                 //     </Link>
                                 //   }})
-
                                 searchUsers = data.allUsers?.find(item => item.googleId == props.currentId)
                                 if(searchUsers.googleId == props.currentId){
                                     {props.userName ? (
