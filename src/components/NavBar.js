@@ -12,31 +12,31 @@ const NavBar = (props) => {
         )
     }
 
-    const matchUser = () => {
-        {fetch(userURL)
-            .then((res) => {
-              if (res.status ===200) {
-                return res.json();
-              } else {
-                return [];
-              }
-            })
-            .then((data) => {
-                //obtaining data from database and updating state when the component mount
-                // data.allUsers?.map((user, index) =>  {
-                //   if(user.googleId != props.uniqueId){
-                //     <Link to='auth'>
-                //     <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
-                //         <div className="flex self-center text-cyan-400">
-                //         Sign Up
-                //         </div>
-                //     </div>
-                //     </Link>
-                //   }})
-                    searchUsers = data.allUsers?.find(item => item.googleId == props.currentId)
-                })
-            }
-        }
+    // const matchUser = () => {
+    //     {fetch(userURL)
+    //         .then((res) => {
+    //           if (res.status ===200) {
+    //             return res.json();
+    //           } else {
+    //             return [];
+    //           }
+    //         })
+    //         .then((data) => {
+    //             //obtaining data from database and updating state when the component mount
+    //             // data.allUsers?.map((user, index) =>  {
+    //             //   if(user.googleId != props.uniqueId){
+    //             //     <Link to='auth'>
+    //             //     <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
+    //             //         <div className="flex self-center text-cyan-400">
+    //             //         Sign Up
+    //             //         </div>
+    //             //     </div>
+    //             //     </Link>
+    //             //   }})
+    //                 searchUsers = data.allUsers?.find(item => item.googleId == props.currentId)
+    //             })
+    //         }
+    //     }
 
     return(
         <div className='font-share-tech-mono flex flex-row justify-center w-screen bg-[#1f1f1f]'>
@@ -59,9 +59,6 @@ const NavBar = (props) => {
                                     Log Out
                                     </div>
                                 </button>
-                                <div className="pl-2">
-                                    <AddGameBtn />
-                                </div>
                             </div>
                         ) : (
                             // {Link} to="/auth"
@@ -74,7 +71,9 @@ const NavBar = (props) => {
                             </Link>
                         )}
                     </div>
-                    
+                    <div className="pl-2">
+                        <AddGameBtn />
+                    </div>
                 </div>
             </div>
         </div>
