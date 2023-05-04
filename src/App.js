@@ -46,8 +46,8 @@ class App extends Component{
       currentId: "",
       userObject: "",
       userName: "",
-      userEmail: "",
-      userPassword: "",
+      // userEmail: "",
+      // userPassword: "",
     };
   }
 
@@ -158,6 +158,7 @@ class App extends Component{
                     customGames={this.state.customGames}
                     apiGames={this.state.games}
                     passGameData={this.passGameData}
+                    getUserData={this.getUser}
                     />}
                 />
                 <Route 
