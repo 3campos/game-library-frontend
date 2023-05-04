@@ -3,9 +3,6 @@ import { Link } from "react-router-dom"
 import AddGameBtn from './AddGameBtn'
 import axios from 'axios';
 
-let baseURL = process.env.REACT_APP_BACKEND_URL
-let searchUsers = '';
-
 const NavBar = (props) => {
 
     const logout = () => {
@@ -51,79 +48,31 @@ const NavBar = (props) => {
                 </div>
                 <div className="flex flex-row pl-[320px]">
                     <div>
-<<<<<<< HEAD
-                            {searchUsers.googleId == props.currentId ? (
-                                <div className='inline-flex'>
-                                    <button className="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mr-2 mt-3 text-cyan-400">
-                                        {props.userName.charAt(0)
-                                        }
-                                    </button>
-                                    <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800" onClick={logout}>
-                                        <div className="flex self-center text-cyan-400">
-                                        Log Out
-=======
-                        {fetch(baseURL)
-                            .then((res) => {
-                              if (res.status ===200) {
-                                return res.json();
-                              } else {
-                                return [];
-                              }
-                            })
-                            .then((data) => {
-                                //obtaining data from database and updating state when the component mount
-                                // data.allUsers?.map((user, index) =>  {
-                                //   if(user.googleId != props.uniqueId){
-                                //     <Link to='auth'>
-                                //     <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
-                                //         <div className="flex self-center text-cyan-400">
-                                //         Sign Up
-                                //         </div>
-                                //     </div>
-                                //     </Link>
-                                //   }})
-
-                                searchUsers = data.allUsers?.find(item => item.googleId == props.currentId)
-                                if(searchUsers.googleId == props.currentId){
-                                    {props.userName ? (
-                                        <div className='inline-flex'>
-                                            <button className="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mr-2 mt-3 text-cyan-400">
-                                                {props.userName.charAt(0)
-                                                }
-                                            </button>
-                                            <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800" onClick={logout}>
-                                                <div className="flex self-center text-cyan-400">
-                                                Log Out
-                                                </div>
-                                            </button>
-                                            <div className="pl-2">
-                                                <AddGameBtn />
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        // {Link} to="/auth"
-                                        <Link to='auth'>
-                                        <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
-                                            <div className="flex self-center text-cyan-400">
-                                            Sign Up/In
-                                            </div>
->>>>>>> parent of 1237963a (fix fetch url in navbar)
-                                        </div>
-                                    </button>
-                                    <div className="pl-2">
-                                        <AddGameBtn />
-                                    </div>
-                                </div>
-                            ) : (
-                                // {Link} to="/auth"
-                                <Link to='auth'>
-                                <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
+                        {props.userName ? (
+                            <div className='inline-flex'>
+                                <button className="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mr-2 mt-3 text-cyan-400">
+                                    {props.userName.charAt(0)
+                                    }
+                                </button>
+                                <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800" onClick={logout}>
                                     <div className="flex self-center text-cyan-400">
-                                    Sign Up/In
+                                    Log Out
                                     </div>
+                                </button>
+                                <div className="pl-2">
+                                    <AddGameBtn />
                                 </div>
-                                </Link>
-                            )}
+                            </div>
+                        ) : (
+                            // {Link} to="/auth"
+                            <Link to='auth'>
+                            <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
+                                <div className="flex self-center text-cyan-400">
+                                Sign In
+                                </div>
+                            </div>
+                            </Link>
+                        )}
                     </div>
                     
                 </div>
