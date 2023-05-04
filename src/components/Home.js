@@ -4,13 +4,10 @@ import CustomGameTile from './CustomGameTile'
 import '../index.css'
 
 class Home extends Component {
-    
-        componentDidMount = () => {
-            this.props.getUser()
-        }
 
     render() {
         console.log('uniqueDbId:', this.props.uniqueDbId, 'currentid:', this.props.currentId)
+        this.props.getUser()
         return(
             <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-4 pb-4'>
                 <h2 className='text-cyan-400 font-bold text-2xl my-4'>Popular Games</h2>
