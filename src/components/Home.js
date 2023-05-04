@@ -7,6 +7,7 @@ class Home extends Component {
 
     render() {
         console.log('uniqueDbId:', this.props.uniqueDbId, 'currentid:', this.props.currentId)
+        this.props.getUserData()
         return(
             <>
             <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-4 pb-4'>
@@ -58,9 +59,14 @@ class Home extends Component {
                     </> : 
                     <>
                         <h2 className='text-cyan-400 font-bold text-2xl my-4 text-center'>Sign In Using Your Google Account <p className="break-words">To Add A Customizable Library!</p></h2>
-                        <button onClick={this.getUser()}>
-                            test button
+                        <div className='inline-flex'>
+                        <button className="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mr-2 mt-3 text-cyan-400" onClick={this.props.getUserData()}>
+                            test button 1
                         </button>
+                        <button className="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mr-2 mt-3 text-cyan-400" onClick={this.props.getUserData}>
+                            test button 2
+                        </button>
+                        </div>
                     </>
                     }
                     </>
