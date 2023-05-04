@@ -152,6 +152,7 @@ class App extends Component{
                 <Route
                   path='/'
                   element={<Home
+                    userCurrentId={this.state.currentId}
                     uniqueDbId={this.state.uniqueDbId}
                     userName = {this.state.userName}
                     customGames={this.state.customGames}
