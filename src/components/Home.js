@@ -5,6 +5,10 @@ import '../index.css'
 
 class Home extends Component {
     
+        componentDidMount = () => {
+            this.props.getUser()
+        }
+
     render() {
         console.log('uniqueDbId:', this.props.uniqueDbId, 'currentid:', this.props.currentId)
         return(
