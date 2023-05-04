@@ -33,6 +33,9 @@ const NavBar = (props) => {
                                     Log Out
                                     </div>
                                 </button>
+                                <div className="pl-2">
+                                    <AddGameBtn />
+                                </div>
                             </div>
                         ) : (
                             // {Link} to="/auth"
@@ -45,9 +48,7 @@ const NavBar = (props) => {
                             </Link>
                         )}
                     </div>
-                    <div className="pl-2">
-                        <AddGameBtn />
-                    </div>
+                    
                 </div>
             </div>
         </div>
