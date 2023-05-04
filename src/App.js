@@ -134,26 +134,6 @@ class App extends Component{
       });
     }
 
-    getUsers = () => {
-        fetch(baseURL)
-        .then((res) => {
-          if (res.status ===200) {
-            return res.json();
-          } else {
-            return [];
-          }
-        })
-        .then((data) => {
-            //obtaining data from database and updating state when the component mount
-            data.allUsers?.map((user, index) =>  {
-              if(user.googleId == this.state.uniqueId){
-                  // return( 'test'
-                  // )
-                  console.log('152 success')
-              }
-              })});
-    }
-
     componentDidMount() {
       this.getGames();
       this.getApiGameUrl();
@@ -168,6 +148,7 @@ class App extends Component{
             userCurrentId={this.state.currentId}
             userObject={this.state.userObject}
             userName={this.state.userName}
+            uniqueId={this.stateuniqueDbId}
           />
               <Routes>
                 <Route
