@@ -54,7 +54,7 @@ class Home extends Component {
                             })}
                     </div> 
                     </> : 
-                    <h2 className='text-cyan-400 font-bold text-2xl my-4 text-center'>New Users: Sign Up Using Your Google Account To <p className="break-words">Register And Then Sign In!</p></h2>
+                    <h2 className='text-cyan-400 font-bold text-2xl my-4 text-center'>New Users: "Sign Up" To Register Your Google Account <p className="break-words">. Then "Sign In" To Add Games!</p></h2>
                     }
                     </>
             </div>
