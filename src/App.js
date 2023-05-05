@@ -8,6 +8,7 @@ import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
 import EditBtn from './components/EditBtn'
 import Auth from './components/Auth'
+import Reg from './components/Reg'
 import { BrowserRouter as Router, Switch, Routes, Route } from "react-router-dom"
 import axios from 'axios';
 
