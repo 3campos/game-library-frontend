@@ -46,8 +46,8 @@ class App extends Component{
       currentId: "",
       userObject: "",
       userName: "",
-      userEmail: "",
-      userPassword: "",
+      // userEmail: "",
+      // userPassword: "",
     };
   }
 
@@ -167,20 +167,20 @@ class App extends Component{
                   userObject = {this.state.userObject}
                   userName = {this.state.userName}
                   getUserData={this.getUser}
-                  // setCurrentId={this.setCurrentId}
                   />
                 }
                 />
-                {/* <Route 
-                path='/userlogin'
+                <Route 
+                path='/register'
                 element={
-                  <Form
+                  <Reg
                   userCurrentId = {this.state.currentId}
-                  setCurrentId={this.setCurrentId}
+                  userObject = {this.state.userObject}
+                  userName = {this.state.userName}
+                  getUserData={this.getUser}
                   />
                 }
-                /> */}
-                
+                />
                 <Route
                   path='/showapi'
                   element={<ShowAPIGame

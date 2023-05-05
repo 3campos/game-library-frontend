@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Auth = () => {
+const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
     }; 
 
-    const googleLogin = () => {
+    const googleRegister = () => {
         window.open("https://game-library-backend-ec.herokuapp.com/auth/google", "_self");
     }
     
@@ -15,13 +15,13 @@ const Auth = () => {
         <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-start box-border">
             <div className="w-full max-w-[1000px] items-center">
                 <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 pl-[70px]'>
-                    Auth Page
+                    User Registration Page
                 </h1>
                 <form 
                 onSubmit={handleSubmit}
                 >
                     <div className="w-1/3 pl-20 py-2">
-                            <button className='w-32 h-16 ml-10 rounded-full border-solid border-2 border-white text-blue-300 bg-white hover:bg-slate-100' onClick={googleLogin}>
+                            <button className='w-32 h-16 ml-10 rounded-full border-solid border-2 border-white text-blue-300 bg-white hover:bg-slate-100' onClick={googleRegister}>
                                 <div className="inline-flex">
                                         <div>
                                             <svg className="w-4 h-4 mr-2 mt-[13px]" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
@@ -29,7 +29,7 @@ const Auth = () => {
                                                 </path>
                                             </svg>
                                         </div>
-                                        <span className='text-lg mt-2'>Sign In</span>
+                                        <span className='text-lg mt-2'>Sign Up</span>
                                 </div>
                             </button>
                         </div>
@@ -40,4 +40,4 @@ const Auth = () => {
     )
 }
 
-export default Auth
+export default Register
