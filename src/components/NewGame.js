@@ -98,7 +98,7 @@ class NewGame extends Component {
                     type='text'
                     value={this.state.playtime}
                     onChange={this.handleChange}
-                    placeholder='Playing Time'
+                    placeholder='Game Duration (hours)'
                     className='border rounded p-1.5 my-1'
                     >
                     </input>
@@ -116,7 +116,7 @@ class NewGame extends Component {
                     type='text'
                     value={this.state.rating}
                     onChange={this.handleChange}
-                    placeholder='Rating'
+                    placeholder='Rating (scale 1-5)'
                     className='border rounded p-1.5 my-1'
                     >
                     </input>
