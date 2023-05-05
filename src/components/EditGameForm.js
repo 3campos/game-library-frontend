@@ -72,7 +72,7 @@ class EditGameForm extends Component {
                 type='text'
                 defaultValue={this.props.gameToEdit.playtime}
                 onChange={this.handleChange}
-                placeholder='Game Name'
+                placeholder='Game Duration (hours)'
                 className='border rounded p-1.5 my-1'
                 >
             </input>
@@ -90,7 +90,7 @@ class EditGameForm extends Component {
                 type='text'
                 defaultValue={this.props.gameToEdit.rating}
                 onChange={this.handleChange}
-                placeholder='Rating'
+                placeholder='Rating (scale of 1-5)'
                 className='border rounded p-1.5 my-1'
                 >
             </input>
