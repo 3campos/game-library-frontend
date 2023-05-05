@@ -15,7 +15,7 @@ const Auth = () => {
         <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-start box-border">
             <div className="w-full max-w-[1000px] items-center">
                 <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 pl-[70px]'>
-                    Auth Page
+                    Sign In Via Google
                 </h1>
                 <form 
                 onSubmit={handleSubmit}
