@@ -8,7 +8,7 @@ import ShowCustomGame from './components/ShowCustomGame'
 import EditGame from './components/EditGame'
 import EditBtn from './components/EditBtn'
 import Auth from './components/Auth'
-import Reg from './components/Reg'
+import Register from './components/Register'
 import { BrowserRouter as Router, Switch, Routes, Route } from "react-router-dom"
 import axios from 'axios';
 
@@ -174,7 +174,7 @@ class App extends Component{
                 <Route 
                 path='/register'
                 element={
-                  <Reg
+                  <Register
                   userCurrentId = {this.state.currentId}
                   userObject = {this.state.userObject}
                   userName = {this.state.userName}

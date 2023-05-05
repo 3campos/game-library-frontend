@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Reg = () => {
+const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -40,4 +40,4 @@ const Reg = () => {
     )
 }
 
-export default Reg
+export default Register
