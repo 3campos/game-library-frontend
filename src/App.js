@@ -46,8 +46,8 @@ class App extends Component{
       currentId: "",
       userObject: "",
       userName: "",
-      // userEmail: "",
-      // userPassword: "",
+      userEmail: "",
+      userPassword: "",
     };
   }
 
@@ -122,6 +122,7 @@ class App extends Component{
     getUser = () => {
       axios.get("https://game-library-backend-ec.herokuapp.com/getuser", {withCredentials: true})
       .then((res) => {
+        console.log(res.data._id);
         if(res){
           this.setState({
             uniqueDbId: res.data._id,
@@ -151,13 +152,11 @@ class App extends Component{
                 <Route
                   path='/'
                   element={<Home
-                    userCurrentId={this.state.currentId}
                     uniqueDbId={this.state.uniqueDbId}
                     userName = {this.state.userName}
                     customGames={this.state.customGames}
                     apiGames={this.state.games}
                     passGameData={this.passGameData}
-                    getUserData={this.getUser}
                     />}
                 />
                 <Route 
