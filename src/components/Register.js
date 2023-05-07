@@ -14,13 +14,13 @@ const Register = () => {
     <div>
         <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-start box-border">
             <div className="w-full max-w-[1000px] items-center">
-                <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 pl-[70px]'>
+                <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 pl-[185px]'>
                     Register Via Google
                 </h1>
                 <form 
                 onSubmit={handleSubmit}
                 >
-                    <div className="w-1/3 pl-20 py-2">
+                    <div className="w-1/3 pl-[290px] py-2">
                             <button className='w-32 h-16 ml-10 rounded-full border-solid border-2 border-white text-blue-300 bg-white hover:bg-slate-100' onClick={googleRegister}>
                                 <div className="inline-flex">
                                         <div className='pt-[7px] pr-1'>
