@@ -12,16 +12,17 @@ const Register = () => {
     
     return (
     <div>
-        <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-start box-border">
-            <div className="w-full max-w-[1000px] items-center">
-                <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 pl-[185px]'>
+        <div className="font-share-tech-mono bg-gray-600 min-h-screen flex justify-center items-start box-border">
+            <div className="w-full max-w-fit break-normal flex-wrap">
+                <h1 className='text-blue-400 font-bold text-4xl my-8'>
                     Register Via Google
                 </h1>
                 <form 
                 onSubmit={handleSubmit}
+                className='flex justify-center'
                 >
-                    <div className="w-1/3 pl-[290px] py-2">
-                            <button className='w-32 h-16 ml-10 rounded-full border-solid border-2 border-white text-blue-300 bg-white hover:bg-slate-100' onClick={googleRegister}>
+                    <div className="w-1/3 py-2">
+                            <button className='w-32 h-16 rounded-full border-solid border-2 border-white text-blue-300 bg-white hover:bg-slate-100' onClick={googleRegister}>
                                 <div className="inline-flex">
                                         <div className='pt-[7px] pr-1'>
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
