@@ -54,8 +54,8 @@ class Home extends Component {
                             })}
                     </div> 
                     </> : 
-                    <h2 className='text-cyan-400 font-bold text-2xl my-4 text-center'>New Users: You Must Be Signed In To Google Chrome With A Google Account. Then:
-                    <p className="break-words"> 1. "Sign Up" To Register Your Google Account.</p>
+                    <h2 className='text-cyan-400 font-bold text-2xl my-4 text-center'>New Users Must Have A Google Account.
+                    <p className="break-words"> 1. "Sign Up" To Register Your Account.</p>
                      <p className="break-words"> 2. "Sign In" To Add Games!</p></h2>
                     }
                     </>
