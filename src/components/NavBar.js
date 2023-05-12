@@ -28,7 +28,7 @@ const NavBar = (props) => {
                                     {props.userName.charAt(0)
                                     }
                                 </button>
-                                <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800" onClick={logout}>
+                                <button className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800" onClick={logout}>
                                     <div className="flex self-center text-cyan-400">
                                     Log Out
                                     </div>
@@ -40,14 +40,14 @@ const NavBar = (props) => {
                         ) : (
                             <div className='inline-flex'>
                                 <Link to='register'>
-                                    <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
+                                    <div className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
                                         <div className="flex self-center text-cyan-400">
                                         Sign Up
                                         </div>
                                     </div>
                                 </Link>
                                 <Link to='auth'>
-                                    <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800 ml-2">
+                                    <div className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800 ml-2">
                                         <div className="flex self-center text-cyan-400">
                                         Sign In
                                         </div>

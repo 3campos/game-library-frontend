@@ -39,7 +39,7 @@ class ShowContainerCustom extends Component{
                         <div>
                             <EditBtn id = {this.props.id}/>
                         </div>
-                        <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{
+                        <button className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{
                             this.props.handleDeleteGame(this.props.id);
                             }}
                             >
