@@ -12,15 +12,19 @@ const NavBar = (props) => {
         )
     }
 
+    const returnHome = () => {
+        window.location.href = "http://localhost:3000/"
+    }
+
     return(
         <div className='font-share-tech-mono flex flex-row justify-center w-screen bg-[#1f1f1f]'>
             <div className='flex items-center w-full max-w-[1000px] p-8'>
-                <div className='flex pr-20'>
+                <div className='flex shrink'>
                     <Link to='/'>
-                        <h1 className='text-cyan-400 font-bold text-3xl -4xl'>Video Game Library</h1>
+                        <h1 className='whitespace-nowrap text-cyan-400 font-bold text-3xl pr-1'>Video Game Library</h1>
                     </Link>
                 </div>
-                <div className="flex flex-row pl-[320px]">
+                <div className="flex flex-row justify-end w-screen">
                     <div>
                         {props.userName ? (
                             <div className='inline-flex'>
