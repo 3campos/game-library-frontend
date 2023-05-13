@@ -32,7 +32,7 @@ class Home extends Component {
                     {this.props.uniqueDbId ?
                     <>
                     <h2 className='text-cyan-400 font-bold text-2xl my-4'>{this.props.userName}'s Games</h2>
-                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[370px]">
+                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[825px] md:min-w-[825px] sm:min-w-[370px]">
                         {this.props.customGames?.map((game, index) =>  {
                             if(this.props.uniqueDbId == game.dbIdForGame){
                                 return(
