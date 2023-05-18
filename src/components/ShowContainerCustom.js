@@ -16,7 +16,8 @@ class ShowContainerCustom extends Component{
                 genre: this.props.gameGenre,
                 rating: this.props.gameRating,
                 notes: this.props.gameNotes,
-                dbIdForGame: this.props.dbIdForGame
+                dbIdForGame: this.props.dbIdForGame,
+                userGoogleId: this.props.googleId
             }
             this.props.passGameData(gameToEdit)
         }
