@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import BackBtn from './BackBtn'
 
 class EditBtn extends Component {
     constructor(props){
         super(props)
     }
-    
+
     render () {
         return (
             this.props.userGoogleId == this.props.creatorsGoogleId ? 
