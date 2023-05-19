@@ -8,6 +8,7 @@ class EditBtn extends Component {
     }
 
     render () {
+        console.log('usergoogleid:', this.props.userGoogleId, 'creatorGoogleid:', this.props.creatorsGoogleId, "typeof googleid:", typeof this.props.userGoogleId)
         return (
             <>
             {this.props.userGoogleId == this.props.creatorsGoogleId && typeof this.props.userGoogleId !== 'undefined' ? 
