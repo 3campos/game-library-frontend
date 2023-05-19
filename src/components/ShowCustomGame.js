@@ -6,7 +6,9 @@ class ShowCustomGame extends Component {
     constructor(props){
         super(props)
     }
+    
     render(){
+        {console.log('userGoogleId:', this.props.userGoogleId)}
         customGameId = window.location.search.slice(4);
         return(
         <div className='font-share-tech-mono'>
