@@ -8,6 +8,12 @@ const NavBar = (props) => {
     const logout = () => {
         axios.get("https://game-library-backend-ec.herokuapp.com/logout", {withCredentials: true})
         .then(
+            this.props.userGoogleId="",
+            this.props.userObject="",
+            this.props.userName="",
+            this.props.uniqueDbId=""
+        )
+        .then(
             window.location.href = "https://game-library-frontend.herokuapp.com/"
         )
     }
