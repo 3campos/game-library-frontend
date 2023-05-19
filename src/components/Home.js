@@ -50,6 +50,7 @@ class Home extends Component {
                                     passGameData={this.props.passGameData}
                                     dbIdForGame={this.props.uniqueDbId}
                                     creatorsGoogleId ={this.props.userGoogleId}
+                                    userGoogleId={this.props.userGoogleId}
                                     />
                                 )
                             }

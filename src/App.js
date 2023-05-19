@@ -232,6 +232,7 @@ class App extends Component{
                     customGames={this.state.customGames}
                     handleEditGame={this.handleEditGame}
                     gameToEdit={this.state.gameToEdit}
+                    passGameData={this.passGameData}
                     userGoogleId = {this.state.googleId}/>}
                 />
                 <Route
