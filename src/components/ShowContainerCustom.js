@@ -23,7 +23,7 @@ class ShowContainerCustom extends Component{
         }
 
     render() {
-        {console.log('SCC 26 userGoogleId:', this.props.userGoogleId, 'creatorsGoogleId:', this.props.creatorsGoogleId)}
+        {console.log('SCC 26 userGoogleId:', this.props.userGoogleId, 'creatorsGoogleId:', this.props.gameCreatorsGoogleId)}
         return(
             <>
             <div className='font-share-tech-mono bg-gray-800 min-h-screen flex justify-center'>
@@ -39,7 +39,7 @@ class ShowContainerCustom extends Component{
                     </div>
                     <div className = "grid flex-col grid-cols-3 justify-items-center mt-2">
                     <>
-                    {this.props.userGoogleId == this.props.creatorsGoogleId ?
+                    {this.props.userGoogleId == this.props.gameCreatorsGoogleId ?
                         <>
                             <div>
                                 <EditBtn id = {this.props.id}/>

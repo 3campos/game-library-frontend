@@ -49,7 +49,7 @@ class Home extends Component {
                                     gameNotes={game.notes}
                                     passGameData={this.props.passGameData}
                                     dbIdForGame={this.props.uniqueDbId}
-                                    creatorsGoogleId ={this.props.creatorsGoogleId}
+                                    gameCreatorsGoogleId ={game.creatorsGoogleId}
                                     userGoogleId={this.props.userGoogleId}
                                     />
                                 )
