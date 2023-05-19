@@ -87,6 +87,8 @@ class App extends Component{
         genre: gameToEdit.genre,
         rating: gameToEdit.rating,
         notes: gameToEdit.notes,
+        dbIdForGame: gameToEdit.dbIdForGame,
+        creatorsGoogleId: gameToEdit.creatorsGoogleId
       }
       })
     }
