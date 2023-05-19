@@ -131,7 +131,7 @@ class App extends Component{
         if(res){
           this.setState({
             uniqueDbId: res.data._id,
-            googleId: res.data.id,
+            googleId: res.data.googleId,
             userObject: res.data,
             userName: res.data.username,
           })
