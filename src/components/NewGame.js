@@ -13,6 +13,7 @@ class NewGame extends Component {
             rating: '',
             notes: '',
             dbIdForGame: this.props.uniqueDbId,
+            creatorsGoogleId: this.props.googleId
         }
     }
 
@@ -59,7 +60,7 @@ class NewGame extends Component {
                 rating: '',
                 notes: '',
                 dbIdForGame: this.props.uniqueDbId,
-                creatorsGoogleId: this.props.userGoogleId
+                creatorsGoogleId: this.props.googleId
             })
             window.location.href=`https://game-library-frontend.herokuapp.com/`
         })
