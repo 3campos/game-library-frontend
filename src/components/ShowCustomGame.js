@@ -29,7 +29,7 @@ class ShowCustomGame extends Component {
                             gameToEdit={this.props.gameToEdit}
                             passGameData={this.props.passGameData}
                             dbIdForGame={this.props.uniqueDbId}
-                            creatorsGoogleId ={this.props.creatorsGoogleId}
+                            gameCreatorsGoogleId ={game.creatorsGoogleId}
                             userGoogleId={this.props.userGoogleId}
                             />
                         </div>
