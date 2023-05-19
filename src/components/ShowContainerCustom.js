@@ -23,6 +23,7 @@ class ShowContainerCustom extends Component{
         }
 
     render() {
+        {console.log('SCC 26 userGoogleId:', this.props.userGoogleId, 'creatorsGoogleId:', this.props.creatorsGoogleId)}
         return(
             <>
             <div className='font-share-tech-mono bg-gray-800 min-h-screen flex justify-center'>
