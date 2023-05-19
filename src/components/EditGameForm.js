@@ -10,7 +10,7 @@ class EditGameForm extends Component {
             genre: this.props.gameToEdit.genre,
             rating: this.props.gameToEdit.rating,
             dbIdForGame: this.props.gameToEdit.uniqueDbId,
-            userGoogleId: this.props.gameToEdit.googleId
+            creatorsGoogleId: this.props.gameToEdit.googleId
         }
     }
 
