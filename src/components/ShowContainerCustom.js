@@ -37,21 +37,28 @@ class ShowContainerCustom extends Component{
                     <div className="text-blue-300 text-2xl flex justify-center h-[250px] pt-2 overflow-y-scroll max-w-full">Game Progress: {this.props.gameNotes}
                     </div>
                     <div className = "grid flex-col grid-cols-3 justify-items-center mt-2">
-                        <div>
-                            <EditBtn id = {this.props.id}/>
+                    <>
+                    {this.props.userGoogleId == this.props.creatorsGoogleId ?
+                        <>
+                            <div>
+                                <EditBtn id = {this.props.id}/>
+                            </div>
+                            <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{
+                                this.props.handleDeleteGame(this.props.id);
+                                }}
+                                >
+                                <span>
+                                    Delete Game
+                                </span>
+                            </button>
+                            <div><BackBtn/></div>
+                        </>
+                        : <div><BackBtn/></div>
+                        }       
+                        </>
                         </div>
-                        <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{
-                            this.props.handleDeleteGame(this.props.id);
-                            }}
-                            >
-                            <span>
-                                Delete Game
-                            </span>
-                        </button>
-                        <div><BackBtn/></div>
                     </div>
                 </div>
-            </div>
             </>
         )
     }
