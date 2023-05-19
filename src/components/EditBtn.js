@@ -10,7 +10,7 @@ class EditBtn extends Component {
     render () {
         return (
             <>
-            {this.props.userGoogleId == this.props.creatorsGoogleId ? 
+            {this.props.userGoogleId == this.props.creatorsGoogleId && typeof this.props.userGoogleId !== 'undefined' ? 
             <>
             <Link to ={`/edit?id=${this.props.id}`}>
                 <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900">
