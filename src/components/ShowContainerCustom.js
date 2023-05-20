@@ -84,7 +84,6 @@ class ShowContainerCustom extends Component{
                             </>
                                 }
                         </>
-                        
                     </div>
                 </div>
             </>

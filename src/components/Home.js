@@ -82,9 +82,20 @@ class Home extends Component {
                             }
                             })}
                     </div> 
+                    <>
+                    
+                    <h2 className='text-cyan-400 font-bold text-2xl mb-2 text-center'>This app is in demo mode whereby no sign up/in is necessary. <p className="break-words">Desktop users who wish to sign up/in must have a Google account.
+                    </p>
+                    <p className="break-words"> 1. "Sign Up" to register your account.</p>
+                    <p className="break-words"> 2. "Sign In" to add games!</p>
+                    <p className="break-words text-xl italic pt-2 underline">Mobile login coming soon!</p>    
+                    </h2>
+                    
                     </>
-
+                    </>
+                    
                     // <>
+                    
                     //     <div className = "grid flex-col grid-cols-3 justify-items-end mt-2">
                     //         <div className='text-cyan-400 font-bold text-2xl my-4 text-center col-span-2'>
                     //             Click here to bypass login!
@@ -103,6 +114,7 @@ class Home extends Component {
                     //     </h2>
                     // </>
                     }
+                    
                     </>
             </div>
         )
