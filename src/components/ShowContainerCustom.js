@@ -78,10 +78,7 @@ class ShowContainerCustom extends Component{
                                             </span>
                                         </button>
                                         <div><BackBtn/></div>
-                                        </div>
-                                        <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
-                                        <div><BackBtn/></div>
-                                    </div>
+                                    </div>   
                                 </>
                                 :
                                     <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
