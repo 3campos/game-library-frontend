@@ -39,7 +39,8 @@ class ShowContainerCustom extends Component{
                     </div>
                     
                         <>
-                        {this.props.userGoogleId == this.props.gameCreatorsGoogleId ?
+                        {/* {this.props.userGoogleId == this.props.gameCreatorsGoogleId ? */}
+                        {!this.props.gameCreatorsGoogleId ?
                             <>
                             <div className = "grid flex-col grid-cols-3 justify-items-center mt-2">
                                 <div>
@@ -55,12 +56,40 @@ class ShowContainerCustom extends Component{
                                 </button>
                                 <div><BackBtn/></div>
                                 </div>
-                            </>
-                            : 
-                            <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
+                                <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
                                 <div><BackBtn/></div>
                             </div>
-                            }       
+                            </>
+                            :
+                            <>
+                            {
+                                this.props.gameCreatorsGoogleId && this.props.userGoogleId == this.props.gameCreatorsGoogleId ?
+                                <>
+                                    <div className = "grid flex-col grid-cols-3 justify-items-center mt-2">
+                                        <div>
+                                            <EditBtn id = {this.props.id}/>
+                                        </div>
+                                        <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{
+                                            this.props.handleDeleteGame(this.props.id);
+                                            }}
+                                            >
+                                            <span>
+                                                Delete Game
+                                            </span>
+                                        </button>
+                                        <div><BackBtn/></div>
+                                        </div>
+                                        <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
+                                        <div><BackBtn/></div>
+                                    </div>
+                                </>
+                                :
+                                    <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
+                                        <div><BackBtn/></div>
+                                    </div>
+                            }
+                            </>
+                                }
                         </>
                         
                     </div>

@@ -45,6 +45,9 @@ const NavBar = (props) => {
                             </div>
                         ) : (
                             <div className='inline-flex'>
+                                <div className="mr-2">
+                                    <AddGameBtn />
+                                </div>
                                 <Link to='register'>
                                     <div className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
                                         <div className="flex self-center text-cyan-400">
