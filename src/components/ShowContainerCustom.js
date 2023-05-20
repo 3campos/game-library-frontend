@@ -35,14 +35,13 @@ class ShowContainerCustom extends Component{
                         
                     <div className="text-blue-300 text-2xl flex justify-center"> Game Rating: {this.props.gameRating}/5
                     </div>
-                    <div className="text-blue-300 text-2xl flex justify-center h-[250px] pt-2 overflow-y-scroll max-w-full">Game Progress: {this.props.gameNotes}
+                    <div className="text-blue-300 text-2xl flex justify-center h-[140px] pt-2 mb-1 overflow-y-scroll max-w-full resize-y">Game Progress: {this.props.gameNotes}
                     </div>
-                    
                         <>
                         {/* {this.props.userGoogleId == this.props.gameCreatorsGoogleId ? */}
                         {!this.props.gameCreatorsGoogleId ?
                             <>
-                            <div className = "grid flex-col grid-cols-3 justify-items-center mt-2">
+                            <div className = "grid flex-col grid-cols-3 justify-items-center pb-1 pt-.5">
                                 <div>
                                     <EditBtn id = {this.props.id}/>
                                 </div>
@@ -62,7 +61,7 @@ class ShowContainerCustom extends Component{
                             {
                                 this.props.gameCreatorsGoogleId && this.props.userGoogleId == this.props.gameCreatorsGoogleId ?
                                 <>
-                                    <div className = "grid flex-col grid-cols-3 justify-items-center mt-2">
+                                    <div className = "grid flex-col grid-cols-3 justify-items-center pb-1 pt-.5">
                                         <div>
                                             <EditBtn id = {this.props.id}/>
                                         </div>
@@ -78,7 +77,7 @@ class ShowContainerCustom extends Component{
                                     </div>   
                                 </>
                                 :
-                                    <div className = "grid flex-col grid-cols-1 justify-items-center mt-2 pt-2">
+                                    <div className = "grid flex-col grid-cols-1 justify-items-center pb-1 pt-.5">
                                         <div><BackBtn/></div>
                                     </div>
                             }
