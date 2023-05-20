@@ -8,8 +8,8 @@ class Home extends Component {
     render() {
         console.log('home 9 googleid:', this.props.userGoogleId)
         return(
-            <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-4 pb-4'>
-                <h2 className='text-cyan-400 font-bold text-2xl my-4'>Popular Games</h2>
+            <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-3 pb-14'>
+                <h2 className='text-cyan-400 font-bold text-2xl mb-3'>Popular Games</h2>
                     <div id="api-tile-container" className='grid w-full sm:w-3/5 sm:min-w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[370px]'>
                         {this.props.apiGames?.map((game, index) => {
                             return (
@@ -32,7 +32,7 @@ class Home extends Component {
                     <>
                     {this.props.uniqueDbId ?
                     <>
-                    <h2 className='text-cyan-400 font-bold text-2xl my-4'>{this.props.userName}'s Games</h2>
+                    <h2 className='text-cyan-400 font-bold text-2xl my-3'>{this.props.userName}'s Games</h2>
                     <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[767px]">
                         {this.props.customGames?.map((game, index) =>  {
                             if(this.props.uniqueDbId == game.dbIdForGame){
@@ -58,7 +58,7 @@ class Home extends Component {
                     </div> 
                     </> : 
                     <>
-                    <h2 className='text-cyan-400 font-bold text-2xl my-4'>Demo Account's Games</h2>
+                    <h2 className='text-cyan-400 font-bold text-2xl my-3'>Demo Account's Games</h2>
                     <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[767px]">
                         {this.props.customGames?.map((game, index) =>  {
                             if(!game.creatorsGoogleId){
@@ -84,35 +84,13 @@ class Home extends Component {
                     </div> 
                     <>
                     
-                    <h2 className='text-cyan-400 font-bold text-2xl mb-2 text-center'>This app is in demo mode whereby no sign up/in is necessary. <p className="break-words">Desktop users who wish to sign up/in must have a Google account.
+                    <h2 className='text-cyan-400 font-bold text-2xl text-center mt-1'>App is in demo mode. Sign up/in is unnecessary. <p className="break-words text-xl">Desktop users can {`${`(step 1: sign up; step 2: sign in)`}`} with a Google account.
                     </p>
-                    <p className="break-words"> 1. "Sign Up" to register your account.</p>
-                    <p className="break-words"> 2. "Sign In" to add games!</p>
-                    <p className="break-words text-xl italic pt-2 underline">Mobile login coming soon!</p>    
+                    <p className="break-words text-xl italic underline">Mobile login coming soon!</p>    
                     </h2>
                     
                     </>
                     </>
-                    
-                    // <>
-                    
-                    //     <div className = "grid flex-col grid-cols-3 justify-items-end mt-2">
-                    //         <div className='text-cyan-400 font-bold text-2xl my-4 text-center col-span-2'>
-                    //             Click here to bypass login!
-                    //         </div>
-                    //         <div className='justify-self-start pl-2 flex shrink'>
-                    //         <DemoBtn/>
-                    //         </div>
-                    //     </div>
-                    //     <h2 className='text-cyan-400 font-bold text-2xl my-4 text-center'>Desktop Users Can Sign Up/In With A Google Account.
-                    //         <p className="break-words"> 1. "Sign Up" To Register.
-                    //         </p>
-                    //         <p className="break-words"> 2. "Sign In" To Add Games!
-                    //         </p>
-                    //         <p className="break-words text-xl italic pt-2 underline">Mobile login coming soon!
-                    //         </p>
-                    //     </h2>
-                    // </>
                     }
                     
                     </>
