@@ -10,7 +10,7 @@ class Home extends Component {
         return(
             <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-3 pb-14'>
                 <h2 className='text-cyan-400 font-bold text-2xl mb-3'>Popular Games</h2>
-                    <div id="api-tile-container" className='grid w-full sm:w-3/5 sm:min-w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[370px]'>
+                    <div id="api-tile-container" className='grid w-full sm:w-3/5 sm:min-w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[370px] md:w-4/5'>
                         {this.props.apiGames?.map((game, index) => {
                             return (
                                 <ApiGameTile
@@ -33,7 +33,8 @@ class Home extends Component {
                     {this.props.uniqueDbId ?
                     <>
                     <h2 className='text-cyan-400 font-bold text-2xl my-3'>{this.props.userName}'s Games</h2>
-                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[767px]">
+                    <div id="custom-game-tile" className="grid w-full 
+                    sm:w-3/5 sm:min-w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[370px] md:w-4/5">
                         {this.props.customGames?.map((game, index) =>  {
                             if(this.props.uniqueDbId == game.dbIdForGame){
                                 return(
@@ -59,7 +60,7 @@ class Home extends Component {
                     </> : 
                     <>
                     <h2 className='text-cyan-400 font-bold text-2xl my-3'>Demo Account's Games</h2>
-                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[767px]">
+                    <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[767px] md:w-4/5">
                         {this.props.customGames?.map((game, index) =>  {
                             if(!game.creatorsGoogleId){
                                 return(

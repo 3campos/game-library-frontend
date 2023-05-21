@@ -19,7 +19,7 @@ const NavBar = (props) => {
     }
 
     return(
-        <div className='font-share-tech-mono flex flex-row justify-center w-screen bg-[#1f1f1f]'>
+        <div className='font-share-tech-mono flex flex-row justify-center w-screen bg-[#1f1f1f] sm: max-w-screen'>
             <div className='flex items-center w-full max-w-[1000px] p-3'>
                 <div className='flex w-4/5 inline-flex shrink text-ellipsis'>
                     <Link to='/'>

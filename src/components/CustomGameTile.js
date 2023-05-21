@@ -6,7 +6,7 @@ class CustomGameTile extends Component {
         return(
         <div className='flex flex-col relative'>
             <div id="tile" className="border-black border-2 rounded-md p-2 h-44 w-44 overflow-hidden transition ease-in-out delay-150 bg-blue-500 hover: translate-y-2 hover:scale-110 hover:bg-indigo-500 duration-300">
-                <div className='flex justify-between items-start w-full snap-center'>
+                <div className='flex justify-around items-start w-full snap-center'>
                     <div className='flex flex-col w-full'>
                         <p className='truncate'><div className={this.props.gameTitle.length>18?'hover:-translate-x-full duration-[3000ms] delay-150':`truncate`}>{this.props.gameTitle}</div>
                         </p>
