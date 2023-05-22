@@ -20,10 +20,10 @@ const NavBar = (props) => {
 
     return(
         <div className='font-share-tech-mono flex flex-row justify-center w-screen bg-[#1f1f1f] sm: max-w-screen'>
-            <div className='flex items-center w-full max-w-[1000px] p-3'>
+            <div className='flex items-center w-full max-w-[1000px] p-3 pl-1 pr-1'>
                 <div className='flex w-3/5 shrink text-ellipsis overflow-hidden'>
                     <Link to='/'>
-                        <div className='text-cyan-400 text-2xl pr-1'>Video Game Library</div>
+                        <div className='text-cyan-400 text-xl lg:text-3xl'>Video Game Library</div>
                     </Link>
                 </div>
                 <div className="flex flex-row justify-end w-full">
