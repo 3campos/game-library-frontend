@@ -8,7 +8,6 @@ class ShowCustomGame extends Component {
     }
     
     render(){
-        {console.log('SCG 11 userGoogleId:', this.props.userGoogleId, 'creatorsGoogleId:', this.props.gameCreatorsGoogleId)}
         customGameId = window.location.search.slice(4);
         return(
         <div className='font-share-tech-mono'>
