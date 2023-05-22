@@ -21,9 +21,9 @@ const NavBar = (props) => {
     return(
         <div className='font-share-tech-mono flex flex-row justify-center w-screen bg-[#1f1f1f] sm: max-w-screen'>
             <div className='flex items-center w-full max-w-[1000px] p-3'>
-                <div className='flex w-4/5 inline-flex shrink text-ellipsis '>
+                <div className='flex w-3/5 shrink text-ellipsis overflow-hidden'>
                     <Link to='/'>
-                        <div className='text-cyan-400 font-bold text-3xl pr-1 sm: text-lg'>Video Game Library</div>
+                        <div className='text-cyan-400 text-2xl pr-1'>Video Game Library</div>
                     </Link>
                 </div>
                 <div className="flex flex-row justify-end w-full">
@@ -34,7 +34,7 @@ const NavBar = (props) => {
                                     {props.userName.charAt(0)
                                     }
                                 </button>
-                                <button className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800 sm: text-lg sm: w-20" onClick={logout}>
+                                <button className="flex justify-center w-[95px] h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800 sm: text-lg sm: w-20" onClick={logout}>
                                     <div className="flex self-center text-cyan-400">
                                     Log Out
                                     </div>
@@ -49,14 +49,14 @@ const NavBar = (props) => {
                                     <AddGameBtn />
                                 </div>
                                 <Link to='register'>
-                                    <div className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800 sm: text-lg sm: text-lg sm: w-20">
+                                    <div className="flex justify-center w-[95px] h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800">
                                         <div className="flex self-center text-cyan-400">
                                         Sign Up
                                         </div>
                                     </div>
                                 </Link>
                                 <Link to='auth'>
-                                    <div className="flex justify-center w-24 h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800 ml-2 sm: text-lg sm: w-20">
+                                    <div className="flex justify-center w-[95px] h-16 rounded-full border-solid border-2 border-white text-center text-xl hover:bg-purple-800 ml-2">
                                         <div className="flex self-center text-cyan-400">
                                         Sign In
                                         </div>

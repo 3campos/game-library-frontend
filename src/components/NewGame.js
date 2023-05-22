@@ -69,14 +69,14 @@ class NewGame extends Component {
 
     render() {
         return(
-            <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-start box-border">
-                <div className="w-full max-w-[1000px] items-center">
-                    <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 pl-12'>
+            <div className="font-share-tech-mono bg-gray-600 min-h-screen flex flex-col justify-start items-center box-border">
+                <div className="w-full max-w-[1000px] flex flex-col justify-start items-center">
+                    <h1 className='text-blue-400 font-bold text-4xl my-8 mx-8 sm: flex flex-col justify-start items-center'>
                         Add Custom Game
                     </h1>
                     <form 
                         onSubmit={this.handleSubmit}
-                        className="font-share-tech-mono flex flex-col w-4/5 p-4 max-w-[400px] bg-black rounded mx-8"
+                        className="font-share-tech-mono flex flex-col w-4/5 p-4 max-w-[400px] bg-black rounded sm: mx-10"
                     >
                     <input
                     id='title'
@@ -140,7 +140,7 @@ class NewGame extends Component {
                     />
 
                     </form>
-                    <div className='mt-.5 pt-2 pl-[175px] grid flex-row justify-items-start'>
+                    <div className='mt-.5 pt-2 grid flex flex-col justify-center'>
                     <BackBtn/>
                     </div>
                 </div>
