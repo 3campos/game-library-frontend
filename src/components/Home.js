@@ -5,10 +5,54 @@ import CustomGameTile from './CustomGameTile'
 import '../index.css'
 
 class Home extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            toggleSharedLibrary: true
+        }
+    }
+
+    showSharedGames = () => {
+        if(this.state.toggleSharedLibrary == true){
+                this.setState({
+                    toggleSharedLibrary: false
+                } 
+                )   
+            }
+                return this.state.toggleSharedLibrary
+            }
+
+    showApiGames = () => {
+        if(this.state.toggleSharedLibrary == false){
+            this.setState({
+                toggleSharedLibrary: true
+            })
+        }
+            return this.state.toggleSharedLibrary
+            // console.log(this.state.toggleSharedLibrary)
+    }
+
     render() {
+        console.log('37:', this.state.toggleSharedLibrary)
         return(
             <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-3 pb-14'>
-                <h2 className='text-cyan-400 font-bold text-2xl mb-3'>Popular Games</h2>
+                <div className='flex w-fit flex-rows justify-center min-w-[370px] gap-4 pl-6'>
+                    <div className='pl-32'>
+                    <h2 className='text-cyan-400 font-bold text-2xl mb-3'>Popular Games</h2>
+                    </div>
+                    <div>
+                        <div class="inline-flex">
+                            <button class="bg-[#1f1f1f] hover:bg-gray-400 text-cyan-400 py-2 px-2 rounded-l text-sm border-solid border-2 border-white" onClick={this.showSharedGames}>
+                                Popular
+                            </button>
+                            <button class="bg-[#1f1f1f] hover:bg-gray-400 text-cyan-400 py-2 px-2 rounded-r text-sm border-solid border-2 border-white"
+                            onClick={this.showApiGames}>
+                                Friends
+                            </button>
+                        </div>
+                    </div>
+                </div>
                     <div id="api-tile-container" className='grid w-full sm:w-3/5 sm:min-w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[370px] md:w-4/5'>
                         {this.props.apiGames?.map((game, index) => {
                             return (
