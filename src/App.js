@@ -45,13 +45,15 @@ class App extends Component{
         dbIdForGame: "",
         creatorsGoogleId: ""
       },
-      //oAuth Login State
+      //oAuth Current Login State
       uniqueDbId: "",
       googleId: "",
       userObject: "",
       userName: "",
-      // userEmail: "",
-      // userPassword: "",
+      databaseUsers: [{
+          googleId: "",
+          username: ""
+        }]
     };
   }
 
@@ -150,6 +152,13 @@ class App extends Component{
           return [];
         }
       })
+      .then((data) => {
+        this.setState({
+          //obtaining data from database and updating state when the component mount
+          databaseUsers: data.allUsers
+        })
+      });
+
     }
 
     componentDidMount() {
