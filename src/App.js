@@ -226,6 +226,7 @@ class App extends Component{
                     passGameData={this.passGameData}
                     uniqueDbId={this.state.uniqueDbId}
                     userGoogleId = {this.state.googleId}
+                    databaseUsers={this.state.databaseUsers}
                     />}
                 />
                 <Route
