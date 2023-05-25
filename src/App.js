@@ -28,7 +28,8 @@ class App extends Component{
         rating: "",
         notes: "",
         dbIdForGame: "",
-        creatorsGoogleId: ""
+        creatorsGoogleId: "",
+        permittedUsers: [{permittedName: ""}]
       }],
         baseUrl: 'https://api.rawg.io/api/games?key=',
         key: process.env.REACT_APP_API_KEY,
@@ -90,7 +91,8 @@ class App extends Component{
         rating: gameToEdit.rating,
         notes: gameToEdit.notes,
         dbIdForGame: gameToEdit.dbIdForGame,
-        creatorsGoogleId: gameToEdit.creatorsGoogleId
+        creatorsGoogleId: gameToEdit.creatorsGoogleId,
+        permittedUsers: [{permittedName: gameToEdit.permittedName}]
       }
       })
     }

@@ -54,6 +54,8 @@ class ShowContainerCustom extends Component{
                                 </button>
                                 <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{
                                     // this.props.handleDeleteGame(this.props.id);
+                                    //create a function to map through all users
+                                    //the function should also add a user to this game's object in a 'permitted users' field; the permitted user field should be an array, so that multiple users can be entered
                                     }}
                                     >
                                     <span>
