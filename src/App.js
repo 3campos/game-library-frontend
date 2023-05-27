@@ -11,6 +11,7 @@ import Auth from './components/Auth'
 import Register from './components/Register'
 import { BrowserRouter as Router, Switch, Routes, Route } from "react-router-dom"
 import axios from 'axios';
+import ShareGameBtn from './components/ShareGameBtn';
 
 //define baseURL
 let baseURL = process.env.REACT_APP_BACKEND_URL
@@ -160,14 +161,13 @@ class App extends Component{
           databaseUsers: data.allUsers
         })
       });
-
     }
 
     componentDidMount() {
       this.getGames();
       this.getApiGameUrl();
-      this.getUser();
-      this.getAllUsers();
+      // this.getUser();
+      // this.getAllUsers();
     }
 
     render() {
@@ -255,6 +255,12 @@ class App extends Component{
                     passGameData={this.passGameData}
                     userGoogleId = {this.state.googleId}/>}
                   />
+                <Route
+                path='/share'
+                element={
+                  <ShareGameBtn/>
+                }
+                />
               </Routes>
         </Router>
       );
