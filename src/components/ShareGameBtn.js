@@ -61,16 +61,16 @@ class ShareGameBtn extends Component {
             {/* need to use a for loop or other method to iterate through users */}
             </div>
             <>
-            {this.state.clickState == false ? <div className='flex flex-col gap-2 w-36 h-24 overflow-y-scroll items-center ml-3'>
+            {this.state.clickState == false ? <div className='flex flex-col gap-1.5 w-40 h-40 overflow-y-scroll items-center pl-1 ml-[5px] rounded-lg border-solid border-2 border-white py-2'>
                 {this.state.databaseUsersToShare?.map((user, index) =>  {
                 return(
-                <button key = {index} className='flex justify-center items-center w-24 h-8 rounded border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900'>
+                <button key = {index} className='flex justify-center items-center w-28 h-14 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-evenly'>
                     {user.username}
                     </button>
                 )
                 })}
             </div> :
-            <div className='flex flex-col gap-2 w-36 h-24 overflow-y-scroll items-center ml-3 invisible'></div>
+            <div className='flex flex-col gap-1.5 w-40 h-40 overflow-y-scroll items-center pl-1 ml-[5px] rounded-lg border-solid border-2 border-white py-2 invisible'></div>
             }
             </>
             <button className='flex justify-center items-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900 mt-2' onClick={this.showUsersToShare}>
