@@ -65,8 +65,8 @@ class ShareGameBtn extends Component {
             </div>
             <>
             {this.state.clickState == false ? <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 animate-slide-in'>
-            <button type="button" class="bg-white rounded-md p-2 inline-flex self-end justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 mr-1" onClick={this.showUsersToShare}>
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <button type="button" class="absolute bg-white rounded-md p-1 inline-flex self-end justify-center text-gray-400 hover:text-violet-900 hover:bg-gray-100 focus:ring-2 focus:ring-inset focus:ring-violet-900 -mr-2 -mt-4" onClick={this.showUsersToShare}>
+              <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
