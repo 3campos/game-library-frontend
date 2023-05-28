@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 
+//to do next
+//i need to push into permittedName the name of the person that's permitted to view: permittedUsers: [{permittedName: ""}]
+
 let usersURL = "http://localhost:3003/users"
 
 class ShareGameBtn extends Component {
@@ -62,6 +65,11 @@ class ShareGameBtn extends Component {
             </div>
             <>
             {this.state.clickState == false ? <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 animate-slide-in'>
+            <button type="button" class="bg-white rounded-md p-2 inline-flex self-end justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 mr-1" onClick={this.showUsersToShare}>
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
                 {this.state.databaseUsersToShare?.map((user, index) =>  {
                 return(
                 <button key = {index} className='flex justify-center items-center w-28 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-evenly'>
@@ -70,7 +78,20 @@ class ShareGameBtn extends Component {
                 )
                 })}
             </div> :
-            <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center pl-1 ml-[5px] rounded-lg border-solid border-2 border-white py-2 invisible'></div>
+            // <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center pl-1 ml-[5px] rounded-lg border-solid border-2 border-white py-2 invisible'></div>
+            null
+            }
+             {this.state.clickState == true ? <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 transition opacity-0'>
+                {this.state.databaseUsersToShare?.map((user, index) =>  {
+                return(
+                <button key = {index} className='flex justify-center items-center w-28 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-evenly'>
+                    {user.username}
+                    </button>
+                )
+                })}
+            </div> :
+            // <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center pl-1 ml-[5px] rounded-lg border-solid border-2 border-white py-2 invisible'></div>
+            null
             }
             </>
             <button className='flex justify-center items-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900 mt-2' onClick={this.showUsersToShare}>
