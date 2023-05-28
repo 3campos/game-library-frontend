@@ -46,7 +46,11 @@ class ShareGameBtn extends Component {
             clickState: true
         }) 
         }
-        console.log(this.state.clickState)
+      }
+
+      addUserToPermittedUsers = (e, data) => {
+        console.log(e.currentTarget.innerText)
+        //gets user's name
       }
 
       componentDidMount() {
@@ -72,7 +76,7 @@ class ShareGameBtn extends Component {
             </button>
                 {this.state.databaseUsersToShare?.map((user, index) =>  {
                 return(
-                <button key = {index} className='flex justify-center items-center w-28 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-evenly'>
+                <button key = {index} className='flex justify-center items-center w-28 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-evenly' onClick ={this.addUserToPermittedUsers}>
                     {user.username}
                     </button>
                 )
