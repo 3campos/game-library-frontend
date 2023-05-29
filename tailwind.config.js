@@ -8,7 +8,7 @@ module.exports = {
       },
       keyframes: {
       slide: {
-        '0%': { transform: 'translateY(5%)'
+        '0%': { transform: 'translateY(10%)'
         },
         '100%' : { transform: 'translateY(0%)'
         }

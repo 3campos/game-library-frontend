@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import EditBtn from './EditBtn'
 import BackBtn from './BackBtn'
+import ShareGameBtn from './ShareGameBtn'
 
 class ShowContainerCustom extends Component{
     constructor(props){
@@ -41,7 +42,7 @@ class ShowContainerCustom extends Component{
                         {/* {this.props.userGoogleId == this.props.gameCreatorsGoogleId ? */}
                         {!this.props.gameCreatorsGoogleId ?
                             <>
-                            <div className = "grid flex-col grid-cols-3 justify-items-center pb-1 pt-.5">
+                            <div className = "grid flex-col grid-cols-4 justify-items-center pb-1 pt-.5">
                                 <div>
                                     <EditBtn id = {this.props.id}/>
                                 </div>
@@ -53,16 +54,18 @@ class ShowContainerCustom extends Component{
                                         Delete Game
                                     </span>
                                 </button>
-                                <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{
-                                    // this.props.handleDeleteGame(this.props.id);
+                                {/* <button className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900" onClick={()=>{ */}
+                                    {/* // this.props.handleDeleteGame(this.props.id);
                                     //create a function to map through all users
-                                    //the function should also add a user to this game's object in a 'permitted users' field; the permitted user field should be an array, so that multiple users can be entered
-                                    }}
-                                    >
-                                    <span>
-                                        Share Game
-                                    </span>
-                                </button>
+                                    //the function should also add a user to this game's object in a 'permitted users' field; the permitted user field should be an array, so that multiple users can be entered */}
+                                <div>
+                                    <ShareGameBtn 
+                                    passGameData={this.props.passGameData}
+                                    dbIdForGame={this.props.uniqueDbId}
+                                    userGoogleId={this.props.userGoogleId}
+                                    databaseUsers={this.props.databaseUsers}
+                                    />
+                                </div>
                                 <div>
                                     <BackBtn/>
                                 </div>

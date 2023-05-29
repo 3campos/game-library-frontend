@@ -16,6 +16,7 @@ import ShareGameBtn from './components/ShareGameBtn';
 //define baseURL
 let baseURL = process.env.REACT_APP_BACKEND_URL
 let usersURL = process.env.REACT_APP_BACKEND_USERS_URL
+let usersURLTest = "http://localhost:3003/users"
 
 class App extends Component{
   constructor(props) {
@@ -147,7 +148,7 @@ class App extends Component{
     }
 
     getAllUsers = () => {
-      fetch(usersURL)
+      fetch(usersURLTest)
       .then((res) => {
         if (res.status ===200) {
           return res.json();
@@ -167,7 +168,7 @@ class App extends Component{
       this.getGames();
       this.getApiGameUrl();
       // this.getUser();
-      // this.getAllUsers();
+      this.getAllUsers();
     }
 
     render() {
@@ -229,6 +230,7 @@ class App extends Component{
                     uniqueDbId={this.state.uniqueDbId}
                     userGoogleId = {this.state.googleId}
                     databaseUsers={this.state.databaseUsers}
+                    getAllUsers={this.getAllUsers}
                     />}
                 />
                 <Route
@@ -255,12 +257,6 @@ class App extends Component{
                     passGameData={this.passGameData}
                     userGoogleId = {this.state.googleId}/>}
                   />
-                <Route
-                path='/share'
-                element={
-                  <ShareGameBtn/>
-                }
-                />
               </Routes>
         </Router>
       );
