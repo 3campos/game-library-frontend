@@ -24,6 +24,7 @@ class ShowCustomGame extends Component {
                             gameDuration={game.playtime}
                             gameRating={game.rating}
                             gameNotes={game.notes}
+                            gamePermittedUsers={game.permittedUsers}
                             handleDeleteGame={this.props.handleDeleteGame}
                             gameToEdit={this.props.gameToEdit}
                             passGameData={this.props.passGameData}

@@ -10,17 +10,11 @@ class ShareGameBtn extends Component {
     constructor(props){
         super(props);
         this.state = {
-        //     databaseUsersToShare: [{
-        //         googleId: "",
-        //         username: ""
-        //       }],
               clickState: true,
           };
     }
 
       showUsersToShare = () => {
-        // {this.state.clickState ? this.state.clickState = false : this.state.clickState = true}
-        // console.log(this.state.clickState)
         {this.state.clickState ?
         this.setState({
             clickState: false
@@ -30,6 +24,8 @@ class ShareGameBtn extends Component {
             clickState: true
         }) 
         }
+        console.log('line 27:', this.props)
+        console.log('line 28:', this.props.gamePermittedUsers)
       }
 
       addUserToPermittedUsers = (e, data) => {
@@ -44,14 +40,14 @@ class ShareGameBtn extends Component {
     render () {
         return(
             <div className="flex justify-center w-36 h-16">
-                {/* <div className="flex justify-center w-28 h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900">
-                    <p className='flex self-center'>Edit Game</p> */}
             <>
             {this.state.clickState == false ? 
             <div className='absolute flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 animate-slide-in -mt-20'>
+              {console.log('line 46:', this.props)}
+              {console.log('line 47:', this.props.gamePermittedUsers)}
             <button type="button" className="sticky -left-1 -top-2 bg-white rounded-md p-1 inline-flex self-start justify-center text-black hover:text-violet-900 hover:bg-gray-100 focus:ring-2 focus:ring-inset focus:ring-violet-900 -mt-2 -mb-5" onClick={this.showUsersToShare}>
               <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
                 {this.props.databaseUsers?.map((user, index) =>  {
@@ -62,7 +58,6 @@ class ShareGameBtn extends Component {
                 )
                 })}
             </div> :
-            // <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center pl-1 ml-[5px] rounded-lg border-solid border-2 border-white py-2 invisible'></div>
             null
             }
              {this.state.clickState == true ? 
@@ -75,7 +70,6 @@ class ShareGameBtn extends Component {
                 )
                 })}
             </div> :
-            // <div className='flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center pl-1 ml-[5px] rounded-lg border-solid border-2 border-white py-2 invisible'></div>
             null
             }
             </>

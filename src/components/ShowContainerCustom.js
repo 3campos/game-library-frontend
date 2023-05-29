@@ -3,6 +3,7 @@ import EditBtn from './EditBtn'
 import BackBtn from './BackBtn'
 import ShareGameBtn from './ShareGameBtn'
 
+let customGameId = window.location.search.slice(4);
 class ShowContainerCustom extends Component{
     constructor(props){
         super(props)
@@ -19,12 +20,14 @@ class ShowContainerCustom extends Component{
                 notes: this.props.gameNotes,
                 dbIdForGame: this.props.dbIdForGame,
                 creatorsGoogleId: this.props.creatorsGoogleId,
-                permittedUsers: [{permittedName: this.props.permittedName}]
+                permittedUsers: [{permittedName: this.props.gamePermittedUsers}]
             }
             this.props.passGameData(gameToEdit)
         }
 
     render() {
+        console.log('28 showContainerCustom:', this.props.gamePermittedUsers)
+        customGameId = window.location.search.slice(4);
         return(
             <>
             <div className='font-share-tech-mono bg-gray-800 min-h-screen flex justify-center'>
@@ -59,7 +62,9 @@ class ShowContainerCustom extends Component{
                                     //create a function to map through all users
                                     //the function should also add a user to this game's object in a 'permitted users' field; the permitted user field should be an array, so that multiple users can be entered */}
                                 <div>
-                                    <ShareGameBtn 
+                                    <ShareGameBtn      
+                                    gamePermittedUsers={this.props.gamePermittedUsers}
+                                    gameToEdit={this.props.gameToEdit}
                                     passGameData={this.props.passGameData}
                                     dbIdForGame={this.props.uniqueDbId}
                                     userGoogleId={this.props.userGoogleId}

@@ -102,6 +102,16 @@ class Home extends Component {
                                             gameDuration = {game.playtime}
                                             gameRating = {game.rating}
                                             gameNotes={game.notes}
+                                            // gamePermittedUsers={game.permittedUsers?.map((user, index) => {
+                                            //         return(
+                                            //             <>
+                                            //             key={index}
+                                            //             permittedUser={user.permittedName}
+                                            //             </>
+                                            //         )
+                                            //     })
+                                            // }
+                                            gamePermittedUsers={game.permittedUsers}
                                             passGameData={this.props.passGameData}
                                             dbIdForGame={this.props.uniqueDbId}
                                             gameCreatorsGoogleId ={game.creatorsGoogleId}
@@ -131,6 +141,7 @@ class Home extends Component {
                                             dbIdForGame={this.props.uniqueDbId}
                                             gameCreatorsGoogleId ={game.creatorsGoogleId}
                                             userGoogleId={this.props.userGoogleId}
+                                            gamePermittedUsers={game.permittedUsers}
                                             />
                                         )
                                     }
@@ -164,6 +175,7 @@ class Home extends Component {
                                         dbIdForGame={this.props.uniqueDbId}
                                         gameCreatorsGoogleId ={game.creatorsGoogleId}
                                         userGoogleId={this.props.userGoogleId}
+                                        gamePermittedUsers={game.permittedUsers}
                                         />
                                     )
                                 }
