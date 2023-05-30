@@ -26,7 +26,6 @@ class ShowContainerCustom extends Component{
         }
 
     render() {
-        console.log('28 showContainerCustom:', this.props.gamePermittedUsers)
         customGameId = window.location.search.slice(4);
         return(
             <>
@@ -63,7 +62,7 @@ class ShowContainerCustom extends Component{
                                     //the function should also add a user to this game's object in a 'permitted users' field; the permitted user field should be an array, so that multiple users can be entered */}
                                 <div>
                                     <ShareGameBtn      
-                                    gamePermittedUsers={this.props.gamePermittedUsers}
+                                    // gamePermittedUsers={this.props.gamePermittedUsers}
                                     gameToEdit={this.props.gameToEdit}
                                     passGameData={this.props.passGameData}
                                     dbIdForGame={this.props.uniqueDbId}
