@@ -10,7 +10,8 @@ class EditGameForm extends Component {
             genre: this.props.gameToEdit.genre,
             rating: this.props.gameToEdit.rating,
             dbIdForGame: this.props.gameToEdit.uniqueDbId,
-            creatorsGoogleId: this.props.gameToEdit.userGoogleId
+            creatorsGoogleId: this.props.gameToEdit.userGoogleId,
+            permittedUsers: [{permittedName: this.props.gameToEdit.gamePermittedUsers}]
         }
     }
 
@@ -46,6 +47,7 @@ class EditGameForm extends Component {
         })
         .catch(err => (console.log(err)))
     }
+    
     render(){
         return(
             <>
