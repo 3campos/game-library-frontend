@@ -36,8 +36,11 @@ class ShareGameBtn extends Component {
         // const copyPermittedUsers = [...this.state.permittedUsers]
         const copyPermittedUsers = [...this.props.gameToEdit.permittedUsers]
         // console.log('37 copyPerUsers', copyPermittedUsers)
+
         copyPermittedUsers.push({permittedName: e.currentTarget.innerText})
+        
         this.props.gameToEdit.permittedUsers = copyPermittedUsers
+
         // console.log('39, copyPerUsers push', copyPermittedUsers)
                         // this.setState({permittedUsers: copyPermittedUsers})
         // console.log('41, state perUsers', this.state.permittedUsers)
@@ -69,9 +72,16 @@ class ShareGameBtn extends Component {
 
         //does not change the data in mongoDB, but note that this function does push the name successfully per line 37 console.log
         // console.log('line 63, post-push-&-setState:', this.state.permittedUsers)
+        .then(window.alert(`${e.currentTarget.innerText} is now following this game!`))
+        .then(
+          this.forceUpdate()
+        )
         console.log('line 71, post-push:', this.props.gameToEdit.permittedUsers)
       }
 
+      // shareAlert = (e) => {
+      //   window.alert(`${e.currentTarget.innerText} is now following this game!`)
+      // }
       // setPermittedUsersState = () => {
       //   this.setState({
       //     permittedUsers: this.props.gameToEdit.permittedUsers
@@ -97,13 +107,24 @@ class ShareGameBtn extends Component {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
+                
                 {this.props.databaseUsers?.map((user, index) =>  {
                 return(
-                <button key = {index} className='flex justify-center items-center w-28 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-between' onClick ={this.addUserToPermittedUsers}>
-                    <div>{user.username}</div>
-                  </button>
+                  <>
+                  {this.props.gameToEdit.permittedUsers.some(e => e.permittedName == user.username) ? 
+                      null
+                    : 
+                    <button key = {index} className='flex justify-center items-center w-[108px] h-8 ml-3 rounded-md border-solid border-y-2 border-x border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-between' onClick={this.addUserToPermittedUsers}>
+                    {/* {this.props.gameToEdit.permittedUsers.some(e => e.permittedName == user.username) ? 
+                      <div className='pointer-events-none'>{user.username} {`${`(Already Shared!)`}`} </div> : <div>{user.username}</div> } */}
+                      <p className='truncate'><div className={user.username.length>4?'hover:-translate-x-1/2 duration-[3000ms] delay-150':`truncate`}>{user.username}</div>
+                      </p>
+                    </button>
+                    }
+                  </>
                 )
                 })}
+
             </div> :
             null
             }
