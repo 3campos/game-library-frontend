@@ -69,6 +69,7 @@ class ShowContainerCustom extends Component{
                                     dbIdForGame={this.props.uniqueDbId}
                                     userGoogleId={this.props.userGoogleId}
                                     databaseUsers={this.props.databaseUsers}
+                                    userName = {this.props.userName}
                                     />
                                 </div>
                                 <div>
@@ -81,7 +82,7 @@ class ShowContainerCustom extends Component{
                             {
                                 this.props.gameCreatorsGoogleId && this.props.userGoogleId == this.props.gameCreatorsGoogleId ?
                                 <>
-                                    <div className = "grid flex-col grid-cols-3 justify-items-center pb-1 pt-.5">
+                                    <div className = "grid flex-col grid-cols-4 justify-items-center pb-1 pt-.5">
                                         <div>
                                             <EditBtn id = {this.props.id}/>
                                         </div>
@@ -93,6 +94,17 @@ class ShowContainerCustom extends Component{
                                                 Delete Game
                                             </span>
                                         </button>
+                                        <div>
+                                            <ShareGameBtn      
+                                            // gamePermittedUsers={this.props.gamePermittedUsers}
+                                            gameToEdit={this.props.gameToEdit}
+                                            passGameData={this.props.passGameData}
+                                            dbIdForGame={this.props.uniqueDbId}
+                                            userGoogleId={this.props.userGoogleId}
+                                            databaseUsers={this.props.databaseUsers}
+                                            userName = {this.props.userName}
+                                            />
+                                        </div>
                                         <div><BackBtn/></div>
                                     </div>   
                                 </>

@@ -233,6 +233,7 @@ class App extends Component{
                     uniqueDbId={this.state.uniqueDbId}
                     userGoogleId = {this.state.googleId}
                     databaseUsers={this.state.databaseUsers}
+                    userName = {this.state.userName}
                     getAllUsers={this.getAllUsers}
                     />}
                 />

@@ -88,7 +88,7 @@ class Home extends Component {
                         <div>
                             {this.state.toggleSharedLibrary ? 
                                 <>
-                                //this map method shows the user's own games
+                                {/* //this map method shows the user's own games */}
                                 {this.props.customGames?.map((game, index) =>  {
                                     if(this.props.uniqueDbId == game.dbIdForGame){
                                         return(
@@ -116,6 +116,7 @@ class Home extends Component {
                                             dbIdForGame={this.props.uniqueDbId}
                                             gameCreatorsGoogleId ={game.creatorsGoogleId}
                                             userGoogleId={this.props.userGoogleId}
+                                            userName={this.props.userName}
                                             />
                                         )
                                     }
@@ -125,7 +126,8 @@ class Home extends Component {
                             //this map method shows games that are shared with this user by others
                                 <>
                                 {this.props.customGames?.map((game, index) =>  {
-                                    if(this.props.uniqueDbId == game.dbIdForGame){
+                                    // finish conditional statement
+                                    if(this.props.uniqueDbId != game.dbIdForGame && game.permittedUsers.some(e => e.permittedName == this.props.userName)){
                                         return(
                                             <CustomGameTile
                                             cssKeys={index}
@@ -142,6 +144,7 @@ class Home extends Component {
                                             gameCreatorsGoogleId ={game.creatorsGoogleId}
                                             userGoogleId={this.props.userGoogleId}
                                             gamePermittedUsers={game.permittedUsers}
+                                            userName={this.props.userName}
                                             />
                                         )
                                     }
@@ -176,6 +179,7 @@ class Home extends Component {
                                         gameCreatorsGoogleId ={game.creatorsGoogleId}
                                         userGoogleId={this.props.userGoogleId}
                                         gamePermittedUsers={game.permittedUsers}
+                                        userName={this.props.userName}
                                         />
                                     )
                                 }

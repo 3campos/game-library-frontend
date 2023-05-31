@@ -32,6 +32,7 @@ class ShowCustomGame extends Component {
                             gameCreatorsGoogleId ={game.creatorsGoogleId}
                             userGoogleId={this.props.userGoogleId}
                             databaseUsers={this.props.databaseUsers}
+                            userName={this.props.userName}
                             />
                         </div>
                     )

@@ -94,7 +94,7 @@ class ShareGameBtn extends Component {
 
     render () {
       // {console.log('82 state:', this.state.permittedUsers, 'props gametoedit', this.props.gameToEdit.permittedUsers)}
-      {console.log('82 props', this.props.gameToEdit.permittedUsers)}
+      {console.log('82 userName via prop', this.props.userName)}
         return(
             <div className="flex justify-center w-36 h-16">
             <>
@@ -111,7 +111,11 @@ class ShareGameBtn extends Component {
                 {this.props.databaseUsers?.map((user, index) =>  {
                 return(
                   <>
-                  {this.props.gameToEdit.permittedUsers.some(e => e.permittedName == user.username) ? 
+                  { 
+                    (this.props.gameToEdit.permittedUsers.some(e => e.permittedName == user.username))
+                    || (user.username == this.props.userName)
+                    || (this.props.userName == null)
+                    ? 
                       null
                     : 
                     <button key = {index} className='flex justify-center items-center w-[108px] h-8 ml-3 rounded-md border-solid border-y-2 border-x border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-between' onClick={this.addUserToPermittedUsers}>
@@ -120,7 +124,7 @@ class ShareGameBtn extends Component {
                       <p className='truncate'><div className={user.username.length>4?'hover:-translate-x-1/2 duration-[3000ms] delay-150':`truncate`}>{user.username}</div>
                       </p>
                     </button>
-                    }
+                  }
                   </>
                 )
                 })}
