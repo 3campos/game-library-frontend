@@ -145,6 +145,7 @@ class Home extends Component {
                                             userGoogleId={this.props.userGoogleId}
                                             gamePermittedUsers={game.permittedUsers}
                                             userName={this.props.userName}
+                                            databaseUsers={this.props.databaseUsers}
                                             />
                                         )
                                     }

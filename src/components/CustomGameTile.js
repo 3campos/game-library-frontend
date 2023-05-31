@@ -14,8 +14,26 @@ class CustomGameTile extends Component {
                         <Link to={`/showcustom?id=${this.props.id}`}>
                             <div>{<img className ="ml-1 mr-1 border-2 w-auto w-36 h-auto h-24" src = {this.props.gameImage} />}</div>
                         </Link></div>
-                        <p className='flex flex-row'>Rating: {this.props.gameRating}/5
-                        </p>
+                        <div className='flex flex-row'>
+                        <>
+                            {this.props.databaseUsers?.map((user, index) =>  {
+                            return(
+                                <>
+                                { 
+                            ((this.props.gameCreatorsGoogleId != this.props.userGoogleId) && (user.googleId == this.props.gameCreatorsGoogleId))
+                            ? 
+                            <div>
+                                {user.username}'s Game
+                            </div>
+                            : 
+                            <p className='flex flex-row'>Rating: {this.props.gameRating}/5
+                            </p>
+                            }
+                            </>
+                            )
+                            })}
+                            </>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -193,6 +193,7 @@ class App extends Component{
                     apiGames={this.state.games}
                     userGoogleId={this.state.googleId}
                     passGameData={this.passGameData}
+                    databaseUsers={this.state.databaseUsers}
                     />}
                 />
                 <Route 
