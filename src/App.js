@@ -46,7 +46,10 @@ class App extends Component{
         rating: "",
         notes: "",
         dbIdForGame: "",
-        creatorsGoogleId: ""
+        creatorsGoogleId: "",
+        permittedUsers: [{
+          permittedName: ""
+        }]
       },
       //oAuth Current Login State
       uniqueDbId: "",
@@ -94,7 +97,7 @@ class App extends Component{
         notes: gameToEdit.notes,
         dbIdForGame: gameToEdit.dbIdForGame,
         creatorsGoogleId: gameToEdit.creatorsGoogleId,
-        permittedUsers: [{permittedName: gameToEdit.permittedName}]
+        permittedUsers: gameToEdit.permittedUsers
       }
       })
     }

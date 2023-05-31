@@ -11,7 +11,7 @@ class EditGameForm extends Component {
             rating: this.props.gameToEdit.rating,
             dbIdForGame: this.props.gameToEdit.uniqueDbId,
             creatorsGoogleId: this.props.gameToEdit.userGoogleId,
-            permittedUsers: [{permittedName: this.props.gameToEdit.permittedUsers}]
+            permittedUsers: this.props.gameToEdit.permittedUsers
         }
     }
 

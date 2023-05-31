@@ -14,7 +14,7 @@ class NewGame extends Component {
             notes: '',
             dbIdForGame: this.props.uniqueDbId,
             creatorsGoogleId: this.props.googleId,
-            permittedUsers: [{permittedName: ""}]
+            permittedUsers: []
         }
     }
 
@@ -42,7 +42,8 @@ class NewGame extends Component {
                 notes: this.state.notes,
                 dbIdForGame: this.props.uniqueDbId,
                 creatorsGoogleId: this.props.userGoogleId,
-                permittedUsers: [{permittedName: ""}]
+                // permittedUsers: [{permittedName: ""}]
+                permittedUsers: this.state.permittedUsers
             })
         })
 

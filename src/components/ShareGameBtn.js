@@ -11,7 +11,7 @@ class ShareGameBtn extends Component {
         super(props);
         this.state = {
               clickState: true,
-              permittedUsers: [{permittedName: this.props.gameToEdit.permittedUsers}]
+              // permittedUsers: this.props.gameToEdit.permittedUsers
           };
     }
 
@@ -30,13 +30,17 @@ class ShareGameBtn extends Component {
       }
 
       addUserToPermittedUsers = (e, data) => {
-        console.log(e.currentTarget.innerText)
+        // console.log(e.currentTarget.innerText)
         //gets user's name
 
-        const copyPermittedUsers = [...this.state.permittedUsers]
+        // const copyPermittedUsers = [...this.state.permittedUsers]
+        const copyPermittedUsers = [...this.props.gameToEdit.permittedUsers]
+        // console.log('37 copyPerUsers', copyPermittedUsers)
         copyPermittedUsers.push({permittedName: e.currentTarget.innerText})
-        this.setState({permittedUsers: copyPermittedUsers})
-
+        this.props.gameToEdit.permittedUsers = copyPermittedUsers
+        // console.log('39, copyPerUsers push', copyPermittedUsers)
+                        // this.setState({permittedUsers: copyPermittedUsers})
+        // console.log('41, state perUsers', this.state.permittedUsers)
         // alert(`${e.currentTarget.innerText} is now following your game!`)
 
         // this.setState({permittedUsers: [this.state.permittedUsers.push({permittedName: e.currentTarget.innerText})]})
@@ -44,7 +48,8 @@ class ShareGameBtn extends Component {
           fetch(`${process.env.REACT_APP_BACKEND_URL}/${this.props.gameToEdit.id}`, {
             method: 'PUT',
             body: JSON.stringify({
-                permittedUsers: this.state.permittedUsers
+                // permittedUsers: this.state.permittedUsers
+                permittedUsers: this.props.gameToEdit.permittedUsers
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -63,15 +68,23 @@ class ShareGameBtn extends Component {
         .catch(err => (console.log(err)))
 
         //does not change the data in mongoDB, but note that this function does push the name successfully per line 37 console.log
-        console.log('line 63, post-push-&-setState:', this.state.permittedUsers)
+        // console.log('line 63, post-push-&-setState:', this.state.permittedUsers)
+        console.log('line 71, post-push:', this.props.gameToEdit.permittedUsers)
       }
 
+      // setPermittedUsersState = () => {
+      //   this.setState({
+      //     permittedUsers: this.props.gameToEdit.permittedUsers
+      //   })
+      // }
+
       // componentDidMount() {
-      //   this.addUserToPermittedUsers();
+      //   this.setPermittedUsersState();
       // }
 
     render () {
-      console.log('74 state:', this.state.permittedUsers, 'props gametoedit', this.props.gameToEdit.permittedUsers)
+      // {console.log('82 state:', this.state.permittedUsers, 'props gametoedit', this.props.gameToEdit.permittedUsers)}
+      {console.log('82 props', this.props.gameToEdit.permittedUsers)}
         return(
             <div className="flex justify-center w-36 h-16">
             <>
