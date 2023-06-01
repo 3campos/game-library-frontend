@@ -151,7 +151,7 @@ class App extends Component{
     }
 
     getAllUsers = () => {
-      fetch(usersURLTest)
+      fetch(usersURL)
       .then((res) => {
         if (res.status ===200) {
           return res.json();
