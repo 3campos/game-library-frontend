@@ -4,8 +4,6 @@ import { Link } from "react-router-dom"
 //to do next
 //i need to push into permittedName the name of the person that's permitted to view: permittedUsers: [{permittedName: ""}]
 
-let usersURL = "http://localhost:3003/users"
-
 class ShareGameBtn extends Component {
     constructor(props){
         super(props);

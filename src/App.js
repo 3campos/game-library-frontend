@@ -16,7 +16,6 @@ import ShareGameBtn from './components/ShareGameBtn';
 //define baseURL
 let baseURL = process.env.REACT_APP_BACKEND_URL
 let usersURL = process.env.REACT_APP_BACKEND_USERS_URL
-let usersURLTest = "http://localhost:3003/users"
 
 class App extends Component{
   constructor(props) {
