@@ -170,7 +170,7 @@ class App extends Component{
     componentDidMount() {
       this.getGames();
       this.getApiGameUrl();
-      // this.getUser();
+      this.getUser();
       this.getAllUsers();
     }
 
