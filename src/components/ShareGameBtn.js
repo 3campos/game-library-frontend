@@ -77,19 +77,6 @@ class ShareGameBtn extends Component {
         console.log('line 71, post-push:', this.props.gameToEdit.permittedUsers)
       }
 
-      // shareAlert = (e) => {
-      //   window.alert(`${e.currentTarget.innerText} is now following this game!`)
-      // }
-      // setPermittedUsersState = () => {
-      //   this.setState({
-      //     permittedUsers: this.props.gameToEdit.permittedUsers
-      //   })
-      // }
-
-      // componentDidMount() {
-      //   this.setPermittedUsersState();
-      // }
-
     render () {
       // {console.log('82 state:', this.state.permittedUsers, 'props gametoedit', this.props.gameToEdit.permittedUsers)}
       {console.log('82 userName via prop', this.props.userName)}
