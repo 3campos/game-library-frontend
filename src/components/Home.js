@@ -89,6 +89,7 @@ class Home extends Component {
                             {this.state.toggleSharedLibrary ? 
                                 <>
                                 {/* //this map method shows the user's own games */}
+                                <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[767px] md:w-4/5">
                                 {this.props.customGames?.map((game, index) =>  {
                                     if(this.props.uniqueDbId == game.dbIdForGame){
                                         return(
@@ -121,10 +122,12 @@ class Home extends Component {
                                         )
                                     }
                                 })}
+                                </div>
                                 </>
                             :
                             //this map method shows games that are shared with this user by others
                                 <>
+                                <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[767px] md:w-4/5">
                                 {this.props.customGames?.map((game, index) =>  {
                                     // finish conditional statement
                                     if(this.props.uniqueDbId != game.dbIdForGame && game.permittedUsers.some(e => e.permittedName == this.props.userName)){
@@ -150,6 +153,7 @@ class Home extends Component {
                                         )
                                     }
                                 })}
+                                </div>
                                 </>
                             }
                         </div>
