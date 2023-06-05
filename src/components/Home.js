@@ -69,7 +69,7 @@ class Home extends Component {
                             }
                         </>
                     <div id="custom-game-tile" className="grid w-full 
-                    sm:w-3/5 sm:min-w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit min-w-[370px] md:w-4/5">
+                    sm:w-3/5 sm:min-w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[764px] min-w-[370px] md:w-4/5">
                         <div>
                             <div class="inline-flex mt-2">
                                 <button class="bg-[#1f1f1f] hover:bg-gray-400 text-cyan-400 py-2 px-2 rounded-l text-sm border-solid border-2 border-white h-10" onClick={this.showSharedGames}>
@@ -89,7 +89,6 @@ class Home extends Component {
                             {this.state.toggleSharedLibrary ? 
                                 <>
                                 {/* //this map method shows the user's own games */}
-                                <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[767px] md:w-4/5">
                                 {this.props.customGames?.map((game, index) =>  {
                                     if(this.props.uniqueDbId == game.dbIdForGame){
                                         return(
@@ -122,12 +121,10 @@ class Home extends Component {
                                         )
                                     }
                                 })}
-                                </div>
                                 </>
                             :
                             //this map method shows games that are shared with this user by others
                                 <>
-                                <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[767px] md:w-4/5">
                                 {this.props.customGames?.map((game, index) =>  {
                                     // finish conditional statement
                                     if(this.props.uniqueDbId != game.dbIdForGame && game.permittedUsers.some(e => e.permittedName == this.props.userName)){
@@ -153,7 +150,6 @@ class Home extends Component {
                                         )
                                     }
                                 })}
-                                </div>
                                 </>
                             }
                         </div>
@@ -165,7 +161,7 @@ class Home extends Component {
                         <div className='flex w-fit flex-rows justify-center min-w-[370px] gap-4 pl-6'>
                                 <h2 className='text-cyan-400 font-bold text-2xl my-3'>Demo Account's Games</h2>
                         </div>
-                        <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[767px] md:w-4/5">
+                        <div id="custom-game-tile" className="grid w-full sm:w-3/5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 h-[370px] grid-flow-row gap-4 bg-transparent overflow-scroll max-w-fit lg:min-w-[764px] md:w-4/5">
                             {this.props.customGames?.map((game, index) =>  {
                                 if(!game.creatorsGoogleId){
                                     return(
