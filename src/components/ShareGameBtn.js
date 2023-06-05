@@ -83,6 +83,7 @@ class ShareGameBtn extends Component {
         return(
             <div className="flex justify-center w-36 h-16">
             <>
+            
             {this.state.clickState == false ? 
             <div className='absolute flex flex-col gap-1.5 w-40 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 animate-slide-in -mt-20'>
               {/* {console.log('line 81:', this.props)}
@@ -92,14 +93,14 @@ class ShareGameBtn extends Component {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-                
+                <>
                 {this.props.databaseUsers?.map((user, index) =>  {
                 return(
                   <>
                   { 
                     (this.props.gameToEdit.permittedUsers.some(e => e.permittedName == user.username))
                     || (user.username == this.props.userName)
-                    || (this.props.userName == null)
+                    // || (this.props.userName == null)
                     ? 
                       null
                     : 
@@ -113,12 +114,15 @@ class ShareGameBtn extends Component {
                   </>
                 )
                 })}
+                </>
 
             </div> :
             null
             }
-             {this.state.clickState == true ? 
-             <div className='absolute flex flex-col gap-1.5 w-36 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 transition opacity-0 -mt-20'>
+            
+            
+            {this.state.clickState == true ? 
+            <div className='absolute flex flex-col gap-1.5 w-36 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 transition opacity-0 -mt-20'>
                 {this.props.databaseUsers?.map((user, index) =>  {
                 return(
                 <button key = {index} className='flex justify-center items-center w-28 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-evenly'>
@@ -126,8 +130,8 @@ class ShareGameBtn extends Component {
                     </button>
                 )
                 })}
-            </div> :
-            null
+              </div> :
+              null
             }
             </>
             <button className='flex absolute justify-center items-center w-28 sm: w-20 sm: text-lg h-16 rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900' onClick={this.showUsersToShare}>
