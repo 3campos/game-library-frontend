@@ -104,12 +104,15 @@ class ShareGameBtn extends Component {
                     ? 
                       null
                     : 
-                    <button key = {index} className='flex justify-center items-center w-[108px] h-8 ml-3 rounded-md border-solid border-y-2 border-x border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-between' onClick={this.addUserToPermittedUsers}>
+                    <button key = {index} className='flex justify-center items-center w-[108px] h-8 ml-3 rounded-md border-solid border-y-2 border-x border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-between' 
+                    // onClick={this.addUserToPermittedUsers}
+                    // uncomment addUserToPermittedUsers click function above
+                    >
                     {/* {this.props.gameToEdit.permittedUsers.some(e => e.permittedName == user.username) ? 
                       <div className='pointer-events-none'>{user.username} {`${`(Already Shared!)`}`} </div> : <div>{user.username}</div> } */}
                       {/* <p className='truncate'><div className={user.username.length>4?'hover:-translate-x-1/2 duration-[3000ms] delay-150':`truncate`}>Sharing Coming Soon!</div>
                       </p> */}
-                      <p className='truncate hover:-translate-x-1/2 duration-[3000ms] delay-150'>Sharing Coming Soon!
+                      <p>Unavailable
                       </p>
                     </button>
                   }
