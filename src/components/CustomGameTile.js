@@ -16,23 +16,26 @@ class CustomGameTile extends Component {
                         </Link></div>
                         <div className='flex flex-row'>
                         <>
-                            {this.props.databaseUsers?.map((user, index) =>  {
-                            return(
-                                <>
-                                { 
-                            ((this.props.gameCreatorsGoogleId != this.props.userGoogleId) && (user.googleId == this.props.gameCreatorsGoogleId))
+                            {((this.props.gameCreatorsGoogleId != this.props.userGoogleId))
                             ? 
-                            <div>
-                                {user.username}'s Game
-                            </div>
+                            <>
+                            {this.props.databaseUsers?.map((user, index) => 
+                             {if(user.googleId == this.props.gameCreatorsGoogleId){
+                                return(
+                                    <div key={index}>
+                                        {user.username}'s Game
+                                    </div>
+                                    )
+                                }
+                                }
+                            )}
+                            </>
                             : 
                             <p className='flex flex-row'>Rating: {this.props.gameRating}/5
                             </p>
                             }
-                            </>
-                            )
-                            })}
-                            </>
+                            
+                        </>
                         </div>
                     </div>
                 </div>
