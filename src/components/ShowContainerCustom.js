@@ -114,7 +114,7 @@ class ShowContainerCustom extends Component{
                             //         </div>
                             // }
                             // </>
-                            <div className = "grid flex-col grid-cols-2 justify-items-center pb-1 pt-.5 w-[600px]">
+                            <div className = "grid flex-col grid-cols-2 justify-items-center pb-1 pt-.5">
                                 <>
                                 {this.props.gameCreatorsGoogleId.length>1 ? 
                                     <>
