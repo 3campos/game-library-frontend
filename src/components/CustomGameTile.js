@@ -20,7 +20,7 @@ class CustomGameTile extends Component {
                             ? 
                             <>
                             {this.props.databaseUsers?.map((user, index) => 
-                             {if(user.googleId == this.props.gameCreatorsGoogleId){
+                                {if(user.googleId == this.props.gameCreatorsGoogleId){
                                 return(
                                     <div key={index}>
                                         {user.username}'s Game

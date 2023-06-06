@@ -114,7 +114,27 @@ class ShowContainerCustom extends Component{
                             //         </div>
                             // }
                             // </>
-                            <div className = "grid flex-col grid-cols-1 justify-items-center pb-1 pt-.5">
+                            <div className = "grid flex-col grid-cols-2 justify-items-center pb-1 pt-.5">
+                                <>
+                                {this.props.gameCreatorsGoogleId.length>1 ? 
+                                    <>
+                                        {this.props.databaseUsers?.map((user, index) => 
+                                            {if(user.googleId == this.props.gameCreatorsGoogleId){
+                                            return(
+                                                <div key={index} className='text-blue-300 text-2xl flex justify-center'>
+                                                    {user.username}'s Game
+                                                </div>
+                                                )
+                                            }
+                                            }
+                                        )}
+                                    </>
+                                    :
+                                    <div className='text-blue-300 text-2xl flex justify-center'>
+                                        Demo Account's Game
+                                    </div>
+                                }
+                                </>
                                 <div><BackBtn/></div>
                             </div>
                                 }
