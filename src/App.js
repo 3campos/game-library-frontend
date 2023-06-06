@@ -171,6 +171,7 @@ class App extends Component{
       this.getGames();
       this.getApiGameUrl();
       this.getUser();
+      //uncomment this when done with testing
       this.getAllUsers();
     }
 
