@@ -135,7 +135,7 @@ class ShowContainerCustom extends Component{
                                     </div>
                                 }
                                 </>
-                                <div className='flex justify-self-start'><BackBtn/></div>
+                                <div className='flex justify-self-center'><BackBtn/></div>
                             </div>
                                 }
                         </>
