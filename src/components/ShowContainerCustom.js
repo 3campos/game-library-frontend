@@ -121,7 +121,7 @@ class ShowContainerCustom extends Component{
                                         {this.props.databaseUsers?.map((user, index) => 
                                             {if(user.googleId == this.props.gameCreatorsGoogleId){
                                             return(
-                                                <div key={index} className='text-blue-300 text-2xl flex justify-center'>
+                                                <div key={index} className='text-blue-300 text-2xl flex justify-self-end'>
                                                     {user.username}'s Game
                                                 </div>
                                                 )
@@ -130,12 +130,12 @@ class ShowContainerCustom extends Component{
                                         )}
                                     </>
                                     :
-                                    <div className='text-blue-300 text-2xl flex justify-center'>
+                                    <div className='text-blue-300 text-2xl flex justify-self-end'>
                                         Demo Account's Game
                                     </div>
                                 }
                                 </>
-                                <div><BackBtn/></div>
+                                <div className='flex justify-self-start'><BackBtn/></div>
                             </div>
                                 }
                         </>
