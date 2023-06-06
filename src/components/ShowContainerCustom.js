@@ -42,8 +42,8 @@ class ShowContainerCustom extends Component{
                     <div className="text-blue-300 text-2xl flex justify-center h-[140px] pt-2 mb-1 overflow-y-scroll max-w-full resize-y">Game Progress: {this.props.gameNotes}
                     </div>
                         <>
-                        {/* {this.props.userGoogleId == this.props.gameCreatorsGoogleId ? */}
-                        {!this.props.gameCreatorsGoogleId ?
+                        {this.props.userGoogleId == this.props.gameCreatorsGoogleId ?
+                        // {!this.props.gameCreatorsGoogleId ?
                             <>
                             <div className = "grid flex-col grid-cols-4 justify-items-center pb-1 pt-.5">
                                 <div>
@@ -78,42 +78,45 @@ class ShowContainerCustom extends Component{
                             </div>
                             </>
                             :
-                            <>
-                            {
-                                (this.props.gameCreatorsGoogleId.length>1) && (this.props.userGoogleId == this.props.gameCreatorsGoogleId) ?
-                                <>
-                                    <div className = "grid flex-col grid-cols-4 justify-items-center pb-1 pt-.5">
-                                        <div>
-                                            <EditBtn id = {this.props.id}/>
-                                        </div>
-                                        <button className="flex justify-center w-28 h-16 sm: w-20 sm: text-lg rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900 sm: pt-1" onClick={()=>{
-                                            this.props.handleDeleteGame(this.props.id);
-                                            }}
-                                            >
-                                            <span>
-                                                Delete Game
-                                            </span>
-                                        </button>
-                                        <div>
-                                            <ShareGameBtn      
-                                            // gamePermittedUsers={this.props.gamePermittedUsers}
-                                            gameToEdit={this.props.gameToEdit}
-                                            passGameData={this.props.passGameData}
-                                            dbIdForGame={this.props.uniqueDbId}
-                                            userGoogleId={this.props.userGoogleId}
-                                            databaseUsers={this.props.databaseUsers}
-                                            userName = {this.props.userName}
-                                            />
-                                        </div>
-                                        <div><BackBtn/></div>
-                                    </div>   
-                                </>
-                                :
-                                    <div className = "grid flex-col grid-cols-1 justify-items-center pb-1 pt-.5">
-                                        <div><BackBtn/></div>
-                                    </div>
-                            }
-                            </>
+                            // <>
+                            // {
+                            //     (this.props.gameCreatorsGoogleId.length>1) && (this.props.userGoogleId == this.props.gameCreatorsGoogleId) ?
+                            //     <>
+                            //         <div className = "grid flex-col grid-cols-4 justify-items-center pb-1 pt-.5">
+                            //             <div>
+                            //                 <EditBtn id = {this.props.id}/>
+                            //             </div>
+                            //             <button className="flex justify-center w-28 h-16 sm: w-20 sm: text-lg rounded-full border-solid border-2 border-white text-blue-300 text-center text-2xl hover:bg-violet-900 sm: pt-1" onClick={()=>{
+                            //                 this.props.handleDeleteGame(this.props.id);
+                            //                 }}
+                            //                 >
+                            //                 <span>
+                            //                     Delete Game
+                            //                 </span>
+                            //             </button>
+                            //             <div>
+                            //                 <ShareGameBtn      
+                            //                 // gamePermittedUsers={this.props.gamePermittedUsers}
+                            //                 gameToEdit={this.props.gameToEdit}
+                            //                 passGameData={this.props.passGameData}
+                            //                 dbIdForGame={this.props.uniqueDbId}
+                            //                 userGoogleId={this.props.userGoogleId}
+                            //                 databaseUsers={this.props.databaseUsers}
+                            //                 userName = {this.props.userName}
+                            //                 />
+                            //             </div>
+                            //             <div><BackBtn/></div>
+                            //         </div>   
+                            //     </>
+                            //     :
+                            //         <div className = "grid flex-col grid-cols-1 justify-items-center pb-1 pt-.5">
+                            //             <div><BackBtn/></div>
+                            //         </div>
+                            // }
+                            // </>
+                            <div className = "grid flex-col grid-cols-1 justify-items-center pb-1 pt-.5">
+                                <div><BackBtn/></div>
+                            </div>
                                 }
                         </>
                     </div>
