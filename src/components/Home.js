@@ -33,7 +33,6 @@ class Home extends Component {
     }
 
     render() {
-        console.log('37:', this.state.toggleSharedLibrary)
         return(
             <div className='font-share-tech-mono flex flex-col justify-start items-center bg-gray-600 w-full h-screen pt-3 pb-14'>
                 <div className='flex w-fit flex-rows justify-center min-w-[370px] gap-4 pl-6'>
