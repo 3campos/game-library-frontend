@@ -31,8 +31,13 @@ class CustomGameTile extends Component {
                             )}
                             </>
                             : 
+                            <>
+                           { !this.props.userGoogleId ? <p className='flex flex-row'>Rating: {this.props.gameRating}/5
+                           </p> :
                             <p className='flex flex-row'>Rating: {this.props.gameRating}/5
                             </p>
+                            }  
+                            </>
                             }
                             
                         </>

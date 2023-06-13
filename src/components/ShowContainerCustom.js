@@ -43,7 +43,7 @@ class ShowContainerCustom extends Component{
                     </div>
                         <>
                         {/* //uncomment the below when doe testing  {!this.props.gameCreatorsGoogleId ? */}
-                        {this.props.userGoogleId == this.props.gameCreatorsGoogleId ?
+                        {(this.props.userGoogleId == this.props.gameCreatorsGoogleId) || (!this.props.userGoogleId) ?
                             <>
                             <div className = "grid flex-col grid-cols-4 justify-items-center pb-1 pt-.5">
                                 <div>
