@@ -100,7 +100,7 @@ class ShareGameBtn extends Component {
             
             
             {this.state.clickState == true ? 
-            <div className='absolute flex flex-col gap-1.5 w-36 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 transition opacity-0 -mt-20'>
+            <div className='absolute flex flex-col gap-1.5 w-36 h-20 overflow-y-scroll items-center rounded-lg border-solid border-2 border-white py-2 transition opacity-0 -mt-20 pointer-events-none'>
                 {this.props.databaseUsers?.map((user, index) =>  {
                 return(
                 <button key = {index} className='flex justify-center items-center w-28 h-16 rounded-md border-solid border-2 border-white text-blue-300 text-center text-sm hover:bg-violet-900 content-evenly'>
