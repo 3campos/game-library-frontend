@@ -1,35 +1,47 @@
-Heroku Links:
--Frontend: https://game-library-frontend.herokuapp.com/
--Backend: https://game-library-backend-ec.herokuapp.com/games
+### <ins> Live application </ins>
+- [Click here to see the live application](https://game-library-frontend.herokuapp.com/)
 
-GitHub links:
--Frontend: https://github.com/3campos/game-library-frontend
--Backend: https://github.com/3campos/game-library-backend
+### <ins> Code repositories</ins>
+- [Frontend](https://github.com/3campos/game-library-frontend)
+- [Backend](https://github.com/3campos/game-library-backend)
 
-I created a video game library application that allows users to view popular games from a third-party API, create their own customizable game library and share games with other users. Users can securely sign in via Google given the application's OAuth authorization framework and share games with each other. Users can add an image, ratings, play duration, genres and notes for each game as well as edit and delete games. When games are shared between users, CRUD operations are limited for users that are "following" the game based on their Google credentials.
+### <ins> Purpose of Video Game Library </ins>
 
-Technologies used:
--OAuth
--MongoDB
--Express
--React
--Node
--Javascript
--Tailwind
+I created Video Game Library to allow users to have a place to note their progress for complex games. A common theme among my friends and I who love playing video games is that whenvever we had to step away from a complex game for several days or weeks, it was difficult to remember what our personal strategies or battle plans were originally. For example, maybe I wanted to complete particular side quests or buy particular equipment to prepare for a challenging boss battle. Video Game Library solves this problem by allowing gamers to track their progress.
 
-To install this application, the user would have to npm install the following dependencies:
--react
--react-dom
--react-router-dom
--react-scripts
--web-vitals
+### <ins> Application features </ins>
 
-User Stories:
-My users are gamers who want to track the progress of multiple questlines in games so that if they step away from playing for multiple days, they can resume playing knowing exactly where they left off.
+Video Game Library is a mobile and desktop responsive application, with a secure Google sign feature that is supported by an OAuth authorization framework.
+
+Users can create a library of games that they are currently playing. For each game, users can add an image, rating, play duration, genre and personal notes. Users also have the option to edit and delete games, as well as share games with other users on the platform. 
+
+Regarding the game sharing feature, when games are shared between users, CRUD operations are limited for users that are "following" the game based on their Google credentials. The way this works is that the application compares the logged in user's credentials to the game-owner credentials attached to a specific game. If the credentials match, then full CRUD operations are allowed. If the logged in user has had games shared with them by other users, the application will allow them to view these games but prohibit them from modifying the games. 
+
+From the home page of the application, users can view: (1) their own library of games; (2) games that have been shared with them; and (3) a library of popular games that are imported from a third-party API.
+
+### <ins> Game sharing feature in action </ins>: [Click here to watch a game being shared between 2 users](https://drive.google.com/file/d/1wJ-qCjnV274QkE5gbJkp3HPdYIXkdcgf/view?usp=sharing)
+
+### <ins> Desktop view </ins>
+<img width="1433" alt="Screen Shot 2024-06-10 at 11 38 52 PM" src="https://github.com/3campos/game-library-frontend/assets/105468537/6ea96bb4-89f1-4a7d-95d4-98e5dea2ae9f">
+
+### <ins> Mobile view </ins>
+<img width="310" alt="Screen Shot 2024-06-11 at 12 12 35 AM" src="https://github.com/3campos/game-library-frontend/assets/105468537/608ea60f-dbc2-4204-aa47-bd9180b71dcb">
+
+### <ins> Technologies used </ins>
+- React
+- Javascript
+- OAuth
+- MongoDB
+- Express
+- Node
+- Tailwind
+
+### <ins> Dependencies used </ins>
+- react
+- react-dom
+- react-router-dom
+- react-scripts
+- web-vitals
+
+### <ins> Wireframe </ins>
 https://git.generalassemb.ly/seirfx-cosmos/capstone-project/issues/11
-
-Wireframe:
-https://git.generalassemb.ly/seirfx-cosmos/capstone-project/issues/11
-
-Unsolved problems or future features.
-I'd like to incorporate a feature to allow the user to indicate certain games as a "favorite" game.
