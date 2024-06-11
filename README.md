@@ -7,7 +7,7 @@
 
 ### <ins> Purpose of Video Game Library </ins>
 
-I created Video Game Library to allow users to have a place to note their progress for complex games. A common theme among my friends and I who love playing video games is that whenvever we had to step away from a complex game for several days or weeks, it was difficult to remember what our personal strategies or battle plans were originally. For example, maybe I wanted to complete particular side quests or buy particular equipment to prepare for a challenging boss battle. Video Game Library solves this problem by allowing gamers to track their progress.
+I created Video Game Library to allow users to have a place to note their progress for complex games. A common theme among my friends and I who love playing video games is that whenvever we had to step away from a complex game for several days or weeks, it was difficult to remember what our personal strategies or battle plans were originally. For example, maybe I wanted to complete particular side quests or collect rewards to buy particular equipment in preparation for a challenging boss battle. Video Game Library solves this problem by allowing gamers to note their strategies so that the next time they sit down to play a game, they can spend more time gaming and less time struggling to recreate their original master plan.
 
 ### <ins> Application features </ins>
 
@@ -15,7 +15,7 @@ Video Game Library is a mobile and desktop responsive application, with a secure
 
 Users can create a library of games that they are currently playing. For each game, users can add an image, rating, play duration, genre and personal notes. Users also have the option to edit and delete games, as well as share games with other users on the platform. 
 
-Regarding the game sharing feature, when games are shared between users, CRUD operations are limited for users that are "following" the game based on their Google credentials. The way this works is that the application compares the logged in user's credentials to the game-owner credentials attached to a specific game. If the credentials match, then full CRUD operations are allowed. If the logged in user has had games shared with them by other users, the application will allow them to view these games but prohibit them from modifying the games. 
+Regarding the game sharing feature, when games are shared between users, CRUD operations are limited for users that are "following" the game based on their Google credentials. The way this works is that the application compares the logged in user's credentials to the game owner's credentials attached to a specific game. If the credentials match, then full CRUD operations are allowed. If the logged in user has had games shared with them by other users, the application will allow them to view these games but prohibit them from modifying or deleting those games. 
 
 From the home page of the application, users can view: (1) their own library of games; (2) games that have been shared with them; and (3) a library of popular games that are imported from a third-party API.
 
